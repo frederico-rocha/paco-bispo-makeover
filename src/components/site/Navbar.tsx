@@ -44,8 +44,11 @@ export const Navbar = () => {
         <Link
           to="/"
           className={cn(
-            "font-serif-display text-xl md:text-2xl leading-none transition-colors",
-            scrolled ? "text-foreground hover:text-primary" : "text-paper hover:text-accent"
+            "font-serif-display text-xl md:text-2xl leading-none transition-colors rounded-sm",
+            "focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-transparent",
+            scrolled
+              ? "text-foreground hover:text-primary focus-visible:ring-primary"
+              : "text-paper hover:text-accent focus-visible:ring-accent"
           )}
         >
           Paço do Bispo
@@ -64,17 +67,17 @@ export const Navbar = () => {
             const active = isActive(l.href);
             const isRoute = !l.href.startsWith("/#");
             const base =
-              "text-sm tracking-wide transition-colors relative after:content-[''] after:absolute after:left-0 after:-bottom-1.5 after:h-px after:bg-current after:transition-all";
+              "text-sm tracking-wide transition-colors relative rounded-sm px-0.5 py-1 after:content-[''] after:absolute after:left-0.5 after:-bottom-0.5 after:h-px after:bg-current after:transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-4";
             const colorCls = scrolled
               ? cn(
-                  "hover:text-primary",
+                  "hover:text-primary focus-visible:ring-primary focus-visible:ring-offset-background",
                   active ? "text-primary" : "text-foreground/80"
                 )
               : cn(
-                  "hover:text-accent",
+                  "hover:text-accent focus-visible:ring-accent focus-visible:ring-offset-transparent",
                   active ? "text-accent" : "text-paper/95"
                 );
-            const underline = active ? "after:w-full" : "after:w-0 hover:after:w-full";
+            const underline = active ? "after:w-[calc(100%-0.25rem)]" : "after:w-0 hover:after:w-[calc(100%-0.25rem)]";
             const cls = cn(base, colorCls, underline);
             return (
               <li key={l.href}>
@@ -96,9 +99,10 @@ export const Navbar = () => {
           href="/#reservas"
           className={cn(
             "hidden md:inline-flex items-center px-6 py-2.5 rounded-full text-sm transition-all duration-300",
+            "focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2",
             scrolled
-              ? "bg-primary text-primary-foreground hover:bg-primary/90"
-              : "bg-paper/95 text-ink hover:bg-paper"
+              ? "bg-primary text-primary-foreground hover:bg-primary/90 focus-visible:ring-primary focus-visible:ring-offset-background"
+              : "bg-paper/95 text-ink hover:bg-paper focus-visible:ring-paper focus-visible:ring-offset-transparent"
           )}
         >
           Reservar
@@ -106,8 +110,11 @@ export const Navbar = () => {
 
         <button
           className={cn(
-            "md:hidden transition-colors",
-            scrolled ? "text-foreground hover:text-primary" : "text-paper hover:text-accent"
+            "md:hidden transition-colors rounded-sm p-1",
+            "focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2",
+            scrolled
+              ? "text-foreground hover:text-primary focus-visible:ring-primary focus-visible:ring-offset-background"
+              : "text-paper hover:text-accent focus-visible:ring-accent focus-visible:ring-offset-transparent"
           )}
           onClick={() => setOpen(!open)}
           aria-label="Menu"
@@ -123,7 +130,8 @@ export const Navbar = () => {
               const active = isActive(l.href);
               const isRoute = !l.href.startsWith("/#");
               const cls = cn(
-                "block transition-colors hover:text-primary",
+                "block transition-colors rounded-sm px-1 py-1 hover:text-primary",
+                "focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background",
                 active ? "text-primary" : "text-foreground/80"
               );
               return (
@@ -142,7 +150,7 @@ export const Navbar = () => {
             })}
             <a
               href="/#reservas"
-              className="inline-flex justify-center px-6 py-3 rounded-full bg-primary text-primary-foreground hover:bg-primary/90 transition-colors"
+              className="inline-flex justify-center px-6 py-3 rounded-full bg-primary text-primary-foreground hover:bg-primary/90 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background"
               onClick={() => setOpen(false)}
             >
               Reservar
