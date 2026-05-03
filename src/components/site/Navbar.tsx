@@ -3,11 +3,12 @@ import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const links = [
-  { href: "#casa", label: "A Casa" },
-  { href: "#quartos", label: "Quartos" },
-  { href: "#experiencias", label: "Experiências" },
-  { href: "#localizacao", label: "Sintra" },
-  { href: "#contacto", label: "Contacto" },
+  { href: "/#casa", label: "A Casa" },
+  { href: "/#quartos", label: "Quartos" },
+  { href: "/galeria", label: "Galeria" },
+  { href: "/#experiencias", label: "Experiências" },
+  { href: "/#localizacao", label: "Sintra" },
+  { href: "/#contacto", label: "Contacto" },
 ];
 
 export const Navbar = () => {
