@@ -130,7 +130,8 @@ export const Navbar = () => {
               const active = isActive(l.href);
               const isRoute = !l.href.startsWith("/#");
               const cls = cn(
-                "block transition-colors hover:text-primary",
+                "block transition-colors rounded-sm px-1 py-1 hover:text-primary",
+                "focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background",
                 active ? "text-primary" : "text-foreground/80"
               );
               return (
@@ -149,7 +150,7 @@ export const Navbar = () => {
             })}
             <a
               href="/#reservas"
-              className="inline-flex justify-center px-6 py-3 rounded-full bg-primary text-primary-foreground hover:bg-primary/90 transition-colors"
+              className="inline-flex justify-center px-6 py-3 rounded-full bg-primary text-primary-foreground hover:bg-primary/90 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background"
               onClick={() => setOpen(false)}
             >
               Reservar
