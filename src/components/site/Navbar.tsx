@@ -36,7 +36,7 @@ export const Navbar = () => {
           href="#top"
           className={cn(
             "font-serif-display text-xl md:text-2xl leading-none transition-colors",
-            scrolled ? "text-foreground" : "text-paper"
+            scrolled ? "text-foreground" : "text-[#c49645]"
           )}
         >
           Paço do Bispo
@@ -52,7 +52,7 @@ export const Navbar = () => {
                 href={l.href}
                 className={cn(
                   "text-sm tracking-wide transition-colors hover:text-primary",
-                  scrolled ? "text-foreground/80" : "text-paper/90"
+                  scrolled ? "text-foreground/80" : "text-[#c49645]"
                 )}
               >
                 {l.label}
@@ -74,7 +74,7 @@ export const Navbar = () => {
         </a>
 
         <button
-          className={cn("md:hidden", scrolled ? "text-foreground" : "text-paper")}
+          className={cn("md:hidden", scrolled ? "text-foreground" : "text-[#c49645]")}
           onClick={() => setOpen(!open)}
           aria-label="Menu"
         >
