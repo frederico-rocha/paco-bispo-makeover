@@ -45,10 +45,10 @@ export const Navbar = () => {
           to="/"
           className={cn(
             "font-serif-display text-xl md:text-2xl leading-none transition-colors rounded-sm",
-            "focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-transparent",
+            "focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2",
             scrolled
-              ? "text-foreground hover:text-primary focus-visible:ring-primary"
-              : "text-paper hover:text-accent focus-visible:ring-accent"
+              ? "text-foreground hover:text-primary focus-visible:ring-primary focus-visible:ring-offset-background"
+              : "text-paper hover:text-accent focus-visible:ring-paper focus-visible:ring-offset-ink focus-visible:[box-shadow:0_0_0_1px_hsl(var(--ink))]"
           )}
         >
           Paço do Bispo
@@ -67,17 +67,17 @@ export const Navbar = () => {
             const active = isActive(l.href);
             const isRoute = !l.href.startsWith("/#");
             const base =
-              "text-sm tracking-wide transition-colors relative rounded-sm px-0.5 py-1 after:content-[''] after:absolute after:left-0.5 after:-bottom-0.5 after:h-px after:bg-current after:transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-4";
+              "text-sm tracking-wide transition-colors relative rounded-sm px-1 py-1 after:content-[''] after:absolute after:left-1 after:-bottom-0.5 after:h-px after:bg-current after:transition-all focus:outline-none focus-visible:ring-2";
             const colorCls = scrolled
               ? cn(
-                  "hover:text-primary focus-visible:ring-primary focus-visible:ring-offset-background",
+                  "hover:text-primary focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background",
                   active ? "text-primary" : "text-foreground/80"
                 )
               : cn(
-                  "hover:text-accent focus-visible:ring-accent focus-visible:ring-offset-transparent",
+                  "hover:text-accent focus-visible:ring-paper focus-visible:ring-offset-2 focus-visible:ring-offset-ink",
                   active ? "text-accent" : "text-paper/95"
                 );
-            const underline = active ? "after:w-[calc(100%-0.25rem)]" : "after:w-0 hover:after:w-[calc(100%-0.25rem)]";
+            const underline = active ? "after:w-[calc(100%-0.5rem)]" : "after:w-0 hover:after:w-[calc(100%-0.5rem)]";
             const cls = cn(base, colorCls, underline);
             return (
               <li key={l.href}>
@@ -102,7 +102,7 @@ export const Navbar = () => {
             "focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2",
             scrolled
               ? "bg-primary text-primary-foreground hover:bg-primary/90 focus-visible:ring-primary focus-visible:ring-offset-background"
-              : "bg-paper/95 text-ink hover:bg-paper focus-visible:ring-paper focus-visible:ring-offset-transparent"
+              : "bg-paper/95 text-ink hover:bg-paper focus-visible:ring-accent focus-visible:ring-offset-ink"
           )}
         >
           Reservar
@@ -114,7 +114,7 @@ export const Navbar = () => {
             "focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2",
             scrolled
               ? "text-foreground hover:text-primary focus-visible:ring-primary focus-visible:ring-offset-background"
-              : "text-paper hover:text-accent focus-visible:ring-accent focus-visible:ring-offset-transparent"
+              : "text-paper hover:text-accent focus-visible:ring-paper focus-visible:ring-offset-ink"
           )}
           onClick={() => setOpen(!open)}
           aria-label="Menu"
