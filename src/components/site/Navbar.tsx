@@ -99,9 +99,10 @@ export const Navbar = () => {
           href="/#reservas"
           className={cn(
             "hidden md:inline-flex items-center px-6 py-2.5 rounded-full text-sm transition-all duration-300",
+            "focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2",
             scrolled
-              ? "bg-primary text-primary-foreground hover:bg-primary/90"
-              : "bg-paper/95 text-ink hover:bg-paper"
+              ? "bg-primary text-primary-foreground hover:bg-primary/90 focus-visible:ring-primary focus-visible:ring-offset-background"
+              : "bg-paper/95 text-ink hover:bg-paper focus-visible:ring-paper focus-visible:ring-offset-transparent"
           )}
         >
           Reservar
@@ -109,8 +110,11 @@ export const Navbar = () => {
 
         <button
           className={cn(
-            "md:hidden transition-colors",
-            scrolled ? "text-foreground hover:text-primary" : "text-paper hover:text-accent"
+            "md:hidden transition-colors rounded-sm p-1",
+            "focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2",
+            scrolled
+              ? "text-foreground hover:text-primary focus-visible:ring-primary focus-visible:ring-offset-background"
+              : "text-paper hover:text-accent focus-visible:ring-accent focus-visible:ring-offset-transparent"
           )}
           onClick={() => setOpen(!open)}
           aria-label="Menu"
