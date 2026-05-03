@@ -44,8 +44,11 @@ export const Navbar = () => {
         <Link
           to="/"
           className={cn(
-            "font-serif-display text-xl md:text-2xl leading-none transition-colors",
-            scrolled ? "text-foreground hover:text-primary" : "text-paper hover:text-accent"
+            "font-serif-display text-xl md:text-2xl leading-none transition-colors rounded-sm",
+            "focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-transparent",
+            scrolled
+              ? "text-foreground hover:text-primary focus-visible:ring-primary"
+              : "text-paper hover:text-accent focus-visible:ring-accent"
           )}
         >
           Paço do Bispo
@@ -64,17 +67,17 @@ export const Navbar = () => {
             const active = isActive(l.href);
             const isRoute = !l.href.startsWith("/#");
             const base =
-              "text-sm tracking-wide transition-colors relative after:content-[''] after:absolute after:left-0 after:-bottom-1.5 after:h-px after:bg-current after:transition-all";
+              "text-sm tracking-wide transition-colors relative rounded-sm px-0.5 py-1 after:content-[''] after:absolute after:left-0.5 after:-bottom-0.5 after:h-px after:bg-current after:transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-4";
             const colorCls = scrolled
               ? cn(
-                  "hover:text-primary",
+                  "hover:text-primary focus-visible:ring-primary focus-visible:ring-offset-background",
                   active ? "text-primary" : "text-foreground/80"
                 )
               : cn(
-                  "hover:text-accent",
+                  "hover:text-accent focus-visible:ring-accent focus-visible:ring-offset-transparent",
                   active ? "text-accent" : "text-paper/95"
                 );
-            const underline = active ? "after:w-full" : "after:w-0 hover:after:w-full";
+            const underline = active ? "after:w-[calc(100%-0.25rem)]" : "after:w-0 hover:after:w-[calc(100%-0.25rem)]";
             const cls = cn(base, colorCls, underline);
             return (
               <li key={l.href}>
