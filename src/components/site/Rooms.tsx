@@ -1,47 +1,37 @@
-import suite from "@/assets/room-suite.jpg";
-import studio from "@/assets/room-studio.jpg";
-import penthouse from "@/assets/room-penthouse.jpg";
+import { Link } from "react-router-dom";
 import { ArrowUpRight } from "lucide-react";
-
-const rooms = [
-  {
-    img: suite,
-    name: "Quartos de Luxo",
-    count: "Nove suítes",
-    desc: "Tectos altos, azulejos seculares e linhos imaculados — cada quarto é um capítulo da casa.",
-  },
-  {
-    img: studio,
-    name: "Estúdio",
-    count: "Vista campo",
-    desc: "Um refúgio íntimo banhado por luz natural, com vista para os pinhais da Penha Longa.",
-  },
-  {
-    img: penthouse,
-    name: "Penthouse",
-    count: "Terraço privado",
-    desc: "O ponto mais alto da casa. Vista panorâmica sobre Sintra, terraço só seu.",
-  },
-];
+import { rooms } from "@/data/rooms";
 
 export const Rooms = () => {
   return (
     <section id="quartos" className="py-28 md:py-40 bg-secondary/40">
       <div className="container-editorial">
-        <div className="max-w-3xl">
-          <p className="eyebrow">Estadia</p>
-          <h2 className="font-serif-display text-4xl md:text-6xl mt-5 leading-[1.05] text-balance">
-            Onze formas de
-            <span className="italic"> dormir em Sintra</span>.
-          </h2>
+        <div className="flex items-end justify-between flex-wrap gap-6 max-w-5xl">
+          <div className="max-w-3xl">
+            <p className="eyebrow">Estadia</p>
+            <h2 className="font-serif-display text-4xl md:text-6xl mt-5 leading-[1.05] text-balance">
+              Onze formas de
+              <span className="italic"> dormir em Sintra</span>.
+            </h2>
+          </div>
+          <Link
+            to="/galeria"
+            className="text-sm tracking-wide hover:text-primary inline-flex items-center gap-2"
+          >
+            Ver galeria completa <ArrowUpRight size={16} />
+          </Link>
         </div>
 
         <div className="mt-16 md:mt-20 grid md:grid-cols-3 gap-8 md:gap-10">
           {rooms.map((r) => (
-            <article key={r.name} className="group cursor-pointer">
+            <Link
+              to={`/quartos/${r.slug}`}
+              key={r.slug}
+              className="group cursor-pointer"
+            >
               <div className="relative aspect-[3/4] overflow-hidden rounded-sm bg-muted">
                 <img
-                  src={r.img}
+                  src={r.hero}
                   alt={r.name}
                   className="w-full h-full object-cover transition-transform duration-[1500ms] group-hover:scale-105"
                   loading="lazy"
@@ -65,9 +55,9 @@ export const Rooms = () => {
                 </span>
               </div>
               <p className="mt-3 text-foreground/70 leading-relaxed font-light">
-                {r.desc}
+                {r.short}
               </p>
-            </article>
+            </Link>
           ))}
         </div>
       </div>
