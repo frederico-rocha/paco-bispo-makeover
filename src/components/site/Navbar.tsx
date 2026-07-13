@@ -130,9 +130,9 @@ export const Navbar = () => {
               const active = isActive(l.href);
               const isRoute = !l.href.startsWith("/#");
               const cls = cn(
-                "block transition-colors rounded-sm px-1 py-1 hover:text-primary",
+                "block transition-colors rounded-sm px-1 py-1 hover:text-foreground",
                 "focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background",
-                active ? "text-primary" : "text-foreground/80"
+                active ? "text-foreground border-l-2 border-primary pl-3" : "text-foreground/80"
               );
               return (
                 <li key={l.href}>
