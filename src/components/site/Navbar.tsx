@@ -74,8 +74,8 @@ export const Navbar = () => {
                   active ? "text-primary" : "text-foreground/80"
                 )
               : cn(
-                  "hover:text-accent focus-visible:ring-paper focus-visible:ring-offset-2 focus-visible:ring-offset-ink",
-                  active ? "text-accent" : "text-paper/95"
+                  "hover:text-paper focus-visible:ring-paper focus-visible:ring-offset-2 focus-visible:ring-offset-ink",
+                  active ? "text-paper" : "text-paper"
                 );
             const underline = active ? "after:w-[calc(100%-0.5rem)]" : "after:w-0 hover:after:w-[calc(100%-0.5rem)]";
             const cls = cn(base, colorCls, underline);
