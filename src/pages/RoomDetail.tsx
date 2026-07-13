@@ -12,6 +12,7 @@ const RoomDetail = () => {
   if (!room) return <NotFound />;
 
   const others = rooms.filter((r) => r.slug !== room.slug);
+  const studioImagePosition = "object-[82%_100%]";
 
   const facts = [
     { icon: Maximize2, label: "Área", value: room.size },
@@ -30,7 +31,9 @@ const RoomDetail = () => {
           <img
             src={room.hero}
             alt={room.name}
-            className="absolute inset-0 w-full h-full object-cover"
+            className={`absolute inset-0 w-full h-full object-cover ${
+              room.slug === "estudio" ? studioImagePosition : ""
+            }`}
           />
           <div
             className="absolute inset-0"
@@ -114,7 +117,9 @@ const RoomDetail = () => {
                   <img
                     src={src}
                     alt={`${room.name} — ${i + 1}`}
-                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-[1500ms]"
+                    className={`w-full h-full object-cover hover:scale-105 transition-transform duration-[1500ms] ${
+                      room.slug === "estudio" && i === 0 ? studioImagePosition : ""
+                    }`}
                     loading="lazy"
                   />
                 </div>
@@ -149,7 +154,9 @@ const RoomDetail = () => {
                     <img
                       src={r.hero}
                       alt={r.name}
-                      className="w-full h-full object-cover transition-transform duration-[1500ms] group-hover:scale-105"
+                      className={`w-full h-full object-cover transition-transform duration-[1500ms] group-hover:scale-105 ${
+                        r.slug === "estudio" ? studioImagePosition : ""
+                      }`}
                       loading="lazy"
                     />
                   </div>
