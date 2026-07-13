@@ -53,7 +53,7 @@
 
     --gradient-warm: linear-gradient(180deg, hsl(36 32% 97%) 0%, hsl(32 22% 92%) 100%);
     --gradient-overlay: linear-gradient(180deg, hsl(20 22% 12% / 0.05) 0%, hsl(20 22% 12% / 0.55) 100%);
-    --gradient-hero: linear-gradient(180deg, hsl(20 22% 12% / 0) 35%, hsl(20 22% 12% / 0.65) 100%);
+    --gradient-hero: linear-gradient(180deg, hsl(20 22% 12% / 0.15) 0%, hsl(20 22% 12% / 0.55) 55%, hsl(20 22% 12% / 0.92) 100%);
 
     --shadow-soft: 0 30px 60px -30px hsl(20 22% 12% / 0.25);
     --shadow-card: 0 20px 40px -24px hsl(20 22% 12% / 0.18);
