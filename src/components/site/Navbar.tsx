@@ -55,7 +55,7 @@ export const Navbar = () => {
           <span
             className={cn(
               "block text-[0.6rem] tracking-[0.4em] uppercase mt-1 font-sans transition-colors",
-              scrolled ? "text-muted-foreground" : "text-paper/80"
+              scrolled ? "text-muted-foreground" : "text-paper"
             )}
           >
             Boutique House
