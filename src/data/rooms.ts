@@ -1,4 +1,5 @@
-import suite from "@/assets/room-suite.jpg";
+import suiteAsset from "@/assets/room-suite.jpg.asset.json";
+const suite = suiteAsset.url;
 import studio from "@/assets/room-studio.jpg";
 import penthouse from "@/assets/room-penthouse.jpg";
 import houseDetail from "@/assets/house-detail.jpg";
