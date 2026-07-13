@@ -37,7 +37,7 @@ export const Navbar = () => {
         "fixed top-0 inset-x-0 z-50 transition-all duration-500",
         scrolled
           ? "bg-background/90 backdrop-blur-md border-b border-border/60"
-          : "bg-gradient-to-b from-ink/55 via-ink/25 to-transparent"
+          : "bg-gradient-to-b from-ink/75 via-ink/45 to-transparent"
       )}
     >
       <nav className="container-editorial flex items-center justify-between h-20">
@@ -48,14 +48,14 @@ export const Navbar = () => {
             "focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2",
             scrolled
               ? "text-foreground hover:text-primary focus-visible:ring-primary focus-visible:ring-offset-background"
-              : "text-paper hover:text-accent focus-visible:ring-paper focus-visible:ring-offset-ink focus-visible:[box-shadow:0_0_0_1px_hsl(var(--ink))]"
+              : "text-paper hover:text-paper focus-visible:ring-paper focus-visible:ring-offset-ink focus-visible:[box-shadow:0_0_0_1px_hsl(var(--ink))]"
           )}
         >
           Paço do Bispo
           <span
             className={cn(
               "block text-[0.6rem] tracking-[0.4em] uppercase mt-1 font-sans transition-colors",
-              scrolled ? "text-muted-foreground" : "text-paper/80"
+              scrolled ? "text-muted-foreground" : "text-paper"
             )}
           >
             Boutique House
@@ -70,12 +70,12 @@ export const Navbar = () => {
               "text-sm tracking-wide transition-colors relative rounded-sm px-1 py-1 after:content-[''] after:absolute after:left-1 after:-bottom-0.5 after:h-px after:bg-current after:transition-all focus:outline-none focus-visible:ring-2";
             const colorCls = scrolled
               ? cn(
-                  "hover:text-primary focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background",
-                  active ? "text-primary" : "text-foreground/80"
+                  "hover:text-foreground focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background after:bg-primary",
+                  active ? "text-foreground" : "text-foreground/80"
                 )
               : cn(
-                  "hover:text-accent focus-visible:ring-paper focus-visible:ring-offset-2 focus-visible:ring-offset-ink",
-                  active ? "text-accent" : "text-paper/95"
+                  "hover:text-paper focus-visible:ring-paper focus-visible:ring-offset-2 focus-visible:ring-offset-ink",
+                  active ? "text-paper" : "text-paper"
                 );
             const underline = active ? "after:w-[calc(100%-0.5rem)]" : "after:w-0 hover:after:w-[calc(100%-0.5rem)]";
             const cls = cn(base, colorCls, underline);
@@ -114,7 +114,7 @@ export const Navbar = () => {
             "focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2",
             scrolled
               ? "text-foreground hover:text-primary focus-visible:ring-primary focus-visible:ring-offset-background"
-              : "text-paper hover:text-accent focus-visible:ring-paper focus-visible:ring-offset-ink"
+              : "text-paper hover:text-paper focus-visible:ring-paper focus-visible:ring-offset-ink"
           )}
           onClick={() => setOpen(!open)}
           aria-label="Menu"
@@ -130,9 +130,9 @@ export const Navbar = () => {
               const active = isActive(l.href);
               const isRoute = !l.href.startsWith("/#");
               const cls = cn(
-                "block transition-colors rounded-sm px-1 py-1 hover:text-primary",
+                "block transition-colors rounded-sm px-1 py-1 hover:text-foreground",
                 "focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background",
-                active ? "text-primary" : "text-foreground/80"
+                active ? "text-foreground border-l-2 border-primary pl-3" : "text-foreground/80"
               );
               return (
                 <li key={l.href}>
