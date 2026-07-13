@@ -34,7 +34,7 @@ export const Rooms = () => {
                   src={r.hero}
                   alt={r.name}
                   className={`w-full h-full object-cover transition-transform duration-[1500ms] group-hover:scale-105 ${
-                    r.slug === "estudio" ? "object-bottom" : ""
+                    r.slug === "estudio" ? "object-[82%_100%]" : ""
                   }`}
                   loading="lazy"
                   width={1080}
