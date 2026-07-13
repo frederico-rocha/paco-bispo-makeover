@@ -162,7 +162,7 @@ const NAV_ELEMENTS: NavEl[] = [
     desktopOnly: true,
     resolve: ({ video, scrolled }) => {
       const bg = bgFor(scrolled, video);
-      const fg = scrolled ? PRIMARY : PAPER; // hover uses underline in transparent state
+      const fg = scrolled ? FOREGROUND : PAPER; // hover uses underline; text stays foreground/paper
       return { fg, bg };
     },
   },
