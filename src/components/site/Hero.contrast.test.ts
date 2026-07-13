@@ -48,8 +48,9 @@ const OVERLAY: RGB = hslToRgb(20, 22, 12); // dark brown gradient stop
 
 // ---------- gradient / composition ----------
 const overlayAlphaAt = (yRatio: number) => {
-  const t = Math.max(0, Math.min(1, (yRatio - 0.35) / 0.65));
-  return t * 0.65;
+  const y = Math.max(0, Math.min(1, yRatio));
+  if (y <= 0.55) return 0.15 + (y / 0.55) * (0.55 - 0.15);
+  return 0.55 + ((y - 0.55) / 0.45) * (0.92 - 0.55);
 };
 
 const compose = (video: RGB, yRatio: number): RGB =>
