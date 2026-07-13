@@ -1,4 +1,4 @@
-import hero from "@/assets/hero-paco.jpg";
+import heroVideo from "@/assets/hero.mp4.asset.json";
 
 export const Hero = () => {
   return (
@@ -7,12 +7,15 @@ export const Hero = () => {
       className="relative h-screen min-h-[640px] w-full overflow-hidden"
     >
       <div className="absolute inset-0">
-        <img
-          src={hero}
-          alt="Paço do Bispo Boutique House ao entardecer, na serra de Sintra"
-          className="w-full h-full object-cover ken-burns"
-          width={1920}
-          height={1280}
+        <video
+          src={heroVideo.url}
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="auto"
+          aria-label="Paço do Bispo Boutique House ao entardecer, na serra de Sintra"
+          className="w-full h-full object-cover"
         />
         <div
           className="absolute inset-0"
