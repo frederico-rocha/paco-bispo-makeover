@@ -43,7 +43,7 @@ const contrast = (a: RGB, b: RGB) => {
 // ---------- design tokens (mirrors src/index.css :root) ----------
 const PAPER: RGB = hslToRgb(36, 32, 97);
 const PRIMARY: RGB = hslToRgb(14, 62, 48);
-const PRIMARY_FG: RGB = hslToRgb(36, 38, 97);
+const PRIMARY_FG: RGB = hslToRgb(0, 0, 100);
 const OVERLAY: RGB = hslToRgb(20, 22, 12); // dark brown gradient stop
 
 // ---------- gradient / composition ----------
