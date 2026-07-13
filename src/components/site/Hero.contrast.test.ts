@@ -8,9 +8,9 @@ import { describe, it, expect } from "vitest";
  *  - several video luminosities (dark night frame → bright sky frame)
  *
  * The gradient overlay (`--gradient-hero`) is a 3-stop linear gradient:
- *   0%   → hsl(20 22% 12% / 0.15)
- *   55%  → hsl(20 22% 12% / 0.55)
- *   100% → hsl(20 22% 12% / 0.92)
+ *   0%   → hsl(20 22% 12% / 0.25)
+ *   45%  → hsl(20 22% 12% / 0.70)
+ *   100% → hsl(20 22% 12% / 0.95)
  */
 
 // ---------- color helpers ----------
