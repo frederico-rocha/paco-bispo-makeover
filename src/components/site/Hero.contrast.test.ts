@@ -7,10 +7,10 @@ import { describe, it, expect } from "vitest";
  *  - several viewport sizes (mobile / tablet / desktop / ultrawide)
  *  - several video luminosities (dark night frame → bright sky frame)
  *
- * The gradient overlay (`--gradient-hero`) is:
- *   linear-gradient(180deg, hsl(20 22% 12% / 0) 35%, hsl(20 22% 12% / 0.65) 100%)
- * so the effective overlay alpha at vertical position `y` (0..1) is:
- *   alpha(y) = clamp((y - 0.35) / 0.65, 0, 1) * 0.65
+ * The gradient overlay (`--gradient-hero`) is a 3-stop linear gradient:
+ *   0%   → hsl(20 22% 12% / 0.15)
+ *   55%  → hsl(20 22% 12% / 0.55)
+ *   100% → hsl(20 22% 12% / 0.92)
  */
 
 // ---------- color helpers ----------
