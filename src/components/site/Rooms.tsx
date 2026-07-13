@@ -33,7 +33,9 @@ export const Rooms = () => {
                 <img
                   src={r.hero}
                   alt={r.name}
-                  className="w-full h-full object-cover transition-transform duration-[1500ms] group-hover:scale-105"
+                  className={`w-full h-full object-cover transition-transform duration-[1500ms] group-hover:scale-105 ${
+                    r.slug === "estudio" ? "object-bottom" : ""
+                  }`}
                   loading="lazy"
                   width={1080}
                   height={1600}
