@@ -37,7 +37,7 @@ export const Navbar = () => {
         "fixed top-0 inset-x-0 z-50 transition-all duration-500",
         scrolled
           ? "bg-background/90 backdrop-blur-md border-b border-border/60"
-          : "bg-gradient-to-b from-ink/55 via-ink/25 to-transparent"
+          : "bg-gradient-to-b from-ink/75 via-ink/45 to-transparent"
       )}
     >
       <nav className="container-editorial flex items-center justify-between h-20">
