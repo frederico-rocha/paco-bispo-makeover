@@ -24,7 +24,7 @@ export const Hero = () => {
       </div>
 
       <div className="relative z-10 h-full container-editorial flex flex-col justify-end pb-24 md:pb-32">
-        <p className="eyebrow text-primary reveal">
+        <p className="uppercase tracking-[0.28em] text-xs font-medium text-primary reveal">
           Ribeira da Penha Longa · Sintra
         </p>
         <h1 className="font-serif-display text-paper text-5xl md:text-7xl lg:text-8xl mt-5 max-w-5xl leading-[1.02] text-balance reveal reveal-delay-1">
