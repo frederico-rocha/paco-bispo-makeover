@@ -70,8 +70,8 @@ export const Navbar = () => {
               "text-sm tracking-wide transition-colors relative rounded-sm px-1 py-1 after:content-[''] after:absolute after:left-1 after:-bottom-0.5 after:h-px after:bg-current after:transition-all focus:outline-none focus-visible:ring-2";
             const colorCls = scrolled
               ? cn(
-                  "hover:text-primary focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background",
-                  active ? "text-primary" : "text-foreground/80"
+                  "hover:text-foreground focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background after:bg-primary",
+                  active ? "text-foreground" : "text-foreground/80"
                 )
               : cn(
                   "hover:text-paper focus-visible:ring-paper focus-visible:ring-offset-2 focus-visible:ring-offset-ink",
