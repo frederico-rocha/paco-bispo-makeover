@@ -151,7 +151,7 @@ const NAV_ELEMENTS: NavEl[] = [
     desktopOnly: true,
     resolve: ({ video, scrolled }) => {
       const bg = bgFor(scrolled, video);
-      const fg = scrolled ? PRIMARY : PAPER; // underline conveys active in transparent state
+      const fg = scrolled ? FOREGROUND : PAPER; // primary underline conveys state; text stays foreground/paper
       return { fg, bg };
     },
   },
