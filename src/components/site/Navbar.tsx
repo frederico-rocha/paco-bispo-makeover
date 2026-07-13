@@ -114,7 +114,7 @@ export const Navbar = () => {
             "focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2",
             scrolled
               ? "text-foreground hover:text-primary focus-visible:ring-primary focus-visible:ring-offset-background"
-              : "text-paper hover:text-accent focus-visible:ring-paper focus-visible:ring-offset-ink"
+              : "text-paper hover:text-paper focus-visible:ring-paper focus-visible:ring-offset-ink"
           )}
           onClick={() => setOpen(!open)}
           aria-label="Menu"
