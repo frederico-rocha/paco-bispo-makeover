@@ -1,4 +1,4 @@
-import houseDetail from "@/assets/about-window-view.jpg.asset.json";
+import courtyard from "@/assets/paco-do-bispo-courtyard.jpg.asset.json";
 
 export const About = () => {
   return (
@@ -7,12 +7,12 @@ export const About = () => {
         <div className="md:col-span-5 order-2 md:order-1">
           <div className="relative aspect-[3/4] overflow-hidden rounded-sm" style={{ boxShadow: "var(--shadow-soft)" }}>
             <img
-              src={houseDetail.url}
-              alt="Vista da janela do Paço do Bispo sobre a fachada terracota e a piscina rodeada de jardins"
+              src={courtyard.url}
+              alt="Pátio exterior do Paço do Bispo com fachada cor de terracota, telhado de telha e escultura de cavalos no centro do lajedo"
               className="w-full h-full object-cover hover:scale-105 transition-transform duration-[1500ms]"
               loading="lazy"
-              width={1920}
-              height={1280}
+              width={1824}
+              height={1216}
             />
 
           </div>
