@@ -212,7 +212,7 @@ const NAV_ELEMENTS: NavEl[] = [
     label: "Menu mobile · link ativo",
     minRatio: 4.5,
     mobileOnly: true,
-    resolve: () => ({ fg: PRIMARY, bg: BACKGROUND }),
+    resolve: () => ({ fg: FOREGROUND, bg: BACKGROUND }),
   },
   {
     key: "drawer-cta",
