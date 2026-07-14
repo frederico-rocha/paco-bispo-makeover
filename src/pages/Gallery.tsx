@@ -15,7 +15,8 @@ const pool = poolAsset.url;
 import chapelAsset from "@/assets/chapel-lounge.jpg.asset.json";
 const chapel = chapelAsset.url;
 import houseDetail from "@/assets/house-detail.jpg";
-import sintra from "@/assets/sintra.jpg";
+import sintraAsset from "@/assets/sintra.jpg.asset.json";
+const sintra = sintraAsset.url;
 
 const items = [
   { src: hero, caption: "A casa ao amanhecer", category: "Exterior" },

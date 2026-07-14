@@ -1,4 +1,5 @@
-import sintra from "@/assets/sintra.jpg";
+import sintraAsset from "@/assets/sintra.jpg.asset.json";
+const sintra = sintraAsset.url;
 
 export const Location = () => {
   const points = [
