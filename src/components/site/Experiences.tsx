@@ -46,7 +46,7 @@ export const Experiences = () => {
                   <img
                     src={item.img}
                     alt={item.title}
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-cover object-[50%_65%]"
                     loading="lazy"
                     width={1920}
                     height={1200}
