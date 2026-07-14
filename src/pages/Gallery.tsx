@@ -15,7 +15,8 @@ import poolAsset from "@/assets/pool.jpg.asset.json";
 const pool = poolAsset.url;
 import chapelAsset from "@/assets/chapel-lounge.jpg.asset.json";
 const chapel = chapelAsset.url;
-import houseDetail from "@/assets/house-detail.jpg";
+import houseDetailAsset from "@/assets/house-detail.jpg.asset.json";
+const houseDetail = houseDetailAsset.url;
 import sintraAsset from "@/assets/sintra.jpg.asset.json";
 const sintra = sintraAsset.url;
 
