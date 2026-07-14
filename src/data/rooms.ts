@@ -5,7 +5,8 @@ const studio = studioAsset.url;
 import penthouseAsset from "@/assets/room-penthouse.jpg.asset.json";
 const penthouse = penthouseAsset.url;
 import houseDetail from "@/assets/house-detail.jpg";
-import pool from "@/assets/pool.jpg";
+import poolAsset from "@/assets/pool.jpg.asset.json";
+const pool = poolAsset.url;
 import chapel from "@/assets/chapel-lounge.jpg";
 
 export type Room = {
