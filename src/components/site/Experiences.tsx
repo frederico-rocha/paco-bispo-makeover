@@ -1,6 +1,7 @@
 import poolAsset from "@/assets/pool.jpg.asset.json";
 const pool = poolAsset.url;
-import chapel from "@/assets/chapel-lounge.jpg";
+import chapelAsset from "@/assets/chapel-lounge.jpg.asset.json";
+const chapel = chapelAsset.url;
 
 const items = [
   {

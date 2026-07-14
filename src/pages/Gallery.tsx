@@ -12,7 +12,8 @@ import penthouseAsset from "@/assets/room-penthouse.jpg.asset.json";
 const penthouse = penthouseAsset.url;
 import poolAsset from "@/assets/pool.jpg.asset.json";
 const pool = poolAsset.url;
-import chapel from "@/assets/chapel-lounge.jpg";
+import chapelAsset from "@/assets/chapel-lounge.jpg.asset.json";
+const chapel = chapelAsset.url;
 import houseDetail from "@/assets/house-detail.jpg";
 import sintra from "@/assets/sintra.jpg";
 
