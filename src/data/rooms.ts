@@ -92,8 +92,8 @@ export const rooms: Room[] = [
     count: "Mais espaço",
     short:
       "Área generosa e detalhes originais do palacete, num ambiente calmo e contemporâneo.",
-    hero: houseDetail,
-    gallery: [houseDetail, suite, pool],
+    hero: superiorHero,
+    gallery: superiorGallery,
     size: "28–32 m²",
     guests: "2 hóspedes",
     bed: "Cama king-size",
