@@ -22,7 +22,7 @@ export const Rooms = () => {
           </Link>
         </div>
 
-        <div className="mt-16 md:mt-20 grid md:grid-cols-3 gap-8 md:gap-10">
+        <div className="mt-16 md:mt-20 grid sm:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-10">
           {rooms.map((r) => (
             <Link
               to={`/quartos/${r.slug}`}
@@ -34,7 +34,7 @@ export const Rooms = () => {
                   src={r.hero}
                   alt={r.name}
                   className={`w-full h-full object-cover transition-transform duration-[1500ms] group-hover:scale-105 ${
-                    r.slug === "estudio" ? "object-[82%_100%]" : ""
+                    r.slug === "standard" ? "object-[82%_100%]" : ""
                   }`}
                   loading="lazy"
                   width={1080}
