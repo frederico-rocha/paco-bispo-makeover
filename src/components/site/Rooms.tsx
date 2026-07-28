@@ -33,9 +33,7 @@ export const Rooms = () => {
                 <img
                   src={r.hero}
                   alt={r.name}
-                  className={`w-full h-full object-cover transition-transform duration-[1500ms] group-hover:scale-105 ${
-                    r.slug === "standard" ? "object-[82%_100%]" : ""
-                  }`}
+                  className="w-full h-full object-cover transition-transform duration-[1500ms] group-hover:scale-105"
                   loading="lazy"
                   width={1080}
                   height={1600}

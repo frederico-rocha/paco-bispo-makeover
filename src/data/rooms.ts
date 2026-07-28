@@ -10,6 +10,23 @@ import poolAsset from "@/assets/pool.jpg.asset.json";
 const pool = poolAsset.url;
 import chapelAsset from "@/assets/chapel-lounge.jpg.asset.json";
 const chapel = chapelAsset.url;
+import standard120Asset from "@/assets/standard-120.jpg.asset.json";
+import standard026Asset from "@/assets/standard-026.jpg.asset.json";
+import standard027Asset from "@/assets/standard-027.jpg.asset.json";
+import standard028Asset from "@/assets/standard-028.jpg.asset.json";
+import standard029Asset from "@/assets/standard-029.jpg.asset.json";
+import standard030Asset from "@/assets/standard-030.jpg.asset.json";
+import standard031Asset from "@/assets/standard-031.jpg.asset.json";
+const standardHero = standard120Asset.url;
+const standardGallery = [
+  standard120Asset.url,
+  standard027Asset.url,
+  standard026Asset.url,
+  standard028Asset.url,
+  standard029Asset.url,
+  standard031Asset.url,
+  standard030Asset.url,
+];
 
 export type Room = {
   slug: string;
@@ -33,8 +50,8 @@ export const rooms: Room[] = [
     count: "Tipologia base",
     short:
       "Um quarto sereno e luminoso, com o essencial cuidado ao detalhe da casa.",
-    hero: studio,
-    gallery: [studio, houseDetail, chapel],
+    hero: standardHero,
+    gallery: standardGallery,
     size: "22–26 m²",
     guests: "2 hóspedes",
     bed: "Cama queen-size",
