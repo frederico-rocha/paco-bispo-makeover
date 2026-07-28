@@ -1,4 +1,24 @@
+import * as React from "react";
+
 export const Reservation = () => {
+  const [checkIn, setCheckIn] = React.useState("");
+  const [checkOut, setCheckOut] = React.useState("");
+  const [guests, setGuests] = React.useState(2);
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+
+    const base = "https://be.heytravel.net/f6292097-5818-4381-93ef-638650ee44bc";
+    const occupation = JSON.stringify([{ room: 1, adults: guests, children: 0 }]);
+    const params = new URLSearchParams({
+      checkIn,
+      checkOut,
+      occupation,
+    });
+
+    window.open(`${base}?${params.toString()}`, "_blank", "noopener,noreferrer");
+  };
+
   return (
     <section id="reservas" className="py-28 md:py-40 bg-background">
       <div className="container-editorial">
@@ -13,19 +33,39 @@ export const Reservation = () => {
           </p>
         </div>
 
-        <div className="mt-14 max-w-4xl mx-auto bg-secondary/50 border border-border p-6 md:p-10 rounded-sm text-center">
-          <p className="text-foreground/70 text-lg font-light">
-            As reservas são geridas na nossa plataforma de reservas. Verifique disponibilidade e tarifas em tempo real.
-          </p>
-          <a
-            href="https://be.heytravel.net/f6292097-5818-4381-93ef-638650ee44bc?checkIn=2026-07-29&occupation=%5B%7B%22room%22%3A1%2C%22adults%22%3A2%2C%22children%22%3A0%7D%5D&checkOut=2026-07-31"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center justify-center h-12 px-8 rounded-full bg-primary text-primary-foreground hover:bg-primary-glow transition-colors text-sm tracking-wide mt-8"
+        <form
+          className="mt-14 max-w-4xl mx-auto bg-secondary/50 border border-border p-6 md:p-10 rounded-sm grid md:grid-cols-4 gap-5 items-end"
+          onSubmit={handleSubmit}
+        >
+          <Field
+            label="Check-in"
+            type="date"
+            value={checkIn}
+            onChange={(e) => setCheckIn(e.target.value)}
+            required
+          />
+          <Field
+            label="Check-out"
+            type="date"
+            value={checkOut}
+            onChange={(e) => setCheckOut(e.target.value)}
+            required
+          />
+          <Field
+            label="Hóspedes"
+            type="number"
+            min={1}
+            value={guests}
+            onChange={(e) => setGuests(Number(e.target.value))}
+            required
+          />
+          <button
+            type="submit"
+            className="h-12 rounded-full bg-primary text-primary-foreground hover:bg-primary-glow transition-colors text-sm tracking-wide"
           >
-            Reservar agora
-          </a>
-        </div>
+            Pedir reserva
+          </button>
+        </form>
 
         <p className="mt-6 text-center text-sm text-muted-foreground">
           Ou contacte-nos diretamente em{" "}
@@ -37,3 +77,18 @@ export const Reservation = () => {
     </section>
   );
 };
+
+const Field = ({
+  label,
+  ...rest
+}: { label: string } & React.InputHTMLAttributes<HTMLInputElement>) => (
+  <label className="flex flex-col gap-2">
+    <span className="text-xs uppercase tracking-[0.22em] text-muted-foreground">
+      {label}
+    </span>
+    <input
+      {...rest}
+      className="h-12 px-4 rounded-sm bg-background border border-border focus:border-primary outline-none transition-colors text-foreground"
+    />
+  </label>
+);
