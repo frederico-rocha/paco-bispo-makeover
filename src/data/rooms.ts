@@ -134,8 +134,8 @@ export const rooms: Room[] = [
     count: "Suíte com carácter",
     short:
       "Tectos altos, azulejos seculares e linhos imaculados — um capítulo original da casa.",
-    hero: suite,
-    gallery: [suite, chapel, houseDetail],
+    hero: deluxeHero,
+    gallery: deluxeGallery,
     size: "32–38 m²",
     guests: "2 hóspedes",
     bed: "Cama king-size",
