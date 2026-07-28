@@ -2,12 +2,41 @@ import suiteAsset from "@/assets/room-suite.jpg.asset.json";
 const suite = suiteAsset.url;
 import studioAsset from "@/assets/room-studio.jpg.asset.json";
 const studio = studioAsset.url;
-import penthouseAsset from "@/assets/room-penthouse.jpg.asset.json";
-const penthouse = penthouseAsset.url;
 import houseDetailAsset from "@/assets/house-detail.jpg.asset.json";
 const houseDetail = houseDetailAsset.url;
 import poolAsset from "@/assets/pool.jpg.asset.json";
 const pool = poolAsset.url;
+import penthouse053Asset from "@/assets/penthouse-053-2.jpg.asset.json";
+import penthouse054Asset from "@/assets/penthouse-054-2.jpg.asset.json";
+import penthouse055Asset from "@/assets/penthouse-055.jpg.asset.json";
+import penthouse056Asset from "@/assets/penthouse-056-3.jpg.asset.json";
+import penthouse057Asset from "@/assets/penthouse-057.jpg.asset.json";
+import penthouse058Asset from "@/assets/penthouse-058.jpg.asset.json";
+import penthouse059Asset from "@/assets/penthouse-059.jpg.asset.json";
+import penthouse060Asset from "@/assets/penthouse-060.jpg.asset.json";
+import penthouse061Asset from "@/assets/penthouse-061.jpg.asset.json";
+import penthouse062Asset from "@/assets/penthouse-062.jpg.asset.json";
+import penthouse063Asset from "@/assets/penthouse-063.jpg.asset.json";
+import penthouse064Asset from "@/assets/penthouse-064.jpg.asset.json";
+import penthouse065Asset from "@/assets/penthouse-065.jpg.asset.json";
+import penthouse071Asset from "@/assets/penthouse-071.jpg.asset.json";
+const penthouseHero = penthouse054Asset.url;
+const penthouseGallery = [
+  penthouse054Asset.url,
+  penthouse061Asset.url,
+  penthouse053Asset.url,
+  penthouse055Asset.url,
+  penthouse056Asset.url,
+  penthouse059Asset.url,
+  penthouse060Asset.url,
+  penthouse065Asset.url,
+  penthouse063Asset.url,
+  penthouse064Asset.url,
+  penthouse071Asset.url,
+  penthouse062Asset.url,
+  penthouse057Asset.url,
+  penthouse058Asset.url,
+];
 import chapelAsset from "@/assets/chapel-lounge.jpg.asset.json";
 const chapel = chapelAsset.url;
 import standard120Asset from "@/assets/standard-120.jpg.asset.json";
@@ -159,8 +188,8 @@ export const rooms: Room[] = [
     count: "Terraço privado",
     short:
       "O ponto mais alto da casa. Vista panorâmica sobre Sintra, terraço só seu.",
-    hero: penthouse,
-    gallery: [penthouse, chapel, pool],
+    hero: penthouseHero,
+    gallery: penthouseGallery,
     size: "62 m² + 24 m² terraço",
     guests: "2–3 hóspedes",
     bed: "Cama king + sofá-cama",
