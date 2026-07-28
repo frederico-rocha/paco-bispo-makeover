@@ -99,6 +99,7 @@ export const Hero = () => {
           src={heroPoster.url}
           alt=""
           aria-hidden="true"
+          loading="eager"
           fetchPriority="high"
           decoding="async"
           className="absolute inset-0 w-full h-full object-cover"
@@ -115,13 +116,18 @@ export const Hero = () => {
             preload="auto"
             disablePictureInPicture
             disableRemotePlayback
-            onLoadedData={() => setVideoReady(true)}
+            // Reveal only once the browser signals it can play through the
+            // first frame without stalling — no half-decoded flashes over
+            // the poster. `onPlaying` is the belt-and-braces fallback for
+            // browsers that hold `canplay` back behind autoplay policies.
             onCanPlay={() => setVideoReady(true)}
+            onPlaying={() => setVideoReady(true)}
             aria-label="Paço do Bispo Boutique House ao entardecer, na serra de Sintra"
-            className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ease-out ${videoReady ? "opacity-100" : "opacity-0"}`}
+            className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-[900ms] ease-[cubic-bezier(0.4,0,0.2,1)] ${videoReady ? "opacity-100" : "opacity-0"}`}
             style={{ willChange: "opacity" }}
           />
         )}
+
         <div
           className="absolute inset-0"
           style={{ background: "var(--gradient-hero)" }}
