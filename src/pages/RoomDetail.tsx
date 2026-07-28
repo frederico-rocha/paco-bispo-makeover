@@ -31,9 +31,7 @@ const RoomDetail = () => {
           <img
             src={room.hero}
             alt={room.name}
-            className={`absolute inset-0 w-full h-full object-cover ${
-              room.slug === "standard" ? studioImagePosition : ""
-            }`}
+            className="absolute inset-0 w-full h-full object-cover"
           />
           <div
             className="absolute inset-0"
