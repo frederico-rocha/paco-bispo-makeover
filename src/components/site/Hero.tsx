@@ -4,36 +4,89 @@ import heroPoster from "@/assets/hero-paco.jpg.asset.json";
 
 export const Hero = () => {
   const videoRef = useRef<HTMLVideoElement>(null);
+  const posterRef = useRef<HTMLImageElement>(null);
   const [canPlayVideo, setCanPlayVideo] = useState(false);
   const [videoReady, setVideoReady] = useState(false);
 
   useEffect(() => {
-    // Respect reduced motion and slow/save-data connections: skip video entirely.
+    // ── Mobile & connection safeguards ─────────────────────────────
     const prefersReducedMotion = window.matchMedia(
       "(prefers-reduced-motion: reduce)",
     ).matches;
     const conn = (navigator as any).connection;
     const saveData = conn?.saveData === true;
-    const slow = conn?.effectiveType && /(^|-)2g|3g/.test(conn.effectiveType);
-    // Skip the 150MB+ video on small viewports — poster is enough.
+    const effType: string | undefined = conn?.effectiveType;
+    const slow = effType ? /(^|-)(2g|3g|slow-2g)$/.test(effType) : false;
+    // Downlink in Mbps — treat <1.5Mbps as too slow for a 150MB hero MP4.
+    const lowBandwidth = typeof conn?.downlink === "number" && conn.downlink < 1.5;
     const smallViewport = window.matchMedia("(max-width: 640px)").matches;
-    if (prefersReducedMotion || saveData || slow || smallViewport) return;
+    // Coarse pointer + short viewport = mobile in landscape; still skip.
+    const coarseSmall =
+      window.matchMedia("(pointer: coarse)").matches &&
+      window.matchMedia("(max-height: 500px)").matches;
 
-    // Defer video mount until the page is idle so it never competes with LCP.
-    const schedule = (cb: () => void) => {
-      const ric = (window as any).requestIdleCallback as
-        | ((cb: () => void, opts?: { timeout: number }) => number)
-        | undefined;
-      if (ric) ric(() => cb(), { timeout: 2500 });
-      else setTimeout(cb, 1200);
-    };
-    const start = () => schedule(() => setCanPlayVideo(true));
-    if (document.readyState === "complete") start();
-    else {
-      window.addEventListener("load", start, { once: true });
-      return () => window.removeEventListener("load", start);
+    if (
+      prefersReducedMotion ||
+      saveData ||
+      slow ||
+      lowBandwidth ||
+      smallViewport ||
+      coarseSmall
+    ) {
+      return;
     }
+
+    let cancelled = false;
+
+    // ── Poster-first: wait for the LCP image to actually decode ────
+    // before we start pulling video bytes, so the video never steals
+    // bandwidth from the first meaningful paint.
+    const startAfterPoster = async () => {
+      const img = posterRef.current;
+      try {
+        if (img && "decode" in img) await img.decode();
+      } catch {
+        /* decode() rejects if the image is not yet loaded — ignore. */
+      }
+      if (cancelled) return;
+
+      const schedule = (cb: () => void) => {
+        const ric = (window as any).requestIdleCallback as
+          | ((cb: () => void, opts?: { timeout: number }) => number)
+          | undefined;
+        if (ric) ric(() => cb(), { timeout: 2500 });
+        else setTimeout(cb, 1200);
+      };
+      schedule(() => {
+        if (!cancelled) setCanPlayVideo(true);
+      });
+    };
+
+    if (document.readyState === "complete") {
+      startAfterPoster();
+    } else {
+      window.addEventListener("load", startAfterPoster, { once: true });
+    }
+
+    return () => {
+      cancelled = true;
+      window.removeEventListener("load", startAfterPoster);
+    };
   }, []);
+
+  // Pause the video when the tab is hidden — saves decode CPU & battery
+  // on mobile and helps the browser reclaim memory quickly.
+  useEffect(() => {
+    if (!canPlayVideo) return;
+    const onVisibility = () => {
+      const v = videoRef.current;
+      if (!v) return;
+      if (document.hidden) v.pause();
+      else v.play().catch(() => {});
+    };
+    document.addEventListener("visibilitychange", onVisibility);
+    return () => document.removeEventListener("visibilitychange", onVisibility);
+  }, [canPlayVideo]);
 
   return (
     <section
@@ -42,6 +95,7 @@ export const Hero = () => {
     >
       <div className="absolute inset-0">
         <img
+          ref={posterRef}
           src={heroPoster.url}
           alt=""
           aria-hidden="true"
@@ -61,9 +115,11 @@ export const Hero = () => {
             preload="auto"
             disablePictureInPicture
             disableRemotePlayback
+            onLoadedData={() => setVideoReady(true)}
             onCanPlay={() => setVideoReady(true)}
             aria-label="Paço do Bispo Boutique House ao entardecer, na serra de Sintra"
-            className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ${videoReady ? "opacity-100" : "opacity-0"}`}
+            className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ease-out ${videoReady ? "opacity-100" : "opacity-0"}`}
+            style={{ willChange: "opacity" }}
           />
         )}
         <div
@@ -71,6 +127,7 @@ export const Hero = () => {
           style={{ background: "var(--gradient-hero)" }}
         />
       </div>
+
 
 
 
