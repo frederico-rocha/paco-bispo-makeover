@@ -50,8 +50,8 @@ export const rooms: Room[] = [
     count: "Tipologia base",
     short:
       "Um quarto sereno e luminoso, com o essencial cuidado ao detalhe da casa.",
-    hero: studio,
-    gallery: [studio, houseDetail, chapel],
+    hero: standardHero,
+    gallery: standardGallery,
     size: "22–26 m²",
     guests: "2 hóspedes",
     bed: "Cama queen-size",
