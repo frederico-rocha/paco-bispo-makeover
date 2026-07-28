@@ -5,17 +5,34 @@ import heroPoster from "@/assets/hero-paco.jpg.asset.json";
 export const Hero = () => {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [canPlayVideo, setCanPlayVideo] = useState(false);
+  const [videoReady, setVideoReady] = useState(false);
 
   useEffect(() => {
-    // Respect reduced motion and slow connections: skip video on constrained clients.
+    // Respect reduced motion and slow/save-data connections: skip video entirely.
     const prefersReducedMotion = window.matchMedia(
       "(prefers-reduced-motion: reduce)",
     ).matches;
     const conn = (navigator as any).connection;
     const saveData = conn?.saveData === true;
-    const slow = conn?.effectiveType && /2g|3g/.test(conn.effectiveType);
-    if (prefersReducedMotion || saveData || slow) return;
-    setCanPlayVideo(true);
+    const slow = conn?.effectiveType && /(^|-)2g|3g/.test(conn.effectiveType);
+    // Skip the 150MB+ video on small viewports — poster is enough.
+    const smallViewport = window.matchMedia("(max-width: 640px)").matches;
+    if (prefersReducedMotion || saveData || slow || smallViewport) return;
+
+    // Defer video mount until the page is idle so it never competes with LCP.
+    const schedule = (cb: () => void) => {
+      const ric = (window as any).requestIdleCallback as
+        | ((cb: () => void, opts?: { timeout: number }) => number)
+        | undefined;
+      if (ric) ric(() => cb(), { timeout: 2500 });
+      else setTimeout(cb, 1200);
+    };
+    const start = () => schedule(() => setCanPlayVideo(true));
+    if (document.readyState === "complete") start();
+    else {
+      window.addEventListener("load", start, { once: true });
+      return () => window.removeEventListener("load", start);
+    }
   }, []);
 
   return (
@@ -41,11 +58,12 @@ export const Hero = () => {
             muted
             loop
             playsInline
-            preload="metadata"
+            preload="auto"
             disablePictureInPicture
             disableRemotePlayback
+            onCanPlay={() => setVideoReady(true)}
             aria-label="Paço do Bispo Boutique House ao entardecer, na serra de Sintra"
-            className="relative w-full h-full object-cover"
+            className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ${videoReady ? "opacity-100" : "opacity-0"}`}
           />
         )}
         <div
@@ -53,6 +71,7 @@ export const Hero = () => {
           style={{ background: "var(--gradient-hero)" }}
         />
       </div>
+
 
 
       <div className="relative z-10 h-full container-editorial flex flex-col justify-end pb-24 md:pb-32">
