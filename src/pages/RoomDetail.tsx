@@ -12,7 +12,7 @@ const RoomDetail = () => {
   if (!room) return <NotFound />;
 
   const others = rooms.filter((r) => r.slug !== room.slug);
-  const studioImagePosition = "object-[82%_100%]";
+  
 
   const facts = [
     { icon: Maximize2, label: "Área", value: room.size },
