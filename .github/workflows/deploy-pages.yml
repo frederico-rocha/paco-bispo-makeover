@@ -30,6 +30,9 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Prepare Lovable assets
+        run: node scripts/prepare-pages-assets.mjs
+
       - name: Build
         run: npm run build
 
