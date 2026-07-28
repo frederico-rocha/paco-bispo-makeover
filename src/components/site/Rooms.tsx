@@ -10,7 +10,7 @@ export const Rooms = () => {
           <div className="max-w-3xl">
             <p className="eyebrow">Estadia</p>
             <h2 className="font-serif-display text-4xl md:text-6xl mt-5 leading-[1.05] text-balance">
-              Onze formas de
+              Quatro formas de
               <span className="italic"> dormir em Sintra</span>.
             </h2>
           </div>
