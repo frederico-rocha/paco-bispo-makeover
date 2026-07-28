@@ -44,6 +44,23 @@ const superiorGallery = [
   superior037Asset.url,
   superior038Asset.url,
 ];
+import deluxe1Asset from "@/assets/deluxe-102_1.jpg.asset.json";
+import deluxe2Asset from "@/assets/deluxe-102_2.jpg.asset.json";
+import deluxe3Asset from "@/assets/deluxe-102_3.jpg.asset.json";
+import deluxe118Asset from "@/assets/deluxe-118.jpg.asset.json";
+import deluxeWc1Asset from "@/assets/deluxe-102_wc1.jpg.asset.json";
+import deluxeWc2Asset from "@/assets/deluxe-102_wc2.jpg.asset.json";
+import deluxeWc3Asset from "@/assets/deluxe-102_wc3.jpg.asset.json";
+const deluxeHero = deluxe1Asset.url;
+const deluxeGallery = [
+  deluxe1Asset.url,
+  deluxe2Asset.url,
+  deluxe118Asset.url,
+  deluxe3Asset.url,
+  deluxeWc1Asset.url,
+  deluxeWc2Asset.url,
+  deluxeWc3Asset.url,
+];
 
 export type Room = {
   slug: string;
@@ -117,8 +134,8 @@ export const rooms: Room[] = [
     count: "Suíte com carácter",
     short:
       "Tectos altos, azulejos seculares e linhos imaculados — um capítulo original da casa.",
-    hero: suite,
-    gallery: [suite, chapel, houseDetail],
+    hero: deluxeHero,
+    gallery: deluxeGallery,
     size: "32–38 m²",
     guests: "2 hóspedes",
     bed: "Cama king-size",
