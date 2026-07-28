@@ -115,9 +115,7 @@ const RoomDetail = () => {
                   <img
                     src={src}
                     alt={`${room.name} — ${i + 1}`}
-                    className={`w-full h-full object-cover hover:scale-105 transition-transform duration-[1500ms] ${
-                      room.slug === "standard" && i === 0 ? studioImagePosition : ""
-                    }`}
+                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-[1500ms]"
                     loading="lazy"
                   />
                 </div>
