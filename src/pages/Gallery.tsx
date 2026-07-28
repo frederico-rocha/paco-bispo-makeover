@@ -96,8 +96,13 @@ const Gallery = () => {
                   <img
                     src={item.src}
                     alt={item.caption}
+                    width={1200}
+                    height={1600}
                     className="w-full h-auto object-cover transition-transform duration-[1500ms] group-hover:scale-105"
-                    loading="lazy"
+                    loading={i < 3 ? "eager" : "lazy"}
+                    decoding="async"
+                    fetchPriority={i < 3 ? "high" : "low"}
+                    sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
                   />
                   <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-5"
                     style={{ background: "var(--gradient-overlay)" }}
