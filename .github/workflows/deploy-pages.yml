@@ -34,7 +34,7 @@ jobs:
         run: node scripts/prepare-pages-assets.mjs
 
       - name: Build
-        run: npm run build
+        run: npm run build -- --base=/paco-bispo-makeover/
 
       - name: Add SPA fallback
         run: cp dist/index.html dist/404.html
