@@ -13,23 +13,19 @@ export const Reservation = () => {
           </p>
         </div>
 
-        <form
-          className="mt-14 max-w-4xl mx-auto bg-secondary/50 border border-border p-6 md:p-10 rounded-sm grid md:grid-cols-4 gap-5 items-end"
-          onSubmit={(e) => {
-            e.preventDefault();
-            window.location.href = "mailto:reservas@pacodobispo.com";
-          }}
-        >
-          <Field label="Check-in" type="date" />
-          <Field label="Check-out" type="date" />
-          <Field label="Hóspedes" type="number" defaultValue={2} min={1} />
-          <button
-            type="submit"
-            className="h-12 rounded-full bg-primary text-primary-foreground hover:bg-primary-glow transition-colors text-sm tracking-wide"
+        <div className="mt-14 max-w-4xl mx-auto bg-secondary/50 border border-border p-6 md:p-10 rounded-sm text-center">
+          <p className="text-foreground/70 text-lg font-light">
+            As reservas são geridas na nossa plataforma de reservas. Verifique disponibilidade e tarifas em tempo real.
+          </p>
+          <a
+            href="https://be.heytravel.net/f6292097-5818-4381-93ef-638650ee44bc?checkIn=2026-07-29&occupation=%5B%7B%22room%22%3A1%2C%22adults%22%3A2%2C%22children%22%3A0%7D%5D&checkOut=2026-07-31"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center justify-center h-12 px-8 rounded-full bg-primary text-primary-foreground hover:bg-primary-glow transition-colors text-sm tracking-wide mt-8"
           >
-            Pedir reserva
-          </button>
-        </form>
+            Reservar agora
+          </a>
+        </div>
 
         <p className="mt-6 text-center text-sm text-muted-foreground">
           Ou contacte-nos diretamente em{" "}
@@ -41,18 +37,3 @@ export const Reservation = () => {
     </section>
   );
 };
-
-const Field = ({
-  label,
-  ...rest
-}: { label: string } & React.InputHTMLAttributes<HTMLInputElement>) => (
-  <label className="flex flex-col gap-2">
-    <span className="text-xs uppercase tracking-[0.22em] text-muted-foreground">
-      {label}
-    </span>
-    <input
-      {...rest}
-      className="h-12 px-4 rounded-sm bg-background border border-border focus:border-primary outline-none transition-colors text-foreground"
-    />
-  </label>
-);
