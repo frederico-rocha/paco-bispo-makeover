@@ -27,6 +27,23 @@ const standardGallery = [
   standard031Asset.url,
   standard030Asset.url,
 ];
+import superior032Asset from "@/assets/superior-032.jpg.asset.json";
+import superior033Asset from "@/assets/superior-033.jpg.asset.json";
+import superior034Asset from "@/assets/superior-034.jpg.asset.json";
+import superior035Asset from "@/assets/superior-035.jpg.asset.json";
+import superior036Asset from "@/assets/superior-036.jpg.asset.json";
+import superior037Asset from "@/assets/superior-037.jpg.asset.json";
+import superior038Asset from "@/assets/superior-038.jpg.asset.json";
+const superiorHero = superior032Asset.url;
+const superiorGallery = [
+  superior032Asset.url,
+  superior036Asset.url,
+  superior033Asset.url,
+  superior035Asset.url,
+  superior034Asset.url,
+  superior037Asset.url,
+  superior038Asset.url,
+];
 
 export type Room = {
   slug: string;
@@ -75,8 +92,8 @@ export const rooms: Room[] = [
     count: "Mais espaço",
     short:
       "Área generosa e detalhes originais do palacete, num ambiente calmo e contemporâneo.",
-    hero: houseDetail,
-    gallery: [houseDetail, suite, pool],
+    hero: superiorHero,
+    gallery: superiorGallery,
     size: "28–32 m²",
     guests: "2 hóspedes",
     bed: "Cama king-size",
