@@ -139,6 +139,8 @@ const Gallery = () => {
             <img
               src={filtered[lightbox].src}
               alt={filtered[lightbox].caption}
+              decoding="async"
+              fetchPriority="high"
               className="max-h-[80vh] w-auto object-contain rounded-sm"
             />
             <figcaption className="mt-5 text-paper/80 font-light tracking-wide text-sm">
