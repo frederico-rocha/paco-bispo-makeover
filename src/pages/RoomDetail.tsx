@@ -32,7 +32,7 @@ const RoomDetail = () => {
             src={room.hero}
             alt={room.name}
             className={`absolute inset-0 w-full h-full object-cover ${
-              room.slug === "estudio" ? studioImagePosition : ""
+              room.slug === "standard" ? studioImagePosition : ""
             }`}
           />
           <div
@@ -118,7 +118,7 @@ const RoomDetail = () => {
                     src={src}
                     alt={`${room.name} — ${i + 1}`}
                     className={`w-full h-full object-cover hover:scale-105 transition-transform duration-[1500ms] ${
-                      room.slug === "estudio" && i === 0 ? studioImagePosition : ""
+                      room.slug === "standard" && i === 0 ? studioImagePosition : ""
                     }`}
                     loading="lazy"
                   />
@@ -155,7 +155,7 @@ const RoomDetail = () => {
                       src={r.hero}
                       alt={r.name}
                       className={`w-full h-full object-cover transition-transform duration-[1500ms] group-hover:scale-105 ${
-                        r.slug === "estudio" ? studioImagePosition : ""
+                        r.slug === "standard" ? studioImagePosition : ""
                       }`}
                       loading="lazy"
                     />
