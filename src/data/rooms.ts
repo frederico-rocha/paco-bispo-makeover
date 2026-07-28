@@ -188,8 +188,8 @@ export const rooms: Room[] = [
     count: "Terraço privado",
     short:
       "O ponto mais alto da casa. Vista panorâmica sobre Sintra, terraço só seu.",
-    hero: penthouse,
-    gallery: [penthouse, chapel, pool],
+    hero: penthouseHero,
+    gallery: penthouseGallery,
     size: "62 m² + 24 m² terraço",
     guests: "2–3 hóspedes",
     bed: "Cama king + sofá-cama",
