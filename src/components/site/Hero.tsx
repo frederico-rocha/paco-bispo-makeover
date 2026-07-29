@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
-import heroVideo from "@/assets/hero.mp4.asset.json";
+import heroVideo1080 from "@/assets/hero-1080.mp4.asset.json";
+import heroVideo720 from "@/assets/hero-720.mp4.asset.json";
 import heroPoster from "@/assets/hero-paco.jpg.asset.json";
 
 export const Hero = () => {
@@ -7,40 +8,41 @@ export const Hero = () => {
   const posterRef = useRef<HTMLImageElement>(null);
   const [canPlayVideo, setCanPlayVideo] = useState(false);
   const [videoReady, setVideoReady] = useState(false);
+  const [videoSrc, setVideoSrc] = useState<string | null>(null);
 
   useEffect(() => {
-    // ── Mobile & connection safeguards ─────────────────────────────
+    // ── Connection & accessibility safeguards ──────────────────────
+    // Video now weighs ~8.5MB (720p) / ~25MB (1080p) so we can serve
+    // it on mobile/tablet too — only bail out on truly hostile
+    // conditions (reduced motion, save-data, 2G).
     const prefersReducedMotion = window.matchMedia(
       "(prefers-reduced-motion: reduce)",
     ).matches;
     const conn = (navigator as any).connection;
     const saveData = conn?.saveData === true;
     const effType: string | undefined = conn?.effectiveType;
-    const slow = effType ? /(^|-)(2g|3g|slow-2g)$/.test(effType) : false;
-    // Downlink in Mbps — treat <1.5Mbps as too slow for a 150MB hero MP4.
-    const lowBandwidth = typeof conn?.downlink === "number" && conn.downlink < 1.5;
-    const smallViewport = window.matchMedia("(max-width: 640px)").matches;
-    // Coarse pointer + short viewport = mobile in landscape; still skip.
-    const coarseSmall =
-      window.matchMedia("(pointer: coarse)").matches &&
-      window.matchMedia("(max-height: 500px)").matches;
+    const verySlow = effType ? /(^|-)(2g|slow-2g)$/.test(effType) : false;
+    const veryLowBandwidth =
+      typeof conn?.downlink === "number" && conn.downlink < 0.7;
 
-    if (
-      prefersReducedMotion ||
-      saveData ||
-      slow ||
-      lowBandwidth ||
-      smallViewport ||
-      coarseSmall
-    ) {
+    if (prefersReducedMotion || saveData || verySlow || veryLowBandwidth) {
       return;
     }
+
+    // ── Pick the right variant for the viewport / DPR ──────────────
+    // Small screens and 3G-ish links get the 720p file (~8.5MB); larger
+    // viewports on decent links get 1080p (~25MB).
+    const viewportW = window.innerWidth * (window.devicePixelRatio || 1);
+    const on3G = effType ? /(^|-)3g$/.test(effType) : false;
+    const isSmall = window.matchMedia("(max-width: 1024px)").matches;
+    const src = viewportW <= 1400 || isSmall || on3G ? heroVideo720.url : heroVideo1080.url;
+    setVideoSrc(src);
 
     let cancelled = false;
 
     // ── Poster-first: wait for the LCP image to actually decode ────
-    // before we start pulling video bytes, so the video never steals
-    // bandwidth from the first meaningful paint.
+    // before pulling video bytes, so the video never steals bandwidth
+    // from the first meaningful paint.
     const startAfterPoster = async () => {
       const img = posterRef.current;
       try {
@@ -104,10 +106,10 @@ export const Hero = () => {
           decoding="async"
           className="absolute inset-0 w-full h-full object-cover"
         />
-        {canPlayVideo && (
+        {canPlayVideo && videoSrc && (
           <video
             ref={videoRef}
-            src={heroVideo.url}
+            src={videoSrc}
             poster={heroPoster.url}
             autoPlay
             muted
@@ -116,10 +118,6 @@ export const Hero = () => {
             preload="auto"
             disablePictureInPicture
             disableRemotePlayback
-            // Reveal only once the browser signals it can play through the
-            // first frame without stalling — no half-decoded flashes over
-            // the poster. `onPlaying` is the belt-and-braces fallback for
-            // browsers that hold `canplay` back behind autoplay policies.
             onCanPlay={() => setVideoReady(true)}
             onPlaying={() => setVideoReady(true)}
             aria-label="Paço do Bispo Boutique House ao entardecer, na serra de Sintra"
