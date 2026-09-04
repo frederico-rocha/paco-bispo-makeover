@@ -1,11 +1,5 @@
-import suiteAsset from "@/assets/room-suite.jpg.asset.json";
-const suite = suiteAsset.url;
 import studioAsset from "@/assets/room-studio.jpg.asset.json";
 const studio = studioAsset.url;
-import houseDetailAsset from "@/assets/house-detail.jpg.asset.json";
-const houseDetail = houseDetailAsset.url;
-import poolAsset from "@/assets/pool.jpg.asset.json";
-const pool = poolAsset.url;
 import penthouse053Asset from "@/assets/penthouse-053-2.jpg.asset.json";
 import penthouse054Asset from "@/assets/penthouse-054-2.jpg.asset.json";
 import penthouse055Asset from "@/assets/penthouse-055.jpg.asset.json";
@@ -37,8 +31,6 @@ const penthouseGallery = [
   penthouse057Asset.url,
   penthouse058Asset.url,
 ];
-import chapelAsset from "@/assets/chapel-lounge.jpg.asset.json";
-const chapel = chapelAsset.url;
 import standard120Asset from "@/assets/standard-120.jpg.asset.json";
 import standard026Asset from "@/assets/standard-026.jpg.asset.json";
 import standard027Asset from "@/assets/standard-027.jpg.asset.json";
@@ -98,7 +90,6 @@ export type Room = {
   short: string;
   hero: string;
   gallery: string[];
-  size: string;
   guests: string;
   bed: string;
   view: string;
@@ -106,106 +97,100 @@ export type Room = {
   amenities: string[];
 };
 
+const commonAmenities = [
+  "Wi-Fi de alta velocidade",
+  "Ar condicionado",
+  "Pavimento radiante na casa de banho",
+  "Amenities de banho",
+  "Roupão de banho turco",
+  "Cofre",
+  "Mini-bar",
+  "Chaleira",
+];
+
 export const rooms: Room[] = [
   {
     slug: "standard",
     name: "Standard",
-    count: "Tipologia base",
-    short:
-      "Um quarto sereno e luminoso, com o essencial cuidado ao detalhe da casa.",
+    count: "Ponto de partida",
+    short: "Um refúgio simples e acolhedor, ideal para estadias curtas.",
     hero: standardHero,
     gallery: standardGallery,
-    size: "22–26 m²",
     guests: "2 hóspedes",
     bed: "Cama queen-size",
     view: "Pátio interior",
     description: [
       "O quarto Standard é o ponto de partida da casa: espaço acolhedor, luz natural e um enquadramento sereno sobre o pátio interior.",
-      "Um refúgio simples e sofisticado, ideal para estadias curtas em Sintra.",
+      "Um refúgio simples e acolhedor, ideal para estadias curtas em Sintra.",
     ],
-    amenities: [
-      "Linho 400 fios",
-      "Casa de banho privativa",
-      "Produtos de banho artesanais",
-      "Wi-Fi de alta velocidade",
-      "Pequeno-almoço incluído",
-      "Climatização individual",
+    amenities: commonAmenities,
+  },
+  {
+    slug: "deluxe",
+    name: "Deluxe",
+    count: "Um passo a cima",
+    short:
+      "Um espaço tranquilo e confortável, pensado para proporcionar uma estadia agradável e especial.",
+    hero: deluxeHero,
+    gallery: deluxeGallery,
+    guests: "2 hóspedes",
+    bed: "Cama king-size",
+    view: "Jardim ou pátio",
+    description: [
+      "Um espaço tranquilo e confortável, pensado para proporcionar uma estadia agradável e especial.",
+      "Restauradas a partir das alas originais do palacete setecentista, as suítes Deluxe conservam tectos altos, soalhos largos em pinho e detalhes em azulejo do século XVIII.",
     ],
+    amenities: commonAmenities,
   },
   {
     slug: "superior",
     name: "Superior",
-    count: "Mais espaço",
-    short:
-      "Área generosa e detalhes originais do palacete, num ambiente calmo e contemporâneo.",
+    count: "Uma experiência Superior",
+    short: "Mais espaço, mais conforto, uma experiência Superior.",
     hero: superiorHero,
     gallery: superiorGallery,
-    size: "28–32 m²",
     guests: "2 hóspedes",
     bed: "Cama king-size",
     view: "Jardim",
     description: [
       "Um passo acima do Standard, o quarto Superior oferece mais área, uma zona de estar e vista sobre o jardim.",
-      "Ideal para quem procura conforto extra sem renunciar à discrição da casa.",
+      "Mais espaço, mais conforto — uma experiência Superior, sem renunciar à discrição da casa.",
     ],
-    amenities: [
-      "Zona de estar",
-      "Linho 400 fios",
-      "Casa de banho privativa",
-      "Produtos de banho artesanais",
-      "Wi-Fi de alta velocidade",
-      "Pequeno-almoço incluído",
-    ],
-  },
-  {
-    slug: "deluxe",
-    name: "Deluxe",
-    count: "Suíte com carácter",
-    short:
-      "Tectos altos, azulejos seculares e linhos imaculados — um capítulo original da casa.",
-    hero: deluxeHero,
-    gallery: deluxeGallery,
-    size: "32–38 m²",
-    guests: "2 hóspedes",
-    bed: "Cama king-size",
-    view: "Jardim ou pátio",
-    description: [
-      "Restauradas a partir das alas originais do palacete setecentista, as suítes Deluxe conservam tectos altos, soalhos largos em pinho e detalhes em azulejo do século XVIII.",
-      "Mobiliário antigo, peças contemporâneas, têxteis em linho português e iluminação suave — uma encenação discreta para o silêncio da serra.",
-    ],
-    amenities: [
-      "Linho 400 fios",
-      "Casa de banho privativa em mármore",
-      "Produtos de banho artesanais",
-      "Wi-Fi de alta velocidade",
-      "Pequeno-almoço incluído",
-      "Climatização individual",
-    ],
+    amenities: commonAmenities,
   },
   {
     slug: "penthouse",
     name: "Penthouse",
-    count: "Terraço privado",
+    count: "O ponto mais alto da casa",
     short:
-      "O ponto mais alto da casa. Vista panorâmica sobre Sintra, terraço só seu.",
+      "Suite familiar equipada com kitchenette, sala de estar e banheira de hidromassagem.",
     hero: penthouseHero,
     gallery: penthouseGallery,
-    size: "62 m² + 24 m² terraço",
-    guests: "2–3 hóspedes",
+    guests: "2–4 hóspedes",
     bed: "Cama king + sofá-cama",
     view: "Panorâmica sobre a serra",
     description: [
-      "A penthouse ocupa todo o último piso da torre original. Quarto, sala, casa de banho em mármore e um terraço privado a 360º sobre a serra de Sintra e o vale.",
-      "Pensada para ocasiões raras — um aniversário, uma lua-de-mel, uma fuga de fim-de-semana com a paisagem como única companhia.",
+      "A penthouse ocupa todo o último piso da torre original. Suite familiar equipada com kitchenette, sala de estar e banheira de hidromassagem.",
+      "Pensada para ocasiões raras — um aniversário, uma lua-de-mel, uma escapadinha em família com a paisagem como única companhia.",
     ],
-    amenities: [
-      "Terraço privado 24 m²",
-      "Banheira com vista",
-      "Sala separada",
-      "Bar privado",
-      "Welcome amenities premium",
-      "Late check-out garantido",
+    amenities: commonAmenities,
+  },
+  {
+    slug: "loft",
+    name: "Loft",
+    count: "Estúdio acolhedor",
+    short:
+      "Um ambiente amplo e descontraído, que combina conforto e personalidade para uma estadia diferente.",
+    hero: studio,
+    gallery: [studio],
+    guests: "2 hóspedes",
+    bed: "Cama queen-size",
+    view: "Jardim",
+    description: [
+      "Um ambiente amplo e descontraído, que combina conforto e personalidade para uma estadia diferente.",
+      "O Loft é o espaço mais informal da casa — perfeito para quem procura liberdade e carácter em Sintra.",
     ],
+    amenities: commonAmenities,
   },
 ];
 

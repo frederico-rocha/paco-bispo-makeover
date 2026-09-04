@@ -12,7 +12,7 @@ const Index = () => {
   useEffect(() => {
     document.title = "Paço do Bispo Boutique House · Sintra";
     const desc =
-      "Boutique house de luxo na reserva natural de Sintra. Nove quartos, estúdio e penthouse, piscina panorâmica e lounge na antiga capela.";
+      "Boutique house de luxo no Parque Natural Sintra-Cascais. Nove quartos, um loft e uma penthouse, piscina panorâmica e lounge na antiga capela.";
     let m = document.querySelector('meta[name="description"]');
     if (!m) {
       m = document.createElement("meta");

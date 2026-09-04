@@ -7,7 +7,7 @@ const links = [
   { href: "/#casa", label: "A Casa" },
   { href: "/#quartos", label: "Quartos" },
   { href: "/galeria", label: "Galeria" },
-  { href: "/#experiencias", label: "Experiências" },
+  { href: "/#experiencias", label: "Eventos" },
   { href: "/#localizacao", label: "Sintra" },
   { href: "/#contacto", label: "Contacto" },
 ];

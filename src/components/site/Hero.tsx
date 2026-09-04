@@ -140,9 +140,9 @@ export const Hero = () => {
           Ribeira da Penha Longa · Sintra
         </p>
         <h1 className="font-serif-display text-paper text-5xl md:text-7xl lg:text-8xl mt-5 max-w-5xl leading-[1.02] text-balance reveal reveal-delay-1">
-          Tradição, paisagem
+          Contemporâneo entre
           <br />
-          <span className="italic font-light">e a serra de Sintra</span>
+          <span className="italic font-light">natureza e história</span>
         </h1>
         <div className="mt-10 flex flex-wrap items-center gap-5 reveal reveal-delay-2">
           <a
@@ -155,7 +155,7 @@ export const Hero = () => {
             href="#casa"
             className="inline-flex items-center px-8 py-3.5 rounded-full border border-paper/40 text-paper hover:bg-paper/10 transition-all duration-500 text-sm tracking-wide"
           >
-            Conhecer a casa
+            Conhecer o hotel
           </a>
         </div>
       </div>
