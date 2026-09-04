@@ -24,6 +24,10 @@ import penthouse0592Asset from "@/assets/penthouse-059-2.jpg.asset.json";
 import penthouse0602Asset from "@/assets/penthouse-060-2.jpg.asset.json";
 import penthouse0612Asset from "@/assets/penthouse-061-2.jpg.asset.json";
 import penthouse0622Asset from "@/assets/penthouse-062-2.jpg.asset.json";
+import penthouse0633Asset from "@/assets/penthouse-063-3.jpg.asset.json";
+import penthouse0643Asset from "@/assets/penthouse-064-3.jpg.asset.json";
+import penthouse0653Asset from "@/assets/penthouse-065-3.jpg.asset.json";
+import penthouse0712Asset from "@/assets/penthouse-071-2.jpg.asset.json";
 const penthouseHero = penthouse054Asset.url;
 const penthouseGallery = [
   penthouse054Asset.url,
