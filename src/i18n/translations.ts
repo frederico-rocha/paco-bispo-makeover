@@ -211,7 +211,7 @@ export const translations: Record<Lang, Dict> = {
         "Uma casa nobre na reserva natural de Sintra. Tradição, paisagem e silêncio, a poucos minutos do Atlântico.",
       visit: "Visite",
       contact: "Contacto",
-      address: "Ribeira da Penha Longa\n2710 Sintra, Portugal",
+      address: "Ribeira da Penha Longa\nLargo S. Brás, nº 88\n2710-005 Sintra",
     },
     gallery: {
       back: "Voltar",
@@ -349,7 +349,7 @@ export const translations: Record<Lang, Dict> = {
         "A noble house in the Sintra nature reserve. Tradition, landscape and silence, minutes from the Atlantic.",
       visit: "Visit",
       contact: "Contact",
-      address: "Ribeira da Penha Longa\n2710 Sintra, Portugal",
+      address: "Ribeira da Penha Longa\nLargo S. Brás, nº 88\n2710-005 Sintra",
     },
     gallery: {
       back: "Back",
@@ -490,7 +490,7 @@ export const translations: Record<Lang, Dict> = {
         "Una casa noble en la reserva natural de Sintra. Tradición, paisaje y silencio, a pocos minutos del Atlántico.",
       visit: "Visite",
       contact: "Contacto",
-      address: "Ribeira da Penha Longa\n2710 Sintra, Portugal",
+      address: "Ribeira da Penha Longa\nLargo S. Brás, nº 88\n2710-005 Sintra",
     },
     gallery: {
       back: "Volver",
@@ -631,7 +631,7 @@ export const translations: Record<Lang, Dict> = {
         "Une demeure noble dans la réserve naturelle de Sintra. Tradition, paysage et silence, à quelques minutes de l'Atlantique.",
       visit: "Visiter",
       contact: "Contact",
-      address: "Ribeira da Penha Longa\n2710 Sintra, Portugal",
+      address: "Ribeira da Penha Longa\nLargo S. Brás, nº 88\n2710-005 Sintra",
     },
     gallery: {
       back: "Retour",

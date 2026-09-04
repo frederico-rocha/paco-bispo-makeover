@@ -1,3 +1,4 @@
+import { Instagram } from "lucide-react";
 import { useI18n } from "@/i18n/LanguageContext";
 
 export const Footer = () => {
@@ -28,8 +29,19 @@ export const Footer = () => {
           <h4 className="text-xs uppercase tracking-[0.28em] text-paper/60">{f.contact}</h4>
           <ul className="mt-5 space-y-2 text-paper/85 font-light">
             <li><a href="mailto:geral@pacodobispoboutiquehouse.com" className="hover:text-primary-glow">geral@pacodobispoboutiquehouse.com</a></li>
-            <li><a href="tel:+351000000000" className="hover:text-primary-glow">+351 000 000 000</a></li>
-            <li><a href="#" className="hover:text-primary-glow">Instagram</a></li>
+            <li><a href="tel:+351219243435" className="hover:text-primary-glow">(+351) 21 924 34 35</a></li>
+            <li><a href="tel:+351926986197" className="hover:text-primary-glow">(+351) 926 986 197</a></li>
+            <li>
+              <a
+                href="https://www.instagram.com/pacodobispobh/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Instagram"
+                className="inline-flex items-center hover:text-primary-glow"
+              >
+                <Instagram size={20} />
+              </a>
+            </li>
           </ul>
         </div>
       </div>
