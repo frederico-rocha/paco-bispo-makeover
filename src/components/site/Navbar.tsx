@@ -144,16 +144,16 @@ export const Navbar = () => {
                     <Link to={l.href} className={cls} onClick={() => setOpen(false)}>
                       {l.label}
                     </Link>
-                  ) : (
-                    <a href={l.href} className={cls} onClick={() => setOpen(false)}>
-                      {l.label}
-                    </a>
-                  )}
+                   ) : (
+                     <a href={anchorHref(l.href)} className={cls} onClick={() => setOpen(false)}>
+                       {l.label}
+                     </a>
+                   )}
                 </li>
               );
             })}
             <a
-              href="/#reservas"
+              href={anchorHref("/#reservas")}
               className="inline-flex justify-center px-6 py-3 rounded-full bg-primary text-primary-foreground hover:bg-primary/90 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background"
               onClick={() => setOpen(false)}
             >
