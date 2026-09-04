@@ -2,8 +2,11 @@ import { useEffect, useRef, useState } from "react";
 import heroVideo1080 from "@/assets/hero-1080.mp4.asset.json";
 import heroVideo720 from "@/assets/hero-720.mp4.asset.json";
 import heroPoster from "@/assets/hero-paco.jpg.asset.json";
+import { useI18n } from "@/i18n/LanguageContext";
 
 export const Hero = () => {
+  const { t } = useI18n();
+  const h = t.hero;
   const videoRef = useRef<HTMLVideoElement>(null);
   const posterRef = useRef<HTMLImageElement>(null);
   const [canPlayVideo, setCanPlayVideo] = useState(false);
@@ -120,7 +123,7 @@ export const Hero = () => {
             disableRemotePlayback
             onCanPlay={() => setVideoReady(true)}
             onPlaying={() => setVideoReady(true)}
-            aria-label="Paço do Bispo Boutique House ao entardecer, na serra de Sintra"
+            aria-label={h.videoLabel}
             className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-[900ms] ease-[cubic-bezier(0.4,0,0.2,1)] ${videoReady ? "opacity-100" : "opacity-0"}`}
             style={{ willChange: "opacity" }}
           />
@@ -137,31 +140,31 @@ export const Hero = () => {
 
       <div className="relative z-10 h-full container-editorial flex flex-col justify-end pb-24 md:pb-32">
         <p className="uppercase tracking-[0.28em] text-xs font-medium text-paper/90 reveal">
-          Ribeira da Penha Longa · Sintra
+          {h.eyebrow}
         </p>
         <h1 className="font-serif-display text-paper text-5xl md:text-7xl lg:text-8xl mt-5 max-w-5xl leading-[1.02] text-balance reveal reveal-delay-1">
-          Contemporâneo entre
+          {h.titleLine1}
           <br />
-          <span className="italic font-light">natureza e história</span>
+          <span className="italic font-light">{h.titleLine2}</span>
         </h1>
         <div className="mt-10 flex flex-wrap items-center gap-5 reveal reveal-delay-2">
           <a
             href="#reservas"
             className="inline-flex items-center px-8 py-3.5 rounded-full bg-primary text-primary-foreground hover:bg-primary-glow transition-all duration-500 text-sm tracking-wide"
           >
-            Reservar estadia
+            {h.ctaBook}
           </a>
           <a
             href="#casa"
             className="inline-flex items-center px-8 py-3.5 rounded-full border border-paper/40 text-paper hover:bg-paper/10 transition-all duration-500 text-sm tracking-wide"
           >
-            Conhecer o hotel
+            {h.ctaDiscover}
           </a>
         </div>
       </div>
 
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 text-paper/70 text-[0.65rem] uppercase tracking-[0.4em] hidden md:block">
-        Scroll
+        {h.scroll}
       </div>
     </section>
   );

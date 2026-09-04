@@ -1,6 +1,9 @@
 import * as React from "react";
+import { useI18n } from "@/i18n/LanguageContext";
 
 export const Reservation = () => {
+  const { t } = useI18n();
+  const r = t.reservation;
   const [checkIn, setCheckIn] = React.useState("");
   const [checkOut, setCheckOut] = React.useState("");
   const [guests, setGuests] = React.useState(2);
@@ -23,13 +26,13 @@ export const Reservation = () => {
     <section id="reservas" className="py-28 md:py-40 bg-background">
       <div className="container-editorial">
         <div className="max-w-3xl mx-auto text-center">
-          <p className="eyebrow">Reservas</p>
+          <p className="eyebrow">{r.eyebrow}</p>
           <h2 className="font-serif-display text-4xl md:text-7xl mt-6 leading-[1.02] text-balance">
-            A sua estadia
-            <span className="italic"> começa aqui</span>.
+            {r.titleStart}
+            <span className="italic"> {r.titleAccent}</span>.
           </h2>
           <p className="mt-7 text-foreground/70 text-lg font-light">
-            Verifique disponibilidade e tarifas. Respondemos em poucas horas.
+            {r.subtitle}
           </p>
         </div>
 
@@ -38,21 +41,21 @@ export const Reservation = () => {
           onSubmit={handleSubmit}
         >
           <Field
-            label="Check-in"
+            label={r.checkIn}
             type="date"
             value={checkIn}
             onChange={(e) => setCheckIn(e.target.value)}
             required
           />
           <Field
-            label="Check-out"
+            label={r.checkOut}
             type="date"
             value={checkOut}
             onChange={(e) => setCheckOut(e.target.value)}
             required
           />
           <Field
-            label="Hóspedes"
+            label={r.guests}
             type="number"
             min={1}
             value={guests}
@@ -63,12 +66,12 @@ export const Reservation = () => {
             type="submit"
             className="h-12 rounded-full bg-primary text-primary-foreground hover:bg-primary-glow transition-colors text-sm tracking-wide"
           >
-            Pedir reserva
+            {r.submit}
           </button>
         </form>
 
         <p className="mt-6 text-center text-sm text-muted-foreground">
-          Ou contacte-nos diretamente em{" "}
+          {r.contactUs}{" "}
           <a className="text-primary underline-offset-4 hover:underline" href="mailto:geral@pacodobispoboutiquehouse.com">
             geral@pacodobispoboutiquehouse.com
           </a>

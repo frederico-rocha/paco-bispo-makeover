@@ -1,4 +1,9 @@
+import { useI18n } from "@/i18n/LanguageContext";
+
 export const Footer = () => {
+  const { t } = useI18n();
+  const f = t.footer;
+
   return (
     <footer id="contacto" className="bg-ink text-paper py-20">
       <div className="container-editorial grid md:grid-cols-4 gap-12">
@@ -8,21 +13,19 @@ export const Footer = () => {
             Boutique House
           </div>
           <p className="mt-6 text-paper/70 max-w-sm font-light leading-relaxed">
-            Uma casa nobre na reserva natural de Sintra. Tradição, paisagem e
-            silêncio, a poucos minutos do Atlântico.
+            {f.tagline}
           </p>
         </div>
 
         <div>
-          <h4 className="text-xs uppercase tracking-[0.28em] text-paper/60">Visite</h4>
-          <address className="not-italic mt-5 text-paper/85 leading-relaxed font-light">
-            Ribeira da Penha Longa<br />
-            2710 Sintra, Portugal
+          <h4 className="text-xs uppercase tracking-[0.28em] text-paper/60">{f.visit}</h4>
+          <address className="not-italic mt-5 text-paper/85 leading-relaxed font-light whitespace-pre-line">
+            {f.address}
           </address>
         </div>
 
         <div>
-          <h4 className="text-xs uppercase tracking-[0.28em] text-paper/60">Contacto</h4>
+          <h4 className="text-xs uppercase tracking-[0.28em] text-paper/60">{f.contact}</h4>
           <ul className="mt-5 space-y-2 text-paper/85 font-light">
             <li><a href="mailto:geral@pacodobispoboutiquehouse.com" className="hover:text-primary-glow">geral@pacodobispoboutiquehouse.com</a></li>
             <li><a href="tel:+351000000000" className="hover:text-primary-glow">+351 000 000 000</a></li>
