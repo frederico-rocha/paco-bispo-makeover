@@ -8,11 +8,13 @@ import NotFound from "./pages/NotFound.tsx";
 import RoomDetail from "./pages/RoomDetail.tsx";
 import Gallery from "./pages/Gallery.tsx";
 import ScrollToTop from "./components/ScrollToTop";
+import { LanguageProvider } from "./i18n/LanguageContext";
 
 const queryClient = new QueryClient();
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
+    <LanguageProvider>
     <TooltipProvider>
       <Toaster />
       <Sonner />
@@ -27,6 +29,7 @@ const App = () => (
         </Routes>
       </BrowserRouter>
     </TooltipProvider>
+    </LanguageProvider>
   </QueryClientProvider>
 );
 
