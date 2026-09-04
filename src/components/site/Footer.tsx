@@ -58,6 +58,14 @@ export const Footer = () => {
       <div className="container-editorial mt-16 pt-8 border-t border-paper/15 flex flex-col md:flex-row justify-between gap-4 text-xs text-paper/50">
         <span>© {new Date().getFullYear()} Paço do Bispo Boutique House</span>
         <span>Sintra · Portugal</span>
+        <a
+          href="https://scaleautomation.dev"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="hover:text-primary-glow transition-colors"
+        >
+          Powered by ScaleAutomation
+        </a>
       </div>
     </footer>
   );
