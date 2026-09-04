@@ -13,7 +13,15 @@ export const Rooms = () => {
               Cinco formas de
               <span className="italic"> dormir em Sintra</span>.
             </h2>
-...
+          </div>
+          <Link
+            to="/galeria"
+            className="text-sm tracking-wide hover:text-primary inline-flex items-center gap-2"
+          >
+            Ver galeria completa <ArrowUpRight size={16} />
+          </Link>
+        </div>
+
         <div className="mt-16 md:mt-20 grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-8 md:gap-10">
           {rooms.map((r) => (
             <Link
