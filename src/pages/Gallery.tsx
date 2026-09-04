@@ -23,19 +23,17 @@ import { useI18n } from "@/i18n/LanguageContext";
 
 type CatKey = "exterior" | "rooms" | "spaces" | "details" | "surroundings";
 
-const baseItems: { src: string; caption: keyof ReturnType<typeof captionKeys>; cat: CatKey }[] = [];
-const captionKeys = () => ({
-  house: "",
-  suite: "",
-  chapel: "",
-  pool: "",
-  loft: "",
-  poolArea: "",
-  penthouse: "",
-  sintra: "",
-});
+type CaptionKey =
+  | "house"
+  | "suite"
+  | "chapel"
+  | "pool"
+  | "loft"
+  | "poolArea"
+  | "penthouse"
+  | "sintra";
 
-const media: { src: string; key: keyof ReturnType<typeof captionKeys>; cat: CatKey }[] = [
+const media: { src: string; key: CaptionKey; cat: CatKey }[] = [
   { src: hero, key: "house", cat: "exterior" },
   { src: suite, key: "suite", cat: "rooms" },
   { src: chapel, key: "chapel", cat: "spaces" },
