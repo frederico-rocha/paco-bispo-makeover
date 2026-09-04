@@ -72,15 +72,35 @@ import deluxe118Asset from "@/assets/deluxe-118.jpg.asset.json";
 import deluxeWc1Asset from "@/assets/deluxe-102_wc1.jpg.asset.json";
 import deluxeWc2Asset from "@/assets/deluxe-102_wc2.jpg.asset.json";
 import deluxeWc3Asset from "@/assets/deluxe-102_wc3.jpg.asset.json";
+import deluxe017Asset from "@/assets/deluxe-017.jpg.asset.json";
+import deluxe018Asset from "@/assets/deluxe-018.jpg.asset.json";
+import deluxe019Asset from "@/assets/deluxe-019-2.jpg.asset.json";
+import deluxe020Asset from "@/assets/deluxe-020.jpg.asset.json";
+import deluxe021Asset from "@/assets/deluxe-021.jpg.asset.json";
+import deluxe022Asset from "@/assets/deluxe-022.jpg.asset.json";
+import deluxe023Asset from "@/assets/deluxe-023.jpg.asset.json";
+import deluxe024Asset from "@/assets/deluxe-024.jpg.asset.json";
+import deluxe025Asset from "@/assets/deluxe-025.jpg.asset.json";
+import deluxe119Asset from "@/assets/deluxe-119.jpg.asset.json";
 const deluxeHero = deluxe1Asset.url;
 const deluxeGallery = [
   deluxe1Asset.url,
   deluxe2Asset.url,
   deluxe118Asset.url,
   deluxe3Asset.url,
+  deluxe017Asset.url,
+  deluxe018Asset.url,
+  deluxe020Asset.url,
+  deluxe021Asset.url,
+  deluxe022Asset.url,
+  deluxe119Asset.url,
+  deluxe019Asset.url,
   deluxeWc1Asset.url,
   deluxeWc2Asset.url,
   deluxeWc3Asset.url,
+  deluxe023Asset.url,
+  deluxe024Asset.url,
+  deluxe025Asset.url,
 ];
 
 export type Room = {
