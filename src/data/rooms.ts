@@ -88,6 +88,14 @@ const superiorGallery = [
   superior070Asset.url,
   superior072Asset.url,
   superior073Asset.url,
+  superior074Asset.url,
+  superior075Asset.url,
+  superior076Asset.url,
+  superior077Asset.url,
+  superior078Asset.url,
+  superior079Asset.url,
+  superior080Asset.url,
+  superior124Asset.url,
 ];
 import deluxe1Asset from "@/assets/deluxe-102_1.jpg.asset.json";
 import deluxe2Asset from "@/assets/deluxe-102_2.jpg.asset.json";
