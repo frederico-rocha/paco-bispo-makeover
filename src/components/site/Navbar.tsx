@@ -89,18 +89,18 @@ export const Navbar = () => {
                   <Link to={l.href} className={cls}>
                     {l.label}
                   </Link>
-                ) : (
-                  <a href={l.href} className={cls}>
-                    {l.label}
-                  </a>
-                )}
+                 ) : (
+                   <a href={anchorHref(l.href)} className={cls}>
+                     {l.label}
+                   </a>
+                 )}
               </li>
             );
           })}
         </ul>
 
         <a
-          href="/#reservas"
+          href={anchorHref("/#reservas")}
           className={cn(
             "hidden md:inline-flex items-center px-6 py-2.5 rounded-full text-sm transition-all duration-300",
             "focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2",
