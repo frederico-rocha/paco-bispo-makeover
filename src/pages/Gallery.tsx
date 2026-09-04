@@ -19,26 +19,57 @@ import houseDetailAsset from "@/assets/house-detail.jpg.asset.json";
 const houseDetail = houseDetailAsset.url;
 import sintraAsset from "@/assets/sintra.jpg.asset.json";
 const sintra = sintraAsset.url;
+import { useI18n } from "@/i18n/LanguageContext";
 
-const items = [
-  { src: hero, caption: "A casa ao amanhecer", category: "Exterior" },
-  { src: suite, caption: "Suíte principal", category: "Quartos" },
-  { src: chapel, caption: "Lounge na antiga capela", category: "Espaços" },
-  { src: pool, caption: "Piscina panorâmica", category: "Exterior" },
-  { src: studio, caption: "Loft com vista", category: "Quartos" },
-  { src: houseDetail, caption: "Área da piscina", category: "Exterior" },
-  { src: penthouse, caption: "Penthouse — terraço privado", category: "Quartos" },
-  { src: sintra, caption: "Serra de Sintra", category: "Envolvente" },
+type CatKey = "exterior" | "rooms" | "spaces" | "details" | "surroundings";
+
+const baseItems: { src: string; caption: keyof ReturnType<typeof captionKeys>; cat: CatKey }[] = [];
+const captionKeys = () => ({
+  house: "",
+  suite: "",
+  chapel: "",
+  pool: "",
+  loft: "",
+  poolArea: "",
+  penthouse: "",
+  sintra: "",
+});
+
+const media: { src: string; key: keyof ReturnType<typeof captionKeys>; cat: CatKey }[] = [
+  { src: hero, key: "house", cat: "exterior" },
+  { src: suite, key: "suite", cat: "rooms" },
+  { src: chapel, key: "chapel", cat: "spaces" },
+  { src: pool, key: "pool", cat: "exterior" },
+  { src: studio, key: "loft", cat: "rooms" },
+  { src: houseDetail, key: "poolArea", cat: "exterior" },
+  { src: penthouse, key: "penthouse", cat: "rooms" },
+  { src: sintra, key: "sintra", cat: "surroundings" },
 ];
 
-const categories = ["Tudo", "Exterior", "Quartos", "Espaços", "Detalhes", "Envolvente"];
+const catKeys: (CatKey | "all")[] = [
+  "all",
+  "exterior",
+  "rooms",
+  "spaces",
+  "details",
+  "surroundings",
+];
 
 const Gallery = () => {
-  const [filter, setFilter] = useState("Tudo");
+  const { t } = useI18n();
+  const g = t.gallery;
+  const [filter, setFilter] = useState<CatKey | "all">("all");
   const [lightbox, setLightbox] = useState<number | null>(null);
 
+  const items = media.map((m) => ({
+    src: m.src,
+    caption: g.captions[m.key],
+    category: g.categories[m.cat],
+    cat: m.cat,
+  }));
+
   const filtered =
-    filter === "Tudo" ? items : items.filter((i) => i.category === filter);
+    filter === "all" ? items : items.filter((i) => i.cat === filter);
 
   return (
     <div className="min-h-screen bg-background">
@@ -51,22 +82,21 @@ const Gallery = () => {
             className="inline-flex items-center gap-2 text-sm tracking-wide text-muted-foreground hover:text-primary mb-8"
           >
             <ArrowLeft size={16} />
-            Voltar
+            {g.back}
           </Link>
 
           <div className="max-w-3xl">
-            <p className="eyebrow">Galeria</p>
+            <p className="eyebrow">{g.eyebrow}</p>
             <h1 className="font-serif-display text-5xl md:text-7xl mt-5 leading-[1.02] text-balance">
-              A casa em <span className="italic">imagens</span>.
+              {g.titleStart} <span className="italic">{g.titleAccent}</span>.
             </h1>
             <p className="mt-6 text-lg text-foreground/70 font-light leading-relaxed max-w-xl">
-              Detalhes, paisagem, luz e silêncio. Um percurso visual pelo Paço do
-              Bispo e pela serra que o envolve.
+              {g.intro}
             </p>
           </div>
 
           <div className="mt-14 flex flex-wrap gap-2">
-            {categories.map((c) => (
+            {catKeys.map((c) => (
               <button
                 key={c}
                 onClick={() => setFilter(c)}
@@ -76,7 +106,7 @@ const Gallery = () => {
                     : "border-border text-foreground/70 hover:border-foreground/60"
                 }`}
               >
-                {c}
+                {c === "all" ? g.categories.all : g.categories[c]}
               </button>
             ))}
           </div>
@@ -131,7 +161,7 @@ const Gallery = () => {
           <button
             className="absolute top-6 right-6 text-paper hover:text-primary transition-colors"
             onClick={() => setLightbox(null)}
-            aria-label="Fechar"
+            aria-label={g.close}
           >
             <X size={28} />
           </button>
