@@ -2,17 +2,19 @@ import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
 import { cn } from "@/lib/utils";
-
-const links = [
-  { href: "/#casa", label: "A Casa" },
-  { href: "/#quartos", label: "Quartos" },
-  { href: "/galeria", label: "Galeria" },
-  { href: "/#experiencias", label: "Eventos" },
-  { href: "/#localizacao", label: "Sintra" },
-  { href: "/#contacto", label: "Contacto" },
-];
+import { useI18n } from "@/i18n/LanguageContext";
+import { LanguageSwitcher } from "./LanguageSwitcher";
 
 export const Navbar = () => {
+  const { t } = useI18n();
+  const links = [
+    { href: "/#casa", label: t.nav.home },
+    { href: "/#quartos", label: t.nav.rooms },
+    { href: "/galeria", label: t.nav.gallery },
+    { href: "/#experiencias", label: t.nav.events },
+    { href: "/#localizacao", label: t.nav.sintra },
+    { href: "/#contacto", label: t.nav.contact },
+  ];
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
   const { pathname, hash } = useLocation();
@@ -99,18 +101,21 @@ export const Navbar = () => {
           })}
         </ul>
 
+        <div className="hidden md:flex items-center gap-4">
+        <LanguageSwitcher scrolled={scrolled} />
         <a
           href={anchorHref("/#reservas")}
           className={cn(
-            "hidden md:inline-flex items-center px-6 py-2.5 rounded-full text-sm transition-all duration-300",
+            "inline-flex items-center px-6 py-2.5 rounded-full text-sm transition-all duration-300",
             "focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2",
             scrolled
               ? "bg-primary text-primary-foreground hover:bg-primary/90 focus-visible:ring-primary focus-visible:ring-offset-background"
               : "bg-paper/95 text-ink hover:bg-paper focus-visible:ring-accent focus-visible:ring-offset-ink"
           )}
         >
-          Reservar
+          {t.nav.book}
         </a>
+        </div>
 
         <button
           className={cn(
@@ -121,7 +126,7 @@ export const Navbar = () => {
               : "text-paper hover:text-paper focus-visible:ring-paper focus-visible:ring-offset-ink"
           )}
           onClick={() => setOpen(!open)}
-          aria-label="Menu"
+          aria-label={t.nav.menu}
         >
           {open ? <X size={24} /> : <Menu size={24} />}
         </button>
@@ -157,8 +162,11 @@ export const Navbar = () => {
               className="inline-flex justify-center px-6 py-3 rounded-full bg-primary text-primary-foreground hover:bg-primary/90 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background"
               onClick={() => setOpen(false)}
             >
-              Reservar
+              {t.nav.book}
             </a>
+            <li className="pt-2 border-t border-border">
+              <LanguageSwitcher scrolled className="-ml-1.5" />
+            </li>
           </ul>
         </div>
       )}
