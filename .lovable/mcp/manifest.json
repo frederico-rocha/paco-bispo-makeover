@@ -15,7 +15,7 @@
       {
         "name": "list_rooms",
         "title": "List rooms",
-        "description": "List all rooms at Paço do Bispo boutique house with slug, name, short description, size, guest capacity, bed type and view.",
+        "description": "List all rooms at Paço do Bispo boutique house with slug, name, short description, guest capacity, bed type and view.",
         "annotations": {
           "readOnlyHint": true,
           "idempotentHint": true,

@@ -1,21 +1,7 @@
 import { Link, useParams } from "react-router-dom";
-import { ArrowLeft, ArrowUpRight, BedDouble, Eye, Maximize2, Users } from "lucide-react";
-import { Navbar } from "@/components/site/Navbar";
-import { Footer } from "@/components/site/Footer";
-import { getRoom, rooms } from "@/data/rooms";
-import NotFound from "./NotFound";
-
-const RoomDetail = () => {
-  const { slug } = useParams();
-  const room = slug ? getRoom(slug) : undefined;
-
-  if (!room) return <NotFound />;
-
-  const others = rooms.filter((r) => r.slug !== room.slug);
-  
-
+import { ArrowLeft, ArrowUpRight, BedDouble, Eye, Users } from "lucide-react";
+...
   const facts = [
-    { icon: Maximize2, label: "Área", value: room.size },
     { icon: Users, label: "Capacidade", value: room.guests },
     { icon: BedDouble, label: "Cama", value: room.bed },
     { icon: Eye, label: "Vista", value: room.view },
