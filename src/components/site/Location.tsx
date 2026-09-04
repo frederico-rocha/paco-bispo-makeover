@@ -1,19 +1,18 @@
 import sintraAsset from "@/assets/sintra.jpg.asset.json";
 const sintra = sintraAsset.url;
+import { useI18n } from "@/i18n/LanguageContext";
 
 export const Location = () => {
-  const points = [
-    { d: "5 km", l: "Vila de Sintra" },
-    { d: "5 km", l: "Estoril & Cascais" },
-    { d: "30 km", l: "Lisboa" },
-    { d: "—", l: "Golf & ténis nas imediações" },
-  ];
+  const { t } = useI18n();
+  const l = t.location;
+  const points = l.points;
+
   return (
     <section id="localizacao" className="relative py-28 md:py-40 overflow-hidden">
       <div className="absolute inset-0">
         <img
           src={sintra}
-          alt="Serra de Sintra coberta por neblina ao amanhecer"
+          alt={l.imageAlt}
           className="w-full h-full object-cover"
           loading="lazy"
           width={1920}
@@ -24,18 +23,17 @@ export const Location = () => {
 
       <div className="relative container-editorial text-paper">
         <div className="max-w-2xl">
-          <p className="eyebrow text-paper/80">Localização</p>
+          <p className="eyebrow text-paper/80">{l.eyebrow}</p>
           <h2 className="font-serif-display text-4xl md:text-6xl mt-5 leading-[1.05] text-balance">
-            No coração do
-            <span className="italic"> Parque Natural Sintra-Cascais</span>.
+            {l.titleStart}
+            <span className="italic"> {l.titleAccent}</span>.
           </h2>
           <p className="mt-7 text-paper/80 text-lg leading-relaxed font-light">
-            A poucos minutos do Atlântico e da vila mágica de Sintra.
-            Estacionamento privativo.
+            {l.text}
           </p>
         </div>
 
-        <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl">
+        <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-10">
           {points.map((p) => (
             <div key={p.l} className="border-t border-paper/30 pt-5">
               <div className="font-serif-display text-3xl md:text-4xl text-paper">{p.d}</div>
