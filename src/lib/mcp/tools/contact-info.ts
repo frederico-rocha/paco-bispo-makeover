@@ -10,7 +10,7 @@ export default defineTool({
   handler: () => {
     const info = {
       name: "Paço do Bispo Boutique House",
-      reservationsEmail: "reservas@pacodobispo.com",
+      reservationsEmail: "geral@pacodobispoboutiquehouse.com",
       location: "Sintra, Portugal",
       website: "https://pacodobispo.com",
     };

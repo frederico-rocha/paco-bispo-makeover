@@ -24,7 +24,7 @@ export const Footer = () => {
         <div>
           <h4 className="text-xs uppercase tracking-[0.28em] text-paper/60">Contacto</h4>
           <ul className="mt-5 space-y-2 text-paper/85 font-light">
-            <li><a href="mailto:reservas@pacodobispo.com" className="hover:text-primary-glow">reservas@pacodobispo.com</a></li>
+            <li><a href="mailto:geral@pacodobispoboutiquehouse.com" className="hover:text-primary-glow">geral@pacodobispoboutiquehouse.com</a></li>
             <li><a href="tel:+351000000000" className="hover:text-primary-glow">+351 000 000 000</a></li>
             <li><a href="#" className="hover:text-primary-glow">Instagram</a></li>
           </ul>

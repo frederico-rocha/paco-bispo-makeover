@@ -26,12 +26,12 @@ export const Location = () => {
         <div className="max-w-2xl">
           <p className="eyebrow text-paper/80">Localização</p>
           <h2 className="font-serif-display text-4xl md:text-6xl mt-5 leading-[1.05] text-balance">
-            No coração da
-            <span className="italic"> reserva natural</span> de Sintra.
+            No coração do
+            <span className="italic"> Parque Natural Sintra-Cascais</span>.
           </h2>
           <p className="mt-7 text-paper/80 text-lg leading-relaxed font-light">
-            A poucos minutos da Vila de Sintra, do Estoril e do mar. Rodeados
-            de pinhais, palácios e silêncio. Estacionamento privativo gratuito.
+            A poucos minutos do Atlântico e da vila mágica de Sintra.
+            Estacionamento privativo.
           </p>
         </div>
 

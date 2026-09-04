@@ -69,8 +69,8 @@ export const Reservation = () => {
 
         <p className="mt-6 text-center text-sm text-muted-foreground">
           Ou contacte-nos diretamente em{" "}
-          <a className="text-primary underline-offset-4 hover:underline" href="mailto:reservas@pacodobispo.com">
-            reservas@pacodobispo.com
+          <a className="text-primary underline-offset-4 hover:underline" href="mailto:geral@pacodobispoboutiquehouse.com">
+            geral@pacodobispoboutiquehouse.com
           </a>
         </p>
       </div>

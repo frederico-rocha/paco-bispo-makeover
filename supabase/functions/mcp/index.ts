@@ -75,7 +75,7 @@ var contact_info_default = defineTool3({
   handler: () => {
     const info = {
       name: "Pa\xE7o do Bispo Boutique House",
-      reservationsEmail: "reservas@pacodobispo.com",
+      reservationsEmail: "geral@pacodobispoboutiquehouse.com",
       location: "Sintra, Portugal",
       website: "https://pacodobispo.com"
     };

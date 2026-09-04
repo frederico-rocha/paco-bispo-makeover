@@ -25,7 +25,7 @@ const items = [
   { src: suite, caption: "Suíte principal", category: "Quartos" },
   { src: chapel, caption: "Lounge na antiga capela", category: "Espaços" },
   { src: pool, caption: "Piscina panorâmica", category: "Exterior" },
-  { src: studio, caption: "Estúdio com vista", category: "Quartos" },
+  { src: studio, caption: "Loft com vista", category: "Quartos" },
   { src: houseDetail, caption: "Área da piscina", category: "Exterior" },
   { src: penthouse, caption: "Penthouse — terraço privado", category: "Quartos" },
   { src: sintra, caption: "Serra de Sintra", category: "Envolvente" },
