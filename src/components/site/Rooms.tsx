@@ -54,9 +54,9 @@ export const Rooms = () => {
                     </div>
                   </div>
                 </div>
-                <div className="mt-6 flex items-baseline justify-between">
+                <div className="mt-6">
                   <h3 className="font-serif-display text-2xl">{txt.name}</h3>
-                  <span className="text-xs uppercase tracking-[0.22em] text-muted-foreground">
+                  <span className="mt-1 block text-xs uppercase tracking-[0.22em] text-muted-foreground">
                     {txt.count}
                   </span>
                 </div>
