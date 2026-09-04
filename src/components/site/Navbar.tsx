@@ -17,6 +17,10 @@ export const Navbar = () => {
   const [open, setOpen] = useState(false);
   const { pathname, hash } = useLocation();
 
+  // Âncoras da home precisam do base path (GitHub Pages serve em /paco-bispo-makeover/)
+  const base = import.meta.env.BASE_URL;
+  const anchorHref = (href: string) => base + href.slice(1); // "/#casa" -> "<base>#casa"
+
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40);
     onScroll();
@@ -85,18 +89,18 @@ export const Navbar = () => {
                   <Link to={l.href} className={cls}>
                     {l.label}
                   </Link>
-                ) : (
-                  <a href={l.href} className={cls}>
-                    {l.label}
-                  </a>
-                )}
+                 ) : (
+                   <a href={anchorHref(l.href)} className={cls}>
+                     {l.label}
+                   </a>
+                 )}
               </li>
             );
           })}
         </ul>
 
         <a
-          href="/#reservas"
+          href={anchorHref("/#reservas")}
           className={cn(
             "hidden md:inline-flex items-center px-6 py-2.5 rounded-full text-sm transition-all duration-300",
             "focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2",
@@ -140,16 +144,16 @@ export const Navbar = () => {
                     <Link to={l.href} className={cls} onClick={() => setOpen(false)}>
                       {l.label}
                     </Link>
-                  ) : (
-                    <a href={l.href} className={cls} onClick={() => setOpen(false)}>
-                      {l.label}
-                    </a>
-                  )}
+                   ) : (
+                     <a href={anchorHref(l.href)} className={cls} onClick={() => setOpen(false)}>
+                       {l.label}
+                     </a>
+                   )}
                 </li>
               );
             })}
             <a
-              href="/#reservas"
+              href={anchorHref("/#reservas")}
               className="inline-flex justify-center px-6 py-3 rounded-full bg-primary text-primary-foreground hover:bg-primary/90 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background"
               onClick={() => setOpen(false)}
             >
