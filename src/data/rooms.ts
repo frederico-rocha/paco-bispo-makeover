@@ -14,6 +14,16 @@ import penthouse063Asset from "@/assets/penthouse-063.jpg.asset.json";
 import penthouse064Asset from "@/assets/penthouse-064.jpg.asset.json";
 import penthouse065Asset from "@/assets/penthouse-065.jpg.asset.json";
 import penthouse071Asset from "@/assets/penthouse-071.jpg.asset.json";
+import penthouse0533Asset from "@/assets/penthouse-053-3.jpg.asset.json";
+import penthouse0543Asset from "@/assets/penthouse-054-3.jpg.asset.json";
+import penthouse0552Asset from "@/assets/penthouse-055-2.jpg.asset.json";
+import penthouse0564Asset from "@/assets/penthouse-056-4.jpg.asset.json";
+import penthouse0572Asset from "@/assets/penthouse-057-2.jpg.asset.json";
+import penthouse0582Asset from "@/assets/penthouse-058-2.jpg.asset.json";
+import penthouse0592Asset from "@/assets/penthouse-059-2.jpg.asset.json";
+import penthouse0602Asset from "@/assets/penthouse-060-2.jpg.asset.json";
+import penthouse0612Asset from "@/assets/penthouse-061-2.jpg.asset.json";
+import penthouse0622Asset from "@/assets/penthouse-062-2.jpg.asset.json";
 const penthouseHero = penthouse054Asset.url;
 const penthouseGallery = [
   penthouse054Asset.url,
@@ -30,6 +40,16 @@ const penthouseGallery = [
   penthouse062Asset.url,
   penthouse057Asset.url,
   penthouse058Asset.url,
+  penthouse0533Asset.url,
+  penthouse0543Asset.url,
+  penthouse0552Asset.url,
+  penthouse0564Asset.url,
+  penthouse0572Asset.url,
+  penthouse0582Asset.url,
+  penthouse0592Asset.url,
+  penthouse0602Asset.url,
+  penthouse0612Asset.url,
+  penthouse0622Asset.url,
 ];
 import standard0262Asset from "@/assets/standard-026-2.jpg.asset.json";
 import standard0272Asset from "@/assets/standard-027-2.jpg.asset.json";
