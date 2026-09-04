@@ -82,6 +82,11 @@ import deluxe023Asset from "@/assets/deluxe-023.jpg.asset.json";
 import deluxe024Asset from "@/assets/deluxe-024.jpg.asset.json";
 import deluxe025Asset from "@/assets/deluxe-025.jpg.asset.json";
 import deluxe119Asset from "@/assets/deluxe-119.jpg.asset.json";
+import deluxe081Asset from "@/assets/deluxe-081.jpg.asset.json";
+import deluxe082Asset from "@/assets/deluxe-082.jpg.asset.json";
+import deluxe083Asset from "@/assets/deluxe-083.jpg.asset.json";
+import deluxe084Asset from "@/assets/deluxe-084.jpg.asset.json";
+import deluxe125Asset from "@/assets/deluxe-125.jpg.asset.json";
 const deluxeHero = deluxe1Asset.url;
 const deluxeGallery = [
   deluxe1Asset.url,
