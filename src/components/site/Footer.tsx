@@ -1,3 +1,4 @@
+import { Instagram } from "lucide-react";
 import { useI18n } from "@/i18n/LanguageContext";
 
 export const Footer = () => {
