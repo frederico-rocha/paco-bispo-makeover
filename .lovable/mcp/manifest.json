@@ -44,7 +44,7 @@
             "slug": {
               "type": "string",
               "minLength": 1,
-              "description": "Room slug. One of: standard, superior, deluxe, penthouse"
+              "description": "Room slug. One of: standard, deluxe, superior, penthouse, loft"
             }
           },
           "required": [

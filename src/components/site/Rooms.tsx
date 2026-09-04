@@ -10,19 +10,11 @@ export const Rooms = () => {
           <div className="max-w-3xl">
             <p className="eyebrow">Estadia</p>
             <h2 className="font-serif-display text-4xl md:text-6xl mt-5 leading-[1.05] text-balance">
-              Quatro formas de
+              Cinco formas de
               <span className="italic"> dormir em Sintra</span>.
             </h2>
-          </div>
-          <Link
-            to="/galeria"
-            className="text-sm tracking-wide hover:text-primary inline-flex items-center gap-2"
-          >
-            Ver galeria completa <ArrowUpRight size={16} />
-          </Link>
-        </div>
-
-        <div className="mt-16 md:mt-20 grid sm:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-10">
+...
+        <div className="mt-16 md:mt-20 grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-8 md:gap-10">
           {rooms.map((r) => (
             <Link
               to={`/quartos/${r.slug}`}

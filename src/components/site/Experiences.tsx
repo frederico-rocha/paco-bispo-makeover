@@ -2,6 +2,8 @@ import poolAsset from "@/assets/pool.jpg.asset.json";
 const pool = poolAsset.url;
 import chapelAsset from "@/assets/chapel-lounge.jpg.asset.json";
 const chapel = chapelAsset.url;
+import eventsAsset from "@/assets/hero-paco.jpg.asset.json";
+const events = eventsAsset.url;
 
 const items = [
   {
@@ -12,9 +14,9 @@ const items = [
   },
   {
     img: chapel,
-    eyebrow: "A Capela",
-    title: "Lounge & Bar na antiga capela",
-    desc: "Uma capela do século passado, agora lounge à luz das velas. Cocktails, vinhos e silêncio de pedra.",
+    eyebrow: "A Capela / Lounge",
+    title: "Lounge na antiga capela",
+    desc: "Antiga capela do século XVIII, este espaço foi cuidadosamente transformado num lounge exclusivo, onde a história e o conforto contemporâneo se encontram em perfeita harmonia. As abóbadas originais, os detalhes arquitectónicos e o altar preservado conferem-lhe uma atmosfera única, intimista e sofisticada.",
     reverse: true,
   },
 ];
