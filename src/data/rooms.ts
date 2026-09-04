@@ -31,22 +31,22 @@ const penthouseGallery = [
   penthouse057Asset.url,
   penthouse058Asset.url,
 ];
-import standard120Asset from "@/assets/standard-120.jpg.asset.json";
-import standard026Asset from "@/assets/standard-026.jpg.asset.json";
-import standard027Asset from "@/assets/standard-027.jpg.asset.json";
-import standard028Asset from "@/assets/standard-028.jpg.asset.json";
-import standard029Asset from "@/assets/standard-029.jpg.asset.json";
-import standard030Asset from "@/assets/standard-030.jpg.asset.json";
-import standard031Asset from "@/assets/standard-031.jpg.asset.json";
-const standardHero = standard120Asset.url;
+import standard0262Asset from "@/assets/standard-026-2.jpg.asset.json";
+import standard0272Asset from "@/assets/standard-027-2.jpg.asset.json";
+import standard0282Asset from "@/assets/standard-028-2.jpg.asset.json";
+import standard0292Asset from "@/assets/standard-029-2.jpg.asset.json";
+import standard0302Asset from "@/assets/standard-030-2.jpg.asset.json";
+import standard0312Asset from "@/assets/standard-031-2.jpg.asset.json";
+import standard1202Asset from "@/assets/standard-120-2.jpg.asset.json";
+const standardHero = standard0262Asset.url;
 const standardGallery = [
-  standard120Asset.url,
-  standard027Asset.url,
-  standard026Asset.url,
-  standard028Asset.url,
-  standard029Asset.url,
-  standard031Asset.url,
-  standard030Asset.url,
+  standard0262Asset.url,
+  standard0272Asset.url,
+  standard1202Asset.url,
+  standard0292Asset.url,
+  standard0282Asset.url,
+  standard0302Asset.url,
+  standard0312Asset.url,
 ];
 import superior032Asset from "@/assets/superior-032.jpg.asset.json";
 import superior033Asset from "@/assets/superior-033.jpg.asset.json";
