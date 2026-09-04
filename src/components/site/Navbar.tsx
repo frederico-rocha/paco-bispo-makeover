@@ -17,6 +17,10 @@ export const Navbar = () => {
   const [open, setOpen] = useState(false);
   const { pathname, hash } = useLocation();
 
+  // Âncoras da home precisam do base path (GitHub Pages serve em /paco-bispo-makeover/)
+  const base = import.meta.env.BASE_URL;
+  const anchorHref = (href: string) => base + href.slice(1); // "/#casa" -> "<base>#casa"
+
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40);
     onScroll();
