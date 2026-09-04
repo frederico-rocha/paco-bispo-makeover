@@ -4,32 +4,36 @@ import chapelAsset from "@/assets/chapel-lounge.jpg.asset.json";
 const chapel = chapelAsset.url;
 import eventsAsset from "@/assets/hero-paco.jpg.asset.json";
 const events = eventsAsset.url;
-
-const items = [
-  {
-    img: pool,
-    eyebrow: "Piscina panorâmica",
-    title: "Vista privilegiada sobre a serra",
-    desc: "A piscina abre-se sobre os pinhais e as colinas — um lugar para ficar, ler e desaparecer.",
-  },
-  {
-    img: chapel,
-    eyebrow: "A Capela / Lounge",
-    title: "Lounge na antiga capela",
-    desc: "Antiga capela do século XVIII, este espaço foi cuidadosamente transformado num lounge exclusivo, onde a história e o conforto contemporâneo se encontram em perfeita harmonia. As abóbadas originais, os detalhes arquitectónicos e o altar preservado conferem-lhe uma atmosfera única, intimista e sofisticada.",
-    reverse: true,
-  },
-];
+import { useI18n } from "@/i18n/LanguageContext";
 
 export const Experiences = () => {
+  const { t } = useI18n();
+  const e = t.experiences;
+
+  const items = [
+    {
+      img: pool,
+      eyebrow: e.poolEyebrow,
+      title: e.poolTitle,
+      desc: e.poolDesc,
+    },
+    {
+      img: chapel,
+      eyebrow: e.chapelEyebrow,
+      title: e.chapelTitle,
+      desc: e.chapelDesc,
+      reverse: true,
+    },
+  ];
+
   return (
     <section id="experiencias" className="py-28 md:py-40 bg-background">
       <div className="container-editorial">
         <div className="max-w-3xl mb-20 md:mb-28">
-          <p className="eyebrow">Eventos</p>
+          <p className="eyebrow">{e.eyebrow}</p>
           <h2 className="font-serif-display text-4xl md:text-6xl mt-5 leading-[1.05] text-balance">
-            Para além do quarto,
-            <span className="italic"> a casa.</span>
+            {e.titleStart}
+            <span className="italic"> {e.titleAccent}</span>
           </h2>
         </div>
 
@@ -41,7 +45,7 @@ export const Experiences = () => {
             >
               <img
                 src={events}
-                alt="Paço do Bispo Boutique House — espaço para eventos em Sintra"
+                alt={e.eventsAlt}
                 className="w-full h-full object-cover"
                 loading="lazy"
                 width={1920}
@@ -50,13 +54,12 @@ export const Experiences = () => {
             </div>
           </div>
           <div className="md:col-span-5">
-            <p className="eyebrow">Eventos</p>
+            <p className="eyebrow">{e.eyebrow}</p>
             <h3 className="font-serif-display text-3xl md:text-5xl mt-4 leading-[1.08] text-balance">
-              Celebrar numa casa com história
+              {e.eventsTitle}
             </h3>
             <p className="mt-6 text-foreground/70 leading-relaxed font-light text-lg">
-              Para mais informações sobre eventos, entre em contacto connosco
-              através de{" "}
+              {e.eventsText}{" "}
               <a
                 href="mailto:geral@pacodobispoboutiquehouse.com"
                 className="text-primary underline-offset-4 hover:underline"
