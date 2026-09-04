@@ -101,6 +101,11 @@ const deluxeGallery = [
   deluxe023Asset.url,
   deluxe024Asset.url,
   deluxe025Asset.url,
+  deluxe081Asset.url,
+  deluxe082Asset.url,
+  deluxe083Asset.url,
+  deluxe125Asset.url,
+  deluxe084Asset.url,
 ];
 
 export type Room = {
