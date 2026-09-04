@@ -40,6 +40,16 @@ const penthouseGallery = [
   penthouse062Asset.url,
   penthouse057Asset.url,
   penthouse058Asset.url,
+  penthouse0533Asset.url,
+  penthouse0543Asset.url,
+  penthouse0552Asset.url,
+  penthouse0564Asset.url,
+  penthouse0572Asset.url,
+  penthouse0582Asset.url,
+  penthouse0592Asset.url,
+  penthouse0602Asset.url,
+  penthouse0612Asset.url,
+  penthouse0622Asset.url,
 ];
 import standard0262Asset from "@/assets/standard-026-2.jpg.asset.json";
 import standard0272Asset from "@/assets/standard-027-2.jpg.asset.json";
