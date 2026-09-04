@@ -63,6 +63,14 @@ import superior070Asset from "@/assets/superior-070.jpg.asset.json";
 import superior072Asset from "@/assets/superior-072.jpg.asset.json";
 import superior073Asset from "@/assets/superior-073.jpg.asset.json";
 import superior123Asset from "@/assets/superior-123.jpg.asset.json";
+import superior074Asset from "@/assets/superior-074.jpg.asset.json";
+import superior075Asset from "@/assets/superior-075.jpg.asset.json";
+import superior076Asset from "@/assets/superior-076.jpg.asset.json";
+import superior077Asset from "@/assets/superior-077.jpg.asset.json";
+import superior078Asset from "@/assets/superior-078.jpg.asset.json";
+import superior079Asset from "@/assets/superior-079.jpg.asset.json";
+import superior080Asset from "@/assets/superior-080.jpg.asset.json";
+import superior124Asset from "@/assets/superior-124.jpg.asset.json";
 const superiorHero = superior0322Asset.url;
 const superiorGallery = [
   superior0322Asset.url,
