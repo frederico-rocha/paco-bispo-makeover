@@ -157,9 +157,9 @@ const RoomDetail = () => {
                     />
                   </div>
                   <div className="mt-5 flex items-baseline justify-between">
-                    <h3 className="font-serif-display text-2xl">{r.name}</h3>
+                    <h3 className="font-serif-display text-2xl">{roomText(r.slug).name}</h3>
                     <span className="text-xs uppercase tracking-[0.22em] text-muted-foreground">
-                      {r.count}
+                      {roomText(r.slug).count}
                     </span>
                   </div>
                 </Link>
