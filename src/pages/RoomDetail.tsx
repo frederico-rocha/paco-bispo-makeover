@@ -4,19 +4,23 @@ import { Navbar } from "@/components/site/Navbar";
 import { Footer } from "@/components/site/Footer";
 import { getRoom, rooms } from "@/data/rooms";
 import NotFound from "./NotFound";
+import { useI18n } from "@/i18n/LanguageContext";
 
 const RoomDetail = () => {
   const { slug } = useParams();
+  const { t, roomText, amenities } = useI18n();
+  const rd = t.roomDetail;
   const room = slug ? getRoom(slug) : undefined;
 
   if (!room) return <NotFound />;
 
+  const txt = roomText(room.slug);
   const others = rooms.filter((r) => r.slug !== room.slug);
 
   const facts = [
-    { icon: Users, label: "Capacidade", value: room.guests },
-    { icon: BedDouble, label: "Cama", value: room.bed },
-    { icon: Eye, label: "Vista", value: room.view },
+    { icon: Users, label: rd.capacity, value: txt.guests },
+    { icon: BedDouble, label: rd.bed, value: txt.bed },
+    { icon: Eye, label: rd.view, value: txt.view },
   ];
 
   return (
@@ -28,7 +32,7 @@ const RoomDetail = () => {
         <section className="relative h-[78vh] min-h-[520px] w-full overflow-hidden">
           <img
             src={room.hero}
-            alt={room.name}
+            alt={txt.name}
             className="absolute inset-0 w-full h-full object-cover"
           />
           <div
@@ -37,9 +41,9 @@ const RoomDetail = () => {
           />
           <div className="absolute inset-x-0 bottom-0">
             <div className="container-editorial pb-16 md:pb-24 text-paper">
-              <p className="eyebrow text-paper/80">{room.count}</p>
+              <p className="eyebrow text-paper/80">{txt.count}</p>
               <h1 className="font-serif-display text-5xl md:text-7xl mt-4 leading-[1.02] max-w-3xl">
-                {room.name}
+                {txt.name}
               </h1>
             </div>
           </div>
@@ -49,12 +53,12 @@ const RoomDetail = () => {
         <section className="py-24 md:py-32">
           <div className="container-editorial grid md:grid-cols-12 gap-12">
             <div className="md:col-span-7">
-              <p className="eyebrow">Sobre o quarto</p>
+              <p className="eyebrow">{rd.about}</p>
               <h2 className="font-serif-display text-3xl md:text-5xl mt-4 leading-[1.1] text-balance">
-                <span className="italic">{room.short}</span>
+                <span className="italic">{txt.short}</span>
               </h2>
               <div className="mt-10 space-y-6 text-foreground/75 leading-relaxed font-light max-w-xl">
-                {room.description.map((p, i) => (
+                {txt.description.map((p, i) => (
                   <p key={i}>{p}</p>
                 ))}
               </div>
@@ -74,9 +78,9 @@ const RoomDetail = () => {
               </div>
 
               <div className="mt-12">
-                <p className="eyebrow">Comodidades</p>
+                <p className="eyebrow">{rd.amenities}</p>
                 <ul className="mt-5 grid grid-cols-1 gap-3">
-                  {room.amenities.map((a) => (
+                  {amenities.map((a) => (
                     <li
                       key={a}
                       className="flex items-center gap-3 text-foreground/80 font-light"
@@ -92,7 +96,7 @@ const RoomDetail = () => {
                 to="/#reservas"
                 className="mt-12 inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-primary text-primary-foreground hover:bg-primary/90 transition-colors text-sm"
               >
-                Reservar este quarto
+                {rd.bookRoom}
                 <ArrowUpRight size={16} />
               </Link>
             </aside>
@@ -112,7 +116,7 @@ const RoomDetail = () => {
                 >
                   <img
                     src={src}
-                    alt={`${room.name} — ${i + 1}`}
+                    alt={`${txt.name} — ${i + 1}`}
                     className="w-full h-full object-cover hover:scale-105 transition-transform duration-[1500ms]"
                     loading="lazy"
                   />
@@ -127,9 +131,9 @@ const RoomDetail = () => {
           <div className="container-editorial">
             <div className="flex items-end justify-between flex-wrap gap-6">
               <div>
-                <p className="eyebrow">Continuar a explorar</p>
+                <p className="eyebrow">{rd.keepExploring}</p>
                 <h2 className="font-serif-display text-3xl md:text-5xl mt-4">
-                  Outros <span className="italic">quartos</span>
+                  {rd.otherStart} <span className="italic">{rd.otherAccent}</span>
                 </h2>
               </div>
               <Link
@@ -137,7 +141,7 @@ const RoomDetail = () => {
                 className="inline-flex items-center gap-2 text-sm tracking-wide hover:text-primary"
               >
                 <ArrowLeft size={16} />
-                Voltar ao início
+                {rd.backHome}
               </Link>
             </div>
 
@@ -147,7 +151,7 @@ const RoomDetail = () => {
                   <div className="relative aspect-[4/3] overflow-hidden rounded-sm bg-muted">
                     <img
                       src={r.hero}
-                      alt={r.name}
+                      alt={roomText(r.slug).name}
                       className="w-full h-full object-cover transition-transform duration-[1500ms] group-hover:scale-105"
                       loading="lazy"
                     />
