@@ -48,22 +48,22 @@ const standardGallery = [
   standard0302Asset.url,
   standard0312Asset.url,
 ];
-import superior032Asset from "@/assets/superior-032.jpg.asset.json";
-import superior033Asset from "@/assets/superior-033.jpg.asset.json";
-import superior034Asset from "@/assets/superior-034.jpg.asset.json";
-import superior035Asset from "@/assets/superior-035.jpg.asset.json";
-import superior036Asset from "@/assets/superior-036.jpg.asset.json";
-import superior037Asset from "@/assets/superior-037.jpg.asset.json";
-import superior038Asset from "@/assets/superior-038.jpg.asset.json";
-const superiorHero = superior032Asset.url;
+import superior0322Asset from "@/assets/superior-032-2.jpg.asset.json";
+import superior0332Asset from "@/assets/superior-033-2.jpg.asset.json";
+import superior0342Asset from "@/assets/superior-034-2.jpg.asset.json";
+import superior0352Asset from "@/assets/superior-035-2.jpg.asset.json";
+import superior0362Asset from "@/assets/superior-036-2.jpg.asset.json";
+import superior0372Asset from "@/assets/superior-037-2.jpg.asset.json";
+import superior0382Asset from "@/assets/superior-038-2.jpg.asset.json";
+const superiorHero = superior0322Asset.url;
 const superiorGallery = [
-  superior032Asset.url,
-  superior036Asset.url,
-  superior033Asset.url,
-  superior035Asset.url,
-  superior034Asset.url,
-  superior037Asset.url,
-  superior038Asset.url,
+  superior0322Asset.url,
+  superior0352Asset.url,
+  superior0332Asset.url,
+  superior0342Asset.url,
+  superior0362Asset.url,
+  superior0372Asset.url,
+  superior0382Asset.url,
 ];
 import deluxe1Asset from "@/assets/deluxe-102_1.jpg.asset.json";
 import deluxe2Asset from "@/assets/deluxe-102_2.jpg.asset.json";
