@@ -20,7 +20,6 @@ const RoomDetail = () => {
   const facts = [
     { icon: Users, label: rd.capacity, value: txt.guests },
     { icon: BedDouble, label: rd.bed, value: txt.bed },
-    { icon: Eye, label: rd.view, value: txt.view },
   ];
 
   return (

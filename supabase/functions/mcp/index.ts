@@ -11,7 +11,7 @@ import { rooms } from "npm:@/data/rooms";
 var list_rooms_default = defineTool({
   name: "list_rooms",
   title: "List rooms",
-  description: "List all rooms at Pa\xE7o do Bispo boutique house with slug, name, short description, guest capacity, bed type and view.",
+  description: "List all rooms at Pa\xE7o do Bispo boutique house with slug, name, short description, guest capacity and bed type.",
   inputSchema: {},
   annotations: { readOnlyHint: true, idempotentHint: true, openWorldHint: false },
   handler: () => {
@@ -21,8 +21,7 @@ var list_rooms_default = defineTool({
       count: r.count,
       short: r.short,
       guests: r.guests,
-      bed: r.bed,
-      view: r.view
+      bed: r.bed
     }));
     return {
       content: [{ type: "text", text: JSON.stringify(summary, null, 2) }],

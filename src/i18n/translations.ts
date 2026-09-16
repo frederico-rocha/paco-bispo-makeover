@@ -103,7 +103,6 @@ export type Dict = {
     about: string;
     capacity: string;
     bed: string;
-    view: string;
     amenities: string;
     bookRoom: string;
     keepExploring: string;
