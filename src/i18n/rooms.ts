@@ -60,7 +60,7 @@ export const roomTexts: Record<Lang, Record<string, RoomText>> = {
       count: "Ponto de partida",
       short: "Um refúgio simples e acolhedor, ideal para estadias curtas.",
       guests: "2 hóspedes",
-      bed: "Cama queen-size",
+      bed: "Cama king-size",
       view: "Pátio interior",
       description: [
         "O quarto Standard é o ponto de partida da casa: espaço acolhedor, luz natural e um enquadramento sereno sobre o pátio interior.",
@@ -126,7 +126,7 @@ export const roomTexts: Record<Lang, Record<string, RoomText>> = {
       count: "The starting point",
       short: "A simple, welcoming retreat, ideal for short stays.",
       guests: "2 guests",
-      bed: "Queen-size bed",
+      bed: "King-size bed",
       view: "Inner courtyard",
       description: [
         "The Standard room is the starting point of the house: a welcoming space, natural light and a serene outlook over the inner courtyard.",
@@ -192,7 +192,7 @@ export const roomTexts: Record<Lang, Record<string, RoomText>> = {
       count: "Punto de partida",
       short: "Un refugio sencillo y acogedor, ideal para estancias cortas.",
       guests: "2 huéspedes",
-      bed: "Cama queen-size",
+      bed: "Cama king-size",
       view: "Patio interior",
       description: [
         "La habitación Standard es el punto de partida de la casa: un espacio acogedor, luz natural y una vista serena sobre el patio interior.",
@@ -258,7 +258,7 @@ export const roomTexts: Record<Lang, Record<string, RoomText>> = {
       count: "Le point de départ",
       short: "Un refuge simple et chaleureux, idéal pour les courts séjours.",
       guests: "2 personnes",
-      bed: "Lit queen-size",
+      bed: "Lit king-size",
       view: "Cour intérieure",
       description: [
         "La chambre Standard est le point de départ de la maison : un espace accueillant, une lumière naturelle et une vue paisible sur la cour intérieure.",

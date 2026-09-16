@@ -221,7 +221,7 @@ export const rooms: Room[] = [
     hero: standardHero,
     gallery: standardGallery,
     guests: "2 hóspedes",
-    bed: "Cama queen-size",
+    bed: "Cama king-size",
     view: "Pátio interior",
     description: [
       "O quarto Standard é o ponto de partida da casa: espaço acolhedor, luz natural e um enquadramento sereno sobre o pátio interior.",
