@@ -7,7 +7,7 @@ import event89Asset from "@/assets/PacodoBispo28.02.2019-89.jpeg.asset.json";
 import event136Asset from "@/assets/PacodoBispo28.02.2019-136.jpeg.asset.json";
 import event139Asset from "@/assets/PacodoBispo28.02.2019-139.jpeg.asset.json";
 import event142Asset from "@/assets/PacodoBispo28.02.2019-142.jpeg.asset.json";
-import event144Asset from "@/assets/PacodoBispo28.02.2019-144.jpeg.asset.json";
+import event144Asset from "@/assets/event-144-centered.jpg.asset.json";
 import {
   Carousel,
   type CarouselApi,
