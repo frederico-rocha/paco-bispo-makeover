@@ -1,6 +1,4 @@
 import React, { useState } from "react";
-import poolAsset from "@/assets/pool.jpg.asset.json";
-const pool = poolAsset.url;
 import chapelAsset from "@/assets/chapel-lounge.jpg.asset.json";
 const chapel = chapelAsset.url;
 import event89Asset from "@/assets/PacodoBispo28.02.2019-89.jpeg.asset.json";
