@@ -15,7 +15,7 @@ export const Footer = () => {
             alt="Paço do Bispo Boutique House"
             width={1531}
             height={435}
-            className="h-16 w-auto"
+            className="h-20 md:h-24 w-auto"
             loading="lazy"
           />
           <p className="mt-6 text-paper/70 max-w-sm font-light leading-relaxed">
