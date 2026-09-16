@@ -103,6 +103,7 @@ import superior052Asset from "@/assets/superior-052.jpg.asset.json";
 import superior039Asset from "@/assets/superior-039.jpg.asset.json";
 const superiorHero = superior039Asset.url;
 const superiorGallery = [
+  superior039Asset.url,
   superior0322Asset.url,
   superior0352Asset.url,
   superior0332Asset.url,
