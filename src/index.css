@@ -32,6 +32,7 @@
     --primary: 14 62% 48%;           /* Paço terracotta */
     --primary-foreground: 0 0% 100%;
     --primary-glow: 18 78% 62%;
+    --facade: 5 41% 42%;              /* terracotta sampled from the house facade */
 
     --secondary: 36 22% 90%;         /* soft sand */
     --secondary-foreground: 20 18% 14%;
@@ -85,6 +86,7 @@
     --popover-foreground: 36 28% 94%;
     --primary: 14 70% 56%;
     --primary-foreground: 20 18% 8%;
+    --facade: 5 48% 58%;
     --secondary: 20 14% 18%;
     --secondary-foreground: 36 28% 94%;
     --muted: 20 14% 16%;
