@@ -64,7 +64,7 @@ export const Navbar = () => {
             alt="Paço do Bispo Boutique House"
             width={1531}
             height={435}
-            className="h-12 md:h-14 w-auto"
+            className="h-14 md:h-16 w-auto"
           />
         </Link>
 
