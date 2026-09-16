@@ -1,6 +1,13 @@
-import { LANGS, LANG_LABELS, LANG_NAMES } from "@/i18n/config";
+import { LANGS, LANG_NAMES } from "@/i18n/config";
 import { useI18n } from "@/i18n/LanguageContext";
 import { cn } from "@/lib/utils";
+
+const LANG_FLAGS: Record<(typeof LANGS)[number], string> = {
+  pt: "🇵🇹",
+  en: "🇬🇧",
+  es: "🇪🇸",
+  fr: "🇫🇷",
+};
 
 type Props = {
   scrolled: boolean;
@@ -12,7 +19,7 @@ export const LanguageSwitcher = ({ scrolled, className }: Props) => {
 
   return (
     <div
-      className={cn("flex items-center gap-1", className)}
+      className={cn("flex items-center gap-1.5", className)}
       role="group"
       aria-label={t.nav.language}
     >
@@ -26,22 +33,15 @@ export const LanguageSwitcher = ({ scrolled, className }: Props) => {
             aria-label={LANG_NAMES[l]}
             aria-current={active ? "true" : undefined}
             className={cn(
-              "px-1.5 py-1 text-[0.7rem] tracking-[0.18em] uppercase rounded-sm transition-colors",
+              "text-base leading-none rounded-sm transition-all",
               "focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2",
+              active ? "scale-110" : "opacity-60 hover:opacity-100",
               scrolled
-                ? cn(
-                    "focus-visible:ring-primary focus-visible:ring-offset-background",
-                    active
-                      ? "text-primary"
-                      : "text-foreground/60 hover:text-foreground"
-                  )
-                : cn(
-                    "focus-visible:ring-paper focus-visible:ring-offset-ink",
-                    active ? "text-paper" : "text-paper/60 hover:text-paper"
-                  )
+                ? "focus-visible:ring-primary focus-visible:ring-offset-background"
+                : "focus-visible:ring-paper focus-visible:ring-offset-ink"
             )}
           >
-            {LANG_LABELS[l]}
+            <span aria-hidden="true">{LANG_FLAGS[l]}</span>
           </button>
         );
       })}
