@@ -59,7 +59,7 @@ export const Experiences = () => {
 
   const items = [
     {
-      img: pool,
+      photos: poolPhotos,
       eyebrow: e.poolEyebrow,
       title: e.poolTitle,
       desc: e.poolDesc,
