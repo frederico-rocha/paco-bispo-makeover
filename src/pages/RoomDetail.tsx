@@ -1,5 +1,5 @@
 import { Link, useParams } from "react-router-dom";
-import { ArrowLeft, ArrowUpRight, BedDouble, Eye, Users } from "lucide-react";
+import { ArrowLeft, ArrowUpRight, BedDouble, Users } from "lucide-react";
 import { Navbar } from "@/components/site/Navbar";
 import { Footer } from "@/components/site/Footer";
 import { getRoom, rooms } from "@/data/rooms";
@@ -20,7 +20,6 @@ const RoomDetail = () => {
   const facts = [
     { icon: Users, label: rd.capacity, value: txt.guests },
     { icon: BedDouble, label: rd.bed, value: txt.bed },
-    { icon: Eye, label: rd.view, value: txt.view },
   ];
 
   return (

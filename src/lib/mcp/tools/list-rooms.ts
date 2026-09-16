@@ -5,7 +5,7 @@ export default defineTool({
   name: "list_rooms",
   title: "List rooms",
   description:
-    "List all rooms at Paço do Bispo boutique house with slug, name, short description, guest capacity, bed type and view.",
+    "List all rooms at Paço do Bispo boutique house with slug, name, short description, guest capacity and bed type.",
   inputSchema: {},
   annotations: { readOnlyHint: true, idempotentHint: true, openWorldHint: false },
   handler: () => {
@@ -16,7 +16,6 @@ export default defineTool({
       short: r.short,
       guests: r.guests,
       bed: r.bed,
-      view: r.view,
     }));
     return {
       content: [{ type: "text", text: JSON.stringify(summary, null, 2) }],

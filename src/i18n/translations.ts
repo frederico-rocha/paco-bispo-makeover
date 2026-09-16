@@ -103,7 +103,6 @@ export type Dict = {
     about: string;
     capacity: string;
     bed: string;
-    view: string;
     amenities: string;
     bookRoom: string;
     keepExploring: string;
@@ -244,7 +243,6 @@ export const translations: Record<Lang, Dict> = {
       about: "Sobre o quarto",
       capacity: "Capacidade",
       bed: "Cama",
-      view: "Vista",
       amenities: "Comodidades",
       bookRoom: "Reservar este quarto",
       keepExploring: "Continuar a explorar",
@@ -382,7 +380,6 @@ export const translations: Record<Lang, Dict> = {
       about: "About the room",
       capacity: "Capacity",
       bed: "Bed",
-      view: "View",
       amenities: "Amenities",
       bookRoom: "Book this room",
       keepExploring: "Keep exploring",
@@ -523,7 +520,6 @@ export const translations: Record<Lang, Dict> = {
       about: "Sobre la habitación",
       capacity: "Capacidad",
       bed: "Cama",
-      view: "Vistas",
       amenities: "Comodidades",
       bookRoom: "Reservar esta habitación",
       keepExploring: "Seguir explorando",
@@ -664,7 +660,6 @@ export const translations: Record<Lang, Dict> = {
       about: "À propos de la chambre",
       capacity: "Capacité",
       bed: "Lit",
-      view: "Vue",
       amenities: "Équipements",
       bookRoom: "Réserver cette chambre",
       keepExploring: "Continuer à explorer",
