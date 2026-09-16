@@ -29,7 +29,7 @@ import penthouse0633Asset from "@/assets/penthouse-063-3.jpg.asset.json";
 import penthouse0643Asset from "@/assets/penthouse-064-3.jpg.asset.json";
 import penthouse0653Asset from "@/assets/penthouse-065-3.jpg.asset.json";
 import penthouse0712Asset from "@/assets/penthouse-071-2.jpg.asset.json";
-const penthouseHero = penthouse054Asset.url;
+const penthouseHero = penthouse0534Asset.url;
 const penthouseGallery = [
   penthouse054Asset.url,
   penthouse061Asset.url,
