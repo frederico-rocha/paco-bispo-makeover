@@ -1,5 +1,6 @@
-import studioAsset from "@/assets/room-studio.jpg.asset.json";
-const studio = studioAsset.url;
+import loft1Asset from "@/assets/loft-1.jpg.asset.json";
+const loftHero = loft1Asset.url;
+const loftGallery = [loft1Asset.url];
 import penthouse0534Asset from "@/assets/penthouse-053-4.jpg.asset.json";
 import penthouse061Asset from "@/assets/penthouse-061.jpg.asset.json";
 import penthouse065Asset from "@/assets/penthouse-065.jpg.asset.json";
@@ -166,8 +167,8 @@ export const rooms: Room[] = [
     count: "Estúdio acolhedor",
     short:
       "Um ambiente amplo e descontraído, que combina conforto e personalidade para uma estadia diferente.",
-    hero: studio,
-    gallery: [studio],
+    hero: loftHero,
+    gallery: loftGallery,
     guests: "2 hóspedes",
     bed: "Cama queen-size",
     description: [
