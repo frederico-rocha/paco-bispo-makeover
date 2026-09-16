@@ -1,4 +1,4 @@
-import facade from "@/assets/DSC_0003.jpg.asset.json";
+import facade from "@/assets/DSC_0003.jpg";
 import { useI18n } from "@/i18n/LanguageContext";
 
 export const About = () => {
@@ -10,7 +10,7 @@ export const About = () => {
       <div className="container-editorial">
         <div className="overflow-hidden rounded-sm" style={{ boxShadow: "var(--shadow-soft)" }}>
           <img
-            src={facade.url}
+            src={facade}
             alt={a.imageAlt}
             className="block w-full h-auto"
             loading="lazy"
