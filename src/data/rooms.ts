@@ -1,6 +1,7 @@
 import studioAsset from "@/assets/room-studio.jpg.asset.json";
 const studio = studioAsset.url;
 import penthouse053Asset from "@/assets/penthouse-053-2.jpg.asset.json";
+import penthouse0534Asset from "@/assets/penthouse-053-4.jpg.asset.json";
 import penthouse054Asset from "@/assets/penthouse-054-2.jpg.asset.json";
 import penthouse055Asset from "@/assets/penthouse-055.jpg.asset.json";
 import penthouse056Asset from "@/assets/penthouse-056-3.jpg.asset.json";
@@ -28,7 +29,7 @@ import penthouse0633Asset from "@/assets/penthouse-063-3.jpg.asset.json";
 import penthouse0643Asset from "@/assets/penthouse-064-3.jpg.asset.json";
 import penthouse0653Asset from "@/assets/penthouse-065-3.jpg.asset.json";
 import penthouse0712Asset from "@/assets/penthouse-071-2.jpg.asset.json";
-const penthouseHero = penthouse054Asset.url;
+const penthouseHero = penthouse0534Asset.url;
 const penthouseGallery = [
   penthouse054Asset.url,
   penthouse061Asset.url,
