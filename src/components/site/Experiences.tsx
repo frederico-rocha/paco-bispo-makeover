@@ -30,6 +30,13 @@ const eventPhotos: { url: string; portrait: boolean }[] = [
   { url: event144Asset.url, portrait: true }, // cropped 853×1024 (5:6): table centered, feet visible
 ];
 
+// Pool photos for the pool section carousel (all landscape 1920×1280, 3:2).
+const poolPhotos: string[] = [
+  piscina1Asset.url,
+  piscina2Asset.url,
+  piscina3Asset.url,
+];
+
 export const Experiences = () => {
   const { t } = useI18n();
   const e = t.experiences;
