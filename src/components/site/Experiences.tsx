@@ -148,7 +148,6 @@ export const Experiences = () => {
                     <Carousel
                       className="h-full"
                       opts={{ loop: true }}
-                      setApi={setApi}
                     >
                       <CarouselContent className="h-full">
                         {item.photos.map((photo, idx) => (
