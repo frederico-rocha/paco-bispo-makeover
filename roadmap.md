@@ -1,0 +1,1 @@
+- [x] Alterar a secção A Casa: usar DSC_0003 horizontal completa e colocar o conteúdo por baixo
