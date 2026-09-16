@@ -7,7 +7,7 @@ import event89Asset from "@/assets/PacodoBispo28.02.2019-89.jpeg.asset.json";
 import event136Asset from "@/assets/PacodoBispo28.02.2019-136.jpeg.asset.json";
 import event139Asset from "@/assets/PacodoBispo28.02.2019-139.jpeg.asset.json";
 import event142Asset from "@/assets/PacodoBispo28.02.2019-142.jpeg.asset.json";
-import event144Asset from "@/assets/PacodoBispo28.02.2019-144.jpeg.asset.json";
+import event144Asset from "@/assets/event-144-centered.jpg.asset.json";
 import {
   Carousel,
   type CarouselApi,
@@ -24,7 +24,7 @@ const eventPhotos: { url: string; portrait: boolean }[] = [
   { url: event136Asset.url, portrait: true }, // 853×1280 portrait
   { url: event139Asset.url, portrait: true },
   { url: event142Asset.url, portrait: false }, // 1280×853 landscape
-  { url: event144Asset.url, portrait: true },
+  { url: event144Asset.url, portrait: true }, // cropped 853×1024 (5:6): table centered, feet visible
 ];
 
 export const Experiences = () => {
