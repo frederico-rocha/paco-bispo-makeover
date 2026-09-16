@@ -25,7 +25,7 @@ export const About = () => {
             <p className="eyebrow">{a.eyebrow}</p>
             <h2 className="font-serif-display text-4xl md:text-6xl mt-5 leading-[1.05] text-balance">
               {a.titleStart}
-              <span className="italic text-primary"> {a.titleAccent}</span>.
+              <span className="italic text-facade"> {a.titleAccent}</span>.
             </h2>
           </div>
 

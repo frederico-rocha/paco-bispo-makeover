@@ -21,6 +21,7 @@ export default {
         ink: "hsl(var(--ink))",
         paper: "hsl(var(--paper))",
         moss: "hsl(var(--moss))",
+        facade: "hsl(var(--facade))",
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",

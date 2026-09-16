@@ -1,1 +1,2 @@
 - [x] Alterar a secção A Casa: usar DSC_0003 horizontal completa e colocar o conteúdo por baixo
+- [x] Aproximar a cor do texto destacado ao terracota da fachada
