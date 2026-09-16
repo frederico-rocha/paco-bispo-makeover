@@ -24,7 +24,7 @@ const eventPhotos: { url: string; portrait: boolean }[] = [
   { url: event136Asset.url, portrait: true }, // 853×1280 portrait
   { url: event139Asset.url, portrait: true },
   { url: event142Asset.url, portrait: false }, // 1280×853 landscape
-  { url: event144Asset.url, portrait: true },
+  { url: event144Asset.url, portrait: true }, // cropped 853×1024 (5:6): table centered, feet visible
 ];
 
 export const Experiences = () => {
