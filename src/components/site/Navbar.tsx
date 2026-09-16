@@ -49,23 +49,22 @@ export const Navbar = () => {
       <nav className="container-editorial flex items-center justify-between h-20">
         <Link
           to="/"
+          aria-label="Paço do Bispo Boutique House"
           className={cn(
-            "font-serif-display text-xl md:text-2xl leading-none transition-colors rounded-sm",
+            "inline-flex items-center leading-none rounded-sm",
             "focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2",
             scrolled
-              ? "text-foreground hover:text-primary focus-visible:ring-primary focus-visible:ring-offset-background"
-              : "text-paper hover:text-paper focus-visible:ring-paper focus-visible:ring-offset-ink focus-visible:[box-shadow:0_0_0_1px_hsl(var(--ink))]"
+              ? "focus-visible:ring-primary focus-visible:ring-offset-background"
+              : "focus-visible:ring-paper focus-visible:ring-offset-ink focus-visible:[box-shadow:0_0_0_1px_hsl(var(--ink))]"
           )}
         >
-          Paço do Bispo
-          <span
-            className={cn(
-              "block text-[0.6rem] tracking-[0.4em] uppercase mt-1 font-sans transition-colors",
-              scrolled ? "text-muted-foreground" : "text-paper"
-            )}
-          >
-            Boutique House
-          </span>
+          <img
+            src={logoAsset.url}
+            alt="Paço do Bispo Boutique House"
+            width={1531}
+            height={435}
+            className="h-9 md:h-11 w-auto"
+          />
         </Link>
 
         <ul className="hidden md:flex items-center gap-9">

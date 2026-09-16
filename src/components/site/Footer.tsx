@@ -9,10 +9,14 @@ export const Footer = () => {
     <footer id="contacto" className="bg-ink text-paper py-20">
       <div className="container-editorial grid md:grid-cols-4 gap-12">
         <div className="md:col-span-2">
-          <div className="font-serif-display text-3xl">Paço do Bispo</div>
-          <div className="text-[0.65rem] tracking-[0.4em] uppercase mt-2 text-paper/60">
-            Boutique House
-          </div>
+          <img
+            src={logoAsset.url}
+            alt="Paço do Bispo Boutique House"
+            width={1531}
+            height={435}
+            className="h-16 w-auto"
+            loading="lazy"
+          />
           <p className="mt-6 text-paper/70 max-w-sm font-light leading-relaxed">
             {f.tagline}
           </p>
