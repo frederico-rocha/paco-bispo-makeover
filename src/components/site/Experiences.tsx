@@ -58,7 +58,7 @@ export const Experiences = () => {
         <div className="grid md:grid-cols-12 gap-10 md:gap-16 items-center mb-24 md:mb-36">
           <div className="md:col-span-7">
             <div
-              className="relative aspect-[4/3] overflow-hidden rounded-sm bg-muted"
+              className="relative aspect-[4/5] md:aspect-[5/6] overflow-hidden rounded-sm bg-muted/60"
               style={{ boxShadow: "var(--shadow-soft)" }}
             >
               <Carousel className="h-full" opts={{ loop: true }}>
