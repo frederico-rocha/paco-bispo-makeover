@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import poolAsset from "@/assets/pool.jpg.asset.json";
 const pool = poolAsset.url;
 import chapelAsset from "@/assets/chapel-lounge.jpg.asset.json";
