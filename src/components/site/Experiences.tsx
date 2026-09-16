@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import chapelAsset from "@/assets/chapel-lounge.jpg.asset.json";
+import chapelAsset from "@/assets/capela-centro-1.jpg.asset.json";
 const chapel = chapelAsset.url;
 import event89Asset from "@/assets/PacodoBispo28.02.2019-89.jpeg.asset.json";
 import event136Asset from "@/assets/PacodoBispo28.02.2019-136.jpeg.asset.json";
