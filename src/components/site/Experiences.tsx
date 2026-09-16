@@ -31,6 +31,22 @@ export const Experiences = () => {
   const { t } = useI18n();
   const e = t.experiences;
 
+  const [activeIndex, setActiveIndex] = useState(0);
+  const [api, setApi] = useState<CarouselApi>();
+
+  React.useEffect(() => {
+    if (!api) return;
+    const onSelect = () => setActiveIndex(api.selectedScrollSnap());
+    onSelect();
+    api.on("select", onSelect);
+    api.on("reInit", onSelect);
+    return () => {
+      api.off("select", onSelect);
+    };
+  }, [api]);
+
+  const activePortrait = eventPhotos[activeIndex]?.portrait ?? false;
+
   const items = [
     {
       img: pool,
@@ -61,15 +77,19 @@ export const Experiences = () => {
         <div className="grid md:grid-cols-12 gap-10 md:gap-16 items-center mb-24 md:mb-36">
           <div className="md:col-span-7">
             <div
-              className="relative aspect-[4/5] md:aspect-[5/6] overflow-hidden rounded-sm bg-muted/60"
+              className={`relative overflow-hidden rounded-sm bg-muted/60 transition-[aspect-ratio] duration-500 ${
+                activePortrait
+                  ? "aspect-[4/5] md:aspect-[5/6]"
+                  : "aspect-[4/3] md:aspect-[3/2]"
+              }`}
               style={{ boxShadow: "var(--shadow-soft)" }}
             >
-              <Carousel className="h-full" opts={{ loop: true }}>
+              <Carousel className="h-full" opts={{ loop: true }} setApi={setApi}>
                 <CarouselContent className="h-full">
                   {eventPhotos.map((photo, i) => (
-                    <CarouselItem key={photo} className="h-full">
+                    <CarouselItem key={photo.url} className="h-full">
                       <img
-                        src={photo}
+                        src={photo.url}
                         alt={`${e.eventsAlt} — ${i + 1}`}
                         className="w-full h-full object-contain"
                         loading={i === 0 ? "eager" : "lazy"}
