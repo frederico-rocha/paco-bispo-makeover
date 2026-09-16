@@ -69,10 +69,6 @@ import standard1202Asset from "@/assets/standard-120-2.jpg.asset.json";
 const standardHero = standard0272Asset.url;
 const standardGallery = [
   standard0262Asset.url,
-  standard0272Asset.url,
-  standard1202Asset.url,
-  standard0292Asset.url,
-  standard0282Asset.url,
   standard0302Asset.url,
   standard0312Asset.url,
 ];
