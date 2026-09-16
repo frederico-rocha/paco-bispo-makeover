@@ -144,14 +144,39 @@ export const Experiences = () => {
                   className="relative aspect-[16/10] overflow-hidden rounded-sm"
                   style={{ boxShadow: "var(--shadow-soft)" }}
                 >
-                  <img
-                    src={item.img}
-                    alt={item.title}
-                    className="w-full h-full object-cover object-[50%_40%]"
-                    loading="lazy"
-                    width={1920}
-                    height={1200}
-                  />
+                  {item.photos ? (
+                    <Carousel
+                      className="h-full"
+                      opts={{ loop: true }}
+                      setApi={setApi}
+                    >
+                      <CarouselContent className="h-full">
+                        {item.photos.map((photo, idx) => (
+                          <CarouselItem key={photo} className="h-full">
+                            <img
+                              src={photo}
+                              alt={`${item.title} — ${idx + 1}`}
+                              className="w-full h-full object-cover object-[50%_50%]"
+                              loading={idx === 0 ? "eager" : "lazy"}
+                              width={1920}
+                              height={1280}
+                            />
+                          </CarouselItem>
+                        ))}
+                      </CarouselContent>
+                      <CarouselPrevious className="left-4" />
+                      <CarouselNext className="right-4" />
+                    </Carousel>
+                  ) : (
+                    <img
+                      src={item.img}
+                      alt={item.title}
+                      className="w-full h-full object-cover object-[50%_40%]"
+                      loading="lazy"
+                      width={1920}
+                      height={1200}
+                    />
+                  )}
                 </div>
               </div>
               <div className="md:col-span-5">
