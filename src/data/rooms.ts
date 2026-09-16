@@ -196,7 +196,6 @@ export type Room = {
   gallery: string[];
   guests: string;
   bed: string;
-  view: string;
   description: string[];
   amenities: string[];
 };
@@ -222,7 +221,6 @@ export const rooms: Room[] = [
     gallery: standardGallery,
     guests: "2 hóspedes",
     bed: "Cama king-size",
-    view: "Pátio interior",
     description: [
       "O quarto Standard é o ponto de partida da casa: espaço acolhedor, luz natural e um enquadramento sereno sobre o pátio interior.",
       "Um refúgio simples e acolhedor, ideal para estadias curtas em Sintra.",
@@ -239,7 +237,6 @@ export const rooms: Room[] = [
     gallery: deluxeGallery,
     guests: "2 hóspedes",
     bed: "Cama king-size",
-    view: "Jardim ou pátio",
     description: [
       "Um espaço tranquilo e confortável, pensado para proporcionar uma estadia agradável e especial.",
       "Restauradas a partir das alas originais do palacete setecentista, as suítes Deluxe conservam tectos altos, soalhos largos em pinho e detalhes em azulejo do século XVIII.",
@@ -255,7 +252,6 @@ export const rooms: Room[] = [
     gallery: superiorGallery,
     guests: "2 hóspedes",
     bed: "Cama king-size",
-    view: "Jardim",
     description: [
       "Um passo acima do Standard, o quarto Superior oferece mais área, uma zona de estar e vista sobre o jardim.",
       "Mais espaço, mais conforto — uma experiência Superior, sem renunciar à discrição da casa.",
@@ -272,7 +268,6 @@ export const rooms: Room[] = [
     gallery: penthouseGallery,
     guests: "2–4 hóspedes",
     bed: "Cama king + sofá-cama",
-    view: "Panorâmica sobre a serra",
     description: [
       "A penthouse ocupa todo o último piso da torre original. Suite familiar equipada com kitchenette, sala de estar e banheira de hidromassagem.",
       "Pensada para ocasiões raras — um aniversário, uma lua-de-mel, uma escapadinha em família com a paisagem como única companhia.",
@@ -289,7 +284,6 @@ export const rooms: Room[] = [
     gallery: [studio],
     guests: "2 hóspedes",
     bed: "Cama queen-size",
-    view: "Jardim",
     description: [
       "Um ambiente amplo e descontraído, que combina conforto e personalidade para uma estadia diferente.",
       "O Loft é o espaço mais informal da casa — perfeito para quem procura liberdade e carácter em Sintra.",

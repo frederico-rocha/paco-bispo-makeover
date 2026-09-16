@@ -1,5 +1,5 @@
 import { Link, useParams } from "react-router-dom";
-import { ArrowLeft, ArrowUpRight, BedDouble, Eye, Users } from "lucide-react";
+import { ArrowLeft, ArrowUpRight, BedDouble, Users } from "lucide-react";
 import { Navbar } from "@/components/site/Navbar";
 import { Footer } from "@/components/site/Footer";
 import { getRoom, rooms } from "@/data/rooms";

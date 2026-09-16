@@ -6,7 +6,6 @@ export type RoomText = {
   short: string;
   guests: string;
   bed: string;
-  view: string;
   description: string[];
 };
 
