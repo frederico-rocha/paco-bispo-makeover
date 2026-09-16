@@ -1,6 +1,7 @@
 import studioAsset from "@/assets/room-studio.jpg.asset.json";
 const studio = studioAsset.url;
 import penthouse053Asset from "@/assets/penthouse-053-2.jpg.asset.json";
+import penthouse0534Asset from "@/assets/penthouse-053-4.jpg.asset.json";
 import penthouse054Asset from "@/assets/penthouse-054-2.jpg.asset.json";
 import penthouse055Asset from "@/assets/penthouse-055.jpg.asset.json";
 import penthouse056Asset from "@/assets/penthouse-056-3.jpg.asset.json";
