@@ -167,8 +167,8 @@ export const rooms: Room[] = [
     count: "Estúdio acolhedor",
     short:
       "Um ambiente amplo e descontraído, que combina conforto e personalidade para uma estadia diferente.",
-    hero: studio,
-    gallery: [studio],
+    hero: loftHero,
+    gallery: loftGallery,
     guests: "2 hóspedes",
     bed: "Cama queen-size",
     description: [
