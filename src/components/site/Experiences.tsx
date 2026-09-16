@@ -2,9 +2,27 @@ import poolAsset from "@/assets/pool.jpg.asset.json";
 const pool = poolAsset.url;
 import chapelAsset from "@/assets/chapel-lounge.jpg.asset.json";
 const chapel = chapelAsset.url;
-import eventsAsset from "@/assets/hero-paco.jpg.asset.json";
-const events = eventsAsset.url;
+import event89Asset from "@/assets/PacodoBispo28.02.2019-89.jpeg.asset.json";
+import event136Asset from "@/assets/PacodoBispo28.02.2019-136.jpeg.asset.json";
+import event139Asset from "@/assets/PacodoBispo28.02.2019-139.jpeg.asset.json";
+import event142Asset from "@/assets/PacodoBispo28.02.2019-142.jpeg.asset.json";
+import event144Asset from "@/assets/PacodoBispo28.02.2019-144.jpeg.asset.json";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
 import { useI18n } from "@/i18n/LanguageContext";
+
+const eventPhotos = [
+  event89Asset.url,
+  event136Asset.url,
+  event139Asset.url,
+  event142Asset.url,
+  event144Asset.url,
+];
 
 export const Experiences = () => {
   const { t } = useI18n();
@@ -43,14 +61,24 @@ export const Experiences = () => {
               className="relative aspect-[16/10] overflow-hidden rounded-sm"
               style={{ boxShadow: "var(--shadow-soft)" }}
             >
-              <img
-                src={events}
-                alt={e.eventsAlt}
-                className="w-full h-full object-cover"
-                loading="lazy"
-                width={1920}
-                height={1200}
-              />
+              <Carousel className="h-full" opts={{ loop: true }}>
+                <CarouselContent className="h-full">
+                  {eventPhotos.map((photo, i) => (
+                    <CarouselItem key={photo} className="h-full">
+                      <img
+                        src={photo}
+                        alt={`${e.eventsAlt} — ${i + 1}`}
+                        className="w-full h-full object-cover"
+                        loading={i === 0 ? "eager" : "lazy"}
+                        width={1920}
+                        height={1200}
+                      />
+                    </CarouselItem>
+                  ))}
+                </CarouselContent>
+                <CarouselPrevious className="left-4" />
+                <CarouselNext className="right-4" />
+              </Carousel>
             </div>
           </div>
           <div className="md:col-span-5">
