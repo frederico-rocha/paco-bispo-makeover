@@ -1,6 +1,4 @@
 import React, { useState } from "react";
-import poolAsset from "@/assets/pool.jpg.asset.json";
-const pool = poolAsset.url;
 import chapelAsset from "@/assets/chapel-lounge.jpg.asset.json";
 const chapel = chapelAsset.url;
 import event89Asset from "@/assets/PacodoBispo28.02.2019-89.jpeg.asset.json";
@@ -8,6 +6,9 @@ import event136Asset from "@/assets/PacodoBispo28.02.2019-136.jpeg.asset.json";
 import event139Asset from "@/assets/PacodoBispo28.02.2019-139.jpeg.asset.json";
 import event142Asset from "@/assets/PacodoBispo28.02.2019-142.jpeg.asset.json";
 import event144Asset from "@/assets/event-144-centered.jpg.asset.json";
+import piscina1Asset from "@/assets/piscina-1.jpg.asset.json";
+import piscina2Asset from "@/assets/piscina-2.jpg.asset.json";
+import piscina3Asset from "@/assets/piscina-3.jpg.asset.json";
 import {
   Carousel,
   type CarouselApi,
@@ -25,6 +26,13 @@ const eventPhotos: { url: string; portrait: boolean }[] = [
   { url: event139Asset.url, portrait: true },
   { url: event142Asset.url, portrait: false }, // 1280×853 landscape
   { url: event144Asset.url, portrait: true }, // cropped 853×1024 (5:6): table centered, feet visible
+];
+
+// Pool photos for the pool section carousel (all landscape 1920×1280, 3:2).
+const poolPhotos: string[] = [
+  piscina1Asset.url,
+  piscina2Asset.url,
+  piscina3Asset.url,
 ];
 
 export const Experiences = () => {
@@ -49,7 +57,7 @@ export const Experiences = () => {
 
   const items = [
     {
-      img: pool,
+      photos: poolPhotos,
       eyebrow: e.poolEyebrow,
       title: e.poolTitle,
       desc: e.poolDesc,
@@ -134,14 +142,38 @@ export const Experiences = () => {
                   className="relative aspect-[16/10] overflow-hidden rounded-sm"
                   style={{ boxShadow: "var(--shadow-soft)" }}
                 >
-                  <img
-                    src={item.img}
-                    alt={item.title}
-                    className="w-full h-full object-cover object-[50%_40%]"
-                    loading="lazy"
-                    width={1920}
-                    height={1200}
-                  />
+                  {item.photos ? (
+                    <Carousel
+                      className="h-full"
+                      opts={{ loop: true }}
+                    >
+                      <CarouselContent className="h-full">
+                        {item.photos.map((photo, idx) => (
+                          <CarouselItem key={photo} className="h-full">
+                            <img
+                              src={photo}
+                              alt={`${item.title} — ${idx + 1}`}
+                              className="w-full h-full object-cover object-[50%_50%]"
+                              loading={idx === 0 ? "eager" : "lazy"}
+                              width={1920}
+                              height={1280}
+                            />
+                          </CarouselItem>
+                        ))}
+                      </CarouselContent>
+                      <CarouselPrevious className="left-4" />
+                      <CarouselNext className="right-4" />
+                    </Carousel>
+                  ) : (
+                    <img
+                      src={item.img}
+                      alt={item.title}
+                      className="w-full h-full object-cover object-[50%_40%]"
+                      loading="lazy"
+                      width={1920}
+                      height={1200}
+                    />
+                  )}
                 </div>
               </div>
               <div className="md:col-span-5">
