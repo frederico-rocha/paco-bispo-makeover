@@ -155,7 +155,7 @@ export const translations: Record<Lang, Dict> = {
       statLoft: "Loft",
       statPenthouse: "Penthouse",
       imageAlt:
-        "Pátio exterior do Paço do Bispo com fachada cor de terracota, telhado de telha e escultura de cavalos no centro do lajedo",
+        "Fachada principal do Paço do Bispo, com paredes cor de terracota, telhado de telha e cruzeiro de pedra",
     },
     rooms: {
       eyebrow: "Estadia",
@@ -296,7 +296,7 @@ export const translations: Record<Lang, Dict> = {
       statLoft: "Loft",
       statPenthouse: "Penthouse",
       imageAlt:
-        "Outdoor courtyard of Paço do Bispo with terracotta façade, tiled roof and horse sculpture at the centre of the paving",
+        "Main façade of Paço do Bispo, with terracotta walls, tiled roof and stone cross",
     },
     rooms: {
       eyebrow: "Stay",
@@ -434,7 +434,7 @@ export const translations: Record<Lang, Dict> = {
       statLoft: "Loft",
       statPenthouse: "Penthouse",
       imageAlt:
-        "Patio exterior del Paço do Bispo con fachada color terracota, tejado de teja y escultura de caballos en el centro del empedrado",
+        "Fachada principal del Paço do Bispo, con paredes color terracota, tejado de teja y crucero de piedra",
     },
     rooms: {
       eyebrow: "Estancia",
@@ -575,7 +575,7 @@ export const translations: Record<Lang, Dict> = {
       statLoft: "Loft",
       statPenthouse: "Penthouse",
       imageAlt:
-        "Cour extérieure du Paço do Bispo avec façade terracotta, toit de tuiles et sculpture de chevaux au centre du dallage",
+        "Façade principale du Paço do Bispo, avec murs couleur terre cuite, toit de tuiles et croix en pierre",
     },
     rooms: {
       eyebrow: "Séjour",
