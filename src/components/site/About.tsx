@@ -14,8 +14,8 @@ export const About = () => {
             alt={a.imageAlt}
             className="block w-full h-auto"
             loading="lazy"
-            width={1152}
-            height={768}
+            width={1920}
+            height={1280}
             sizes="(min-width: 1280px) 1200px, calc(100vw - 3rem)"
           />
         </div>
