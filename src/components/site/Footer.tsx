@@ -11,7 +11,7 @@ export const Footer = () => {
       <div className="container-editorial grid md:grid-cols-4 gap-12">
         <div className="md:col-span-2">
           <img
-            src={logoAsset.url}
+            src={logoUrl}
             alt="Paço do Bispo Boutique House"
             width={1531}
             height={435}

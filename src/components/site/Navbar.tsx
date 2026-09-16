@@ -60,7 +60,7 @@ export const Navbar = () => {
           )}
         >
           <img
-            src={logoAsset.url}
+            src={logoUrl}
             alt="Paço do Bispo Boutique House"
             width={1531}
             height={435}
