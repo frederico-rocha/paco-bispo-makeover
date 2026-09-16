@@ -61,14 +61,24 @@ export const Experiences = () => {
               className="relative aspect-[16/10] overflow-hidden rounded-sm"
               style={{ boxShadow: "var(--shadow-soft)" }}
             >
-              <img
-                src={events}
-                alt={e.eventsAlt}
-                className="w-full h-full object-cover"
-                loading="lazy"
-                width={1920}
-                height={1200}
-              />
+              <Carousel className="h-full" opts={{ loop: true }}>
+                <CarouselContent className="h-full">
+                  {eventPhotos.map((photo, i) => (
+                    <CarouselItem key={photo} className="h-full">
+                      <img
+                        src={photo}
+                        alt={`${e.eventsAlt} — ${i + 1}`}
+                        className="w-full h-full object-cover"
+                        loading={i === 0 ? "eager" : "lazy"}
+                        width={1920}
+                        height={1200}
+                      />
+                    </CarouselItem>
+                  ))}
+                </CarouselContent>
+                <CarouselPrevious className="left-4" />
+                <CarouselNext className="right-4" />
+              </Carousel>
             </div>
           </div>
           <div className="md:col-span-5">
