@@ -56,11 +56,6 @@ const RoomDetail = () => {
               <h2 className="font-serif-display text-3xl md:text-5xl mt-4 leading-[1.1] text-balance">
                 <span className="italic">{txt.short}</span>
               </h2>
-              <div className="mt-10 space-y-6 text-foreground/75 leading-relaxed font-light max-w-xl">
-                {txt.description.map((p, i) => (
-                  <p key={i}>{p}</p>
-                ))}
-              </div>
             </div>
 
             <aside className="md:col-span-5 md:pl-8">
