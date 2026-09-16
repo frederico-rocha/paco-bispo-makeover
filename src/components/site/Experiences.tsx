@@ -58,7 +58,7 @@ export const Experiences = () => {
         <div className="grid md:grid-cols-12 gap-10 md:gap-16 items-center mb-24 md:mb-36">
           <div className="md:col-span-7">
             <div
-              className="relative aspect-[16/10] overflow-hidden rounded-sm"
+              className="relative aspect-[4/3] overflow-hidden rounded-sm bg-muted"
               style={{ boxShadow: "var(--shadow-soft)" }}
             >
               <Carousel className="h-full" opts={{ loop: true }}>
@@ -68,7 +68,7 @@ export const Experiences = () => {
                       <img
                         src={photo}
                         alt={`${e.eventsAlt} — ${i + 1}`}
-                        className="w-full h-full object-cover"
+                        className="w-full h-full object-contain"
                         loading={i === 0 ? "eager" : "lazy"}
                         width={1920}
                         height={1200}
