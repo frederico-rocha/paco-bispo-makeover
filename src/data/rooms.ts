@@ -80,6 +80,9 @@ import superior079Asset from "@/assets/superior-079.jpg.asset.json";
 import superior046Asset from "@/assets/superior-046.jpg.asset.json";
 import superior052Asset from "@/assets/superior-052.jpg.asset.json";
 import superior039Asset from "@/assets/superior-039.jpg.asset.json";
+import superior121Asset from "@/assets/superior-121.jpg.asset.json";
+import superior043Asset from "@/assets/superior-043.jpg.asset.json";
+import superior044Asset from "@/assets/superior-044.jpg.asset.json";
 const superiorHero = superior039Asset.url;
 const superiorGallery = [
   superior039Asset.url,
@@ -92,6 +95,9 @@ const superiorGallery = [
   superior079Asset.url,
   superior046Asset.url,
   superior052Asset.url,
+  superior121Asset.url,
+  superior043Asset.url,
+  superior044Asset.url,
 ];
 import deluxe1Asset from "@/assets/deluxe-102_1.jpg.asset.json";
 import deluxeWc1Asset from "@/assets/deluxe-102_wc1.jpg.asset.json";
