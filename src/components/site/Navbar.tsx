@@ -4,7 +4,7 @@ import { Link, useLocation } from "react-router-dom";
 import { cn } from "@/lib/utils";
 import { useI18n } from "@/i18n/LanguageContext";
 import { LanguageSwitcher } from "./LanguageSwitcher";
-import logoAsset from "@/assets/logo-paco-do-bispo.png.asset.json";
+import logoUrl from "@/assets/logo-paco-do-bispo.png";
 
 export const Navbar = () => {
   const { t } = useI18n();

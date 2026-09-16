@@ -1,6 +1,6 @@
 import { Facebook, Instagram } from "lucide-react";
 import { useI18n } from "@/i18n/LanguageContext";
-import logoAsset from "@/assets/logo-paco-do-bispo.png.asset.json";
+import logoUrl from "@/assets/logo-paco-do-bispo.png";
 
 export const Footer = () => {
   const { t } = useI18n();
