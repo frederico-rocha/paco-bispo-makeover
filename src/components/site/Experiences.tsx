@@ -1,3 +1,4 @@
+import { useState } from "react";
 import poolAsset from "@/assets/pool.jpg.asset.json";
 const pool = poolAsset.url;
 import chapelAsset from "@/assets/chapel-lounge.jpg.asset.json";
@@ -9,6 +10,7 @@ import event142Asset from "@/assets/PacodoBispo28.02.2019-142.jpeg.asset.json";
 import event144Asset from "@/assets/PacodoBispo28.02.2019-144.jpeg.asset.json";
 import {
   Carousel,
+  type CarouselApi,
   CarouselContent,
   CarouselItem,
   CarouselNext,
@@ -16,12 +18,13 @@ import {
 } from "@/components/ui/carousel";
 import { useI18n } from "@/i18n/LanguageContext";
 
-const eventPhotos = [
-  event89Asset.url,
-  event136Asset.url,
-  event139Asset.url,
-  event142Asset.url,
-  event144Asset.url,
+// Each event photo with its native orientation so the carousel frame can adapt.
+const eventPhotos: { url: string; portrait: boolean }[] = [
+  { url: event89Asset.url, portrait: false }, // 1280×853 landscape
+  { url: event136Asset.url, portrait: true }, // 853×1280 portrait
+  { url: event139Asset.url, portrait: true },
+  { url: event142Asset.url, portrait: false }, // 1280×853 landscape
+  { url: event144Asset.url, portrait: true },
 ];
 
 export const Experiences = () => {
