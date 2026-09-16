@@ -61,18 +61,11 @@ const penthouseGallery = [
 ];
 import standard0262Asset from "@/assets/standard-026-2.jpg.asset.json";
 import standard0272Asset from "@/assets/standard-027-2.jpg.asset.json";
-import standard0282Asset from "@/assets/standard-028-2.jpg.asset.json";
-import standard0292Asset from "@/assets/standard-029-2.jpg.asset.json";
 import standard0302Asset from "@/assets/standard-030-2.jpg.asset.json";
 import standard0312Asset from "@/assets/standard-031-2.jpg.asset.json";
-import standard1202Asset from "@/assets/standard-120-2.jpg.asset.json";
 const standardHero = standard0272Asset.url;
 const standardGallery = [
   standard0262Asset.url,
-  standard0272Asset.url,
-  standard1202Asset.url,
-  standard0292Asset.url,
-  standard0282Asset.url,
   standard0302Asset.url,
   standard0312Asset.url,
 ];
