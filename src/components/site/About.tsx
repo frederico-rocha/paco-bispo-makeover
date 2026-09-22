@@ -1,4 +1,5 @@
-import facade from "@/assets/DSC_0003.jpg";
+import facadeAsset from "@/assets/fachada-paco-bispo.png.asset.json";
+const facade = facadeAsset.url;
 import { useI18n } from "@/i18n/LanguageContext";
 
 export const About = () => {
