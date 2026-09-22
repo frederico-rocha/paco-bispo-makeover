@@ -89,13 +89,17 @@ export type Dict = {
       string
     >;
     captions: {
+      facade: string;
       house: string;
-      suite: string;
-      chapel: string;
       pool: string;
-      loft: string;
-      poolArea: string;
+      chapel: string;
+      events: string;
+      breakfast: string;
+      standard: string;
+      superior: string;
+      deluxe: string;
       penthouse: string;
+      loft: string;
       sintra: string;
     };
   };
@@ -229,13 +233,17 @@ export const translations: Record<Lang, Dict> = {
         surroundings: "Envolvente",
       },
       captions: {
+        facade: "A fachada da casa",
         house: "A casa ao amanhecer",
-        suite: "Suíte principal",
-        chapel: "Lounge na antiga capela",
         pool: "Piscina panorâmica",
-        loft: "Loft com vista",
-        poolArea: "Área da piscina",
+        chapel: "Lounge na antiga capela",
+        events: "Sala de eventos",
+        breakfast: "Sala de pequenos-almoços",
+        standard: "Quarto Standard",
+        superior: "Quarto Superior",
+        deluxe: "Quarto Deluxe",
         penthouse: "Penthouse — terraço privado",
+        loft: "Loft",
         sintra: "Serra de Sintra",
       },
     },
@@ -366,13 +374,17 @@ export const translations: Record<Lang, Dict> = {
         surroundings: "Surroundings",
       },
       captions: {
+        facade: "The house façade",
         house: "The house at dawn",
-        suite: "Main suite",
-        chapel: "Lounge in the former chapel",
         pool: "Panoramic pool",
-        loft: "Loft with a view",
-        poolArea: "Pool area",
+        chapel: "Lounge in the former chapel",
+        events: "Events room",
+        breakfast: "Breakfast room",
+        standard: "Standard room",
+        superior: "Superior room",
+        deluxe: "Deluxe room",
         penthouse: "Penthouse — private terrace",
+        loft: "Loft",
         sintra: "Sintra hills",
       },
     },
