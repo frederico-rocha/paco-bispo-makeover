@@ -3,45 +3,80 @@ import { Link } from "react-router-dom";
 import { ArrowLeft, X } from "lucide-react";
 import { Navbar } from "@/components/site/Navbar";
 import { Footer } from "@/components/site/Footer";
+import { rooms } from "@/data/rooms";
 import heroAsset from "@/assets/hero-paco.jpg.asset.json";
-const hero = heroAsset.url;
-import suiteAsset from "@/assets/room-suite.jpg.asset.json";
-const suite = suiteAsset.url;
-import studioAsset from "@/assets/room-studio.jpg.asset.json";
-const studio = studioAsset.url;
-import penthouseAsset from "@/assets/room-penthouse.jpg.asset.json";
-const penthouse = penthouseAsset.url;
-import poolAsset from "@/assets/pool.jpg.asset.json";
-const pool = poolAsset.url;
-import chapelAsset from "@/assets/chapel-lounge.jpg.asset.json";
-const chapel = chapelAsset.url;
-import houseDetailAsset from "@/assets/house-detail.jpg.asset.json";
-const houseDetail = houseDetailAsset.url;
+import facadeAsset from "@/assets/fachada-paco-bispo.png.asset.json";
+import piscina1Asset from "@/assets/piscina-1.jpg.asset.json";
+import piscina2Asset from "@/assets/piscina-2.jpg.asset.json";
+import piscina3Asset from "@/assets/piscina-3.jpg.asset.json";
+import chapelAsset from "@/assets/capela-centro-1.jpg.asset.json";
+import event89Asset from "@/assets/PacodoBispo28.02.2019-89.jpeg.asset.json";
+import event136Asset from "@/assets/PacodoBispo28.02.2019-136.jpeg.asset.json";
+import event139Asset from "@/assets/PacodoBispo28.02.2019-139.jpeg.asset.json";
+import event142Asset from "@/assets/PacodoBispo28.02.2019-142.jpeg.asset.json";
+import event144Asset from "@/assets/event-144-centered.jpg.asset.json";
+import breakfast008Asset from "@/assets/breakfast-008.jpg.asset.json";
+import breakfast004Asset from "@/assets/breakfast-004.jpg.asset.json";
+import breakfast007Asset from "@/assets/breakfast-007.jpg.asset.json";
 import sintraAsset from "@/assets/sintra.jpg.asset.json";
-const sintra = sintraAsset.url;
 import { useI18n } from "@/i18n/LanguageContext";
 
-type CatKey = "exterior" | "rooms" | "spaces" | "details" | "surroundings";
+type CatKey = "exterior" | "rooms" | "spaces" | "surroundings";
 
 type CaptionKey =
+  | "facade"
   | "house"
-  | "suite"
-  | "chapel"
   | "pool"
-  | "loft"
-  | "poolArea"
+  | "chapel"
+  | "events"
+  | "breakfast"
+  | "standard"
+  | "superior"
+  | "deluxe"
   | "penthouse"
+  | "loft"
   | "sintra";
 
-const media: { src: string; key: CaptionKey; cat: CatKey }[] = [
-  { src: hero, key: "house", cat: "exterior" },
-  { src: suite, key: "suite", cat: "rooms" },
-  { src: chapel, key: "chapel", cat: "spaces" },
-  { src: pool, key: "pool", cat: "exterior" },
-  { src: studio, key: "loft", cat: "rooms" },
-  { src: houseDetail, key: "poolArea", cat: "exterior" },
-  { src: penthouse, key: "penthouse", cat: "rooms" },
-  { src: sintra, key: "sintra", cat: "surroundings" },
+type MediaItem = { src: string; key: CaptionKey; cat: CatKey };
+
+const exteriorMedia: MediaItem[] = [
+  { src: facadeAsset.url, key: "facade", cat: "exterior" },
+  { src: heroAsset.url, key: "house", cat: "exterior" },
+  { src: piscina1Asset.url, key: "pool", cat: "exterior" },
+  { src: piscina2Asset.url, key: "pool", cat: "exterior" },
+  { src: piscina3Asset.url, key: "pool", cat: "exterior" },
+];
+
+const spacesMedia: MediaItem[] = [
+  { src: chapelAsset.url, key: "chapel", cat: "spaces" },
+  { src: breakfast008Asset.url, key: "breakfast", cat: "spaces" },
+  { src: breakfast004Asset.url, key: "breakfast", cat: "spaces" },
+  { src: breakfast007Asset.url, key: "breakfast", cat: "spaces" },
+  { src: event89Asset.url, key: "events", cat: "spaces" },
+  { src: event136Asset.url, key: "events", cat: "spaces" },
+  { src: event139Asset.url, key: "events", cat: "spaces" },
+  { src: event142Asset.url, key: "events", cat: "spaces" },
+  { src: event144Asset.url, key: "events", cat: "spaces" },
+];
+
+const surroundingsMedia: MediaItem[] = [
+  { src: sintraAsset.url, key: "sintra", cat: "surroundings" },
+];
+
+const roomMedia: MediaItem[] = rooms.flatMap((room) => {
+  const urls = [room.hero, ...room.gallery.filter((u) => u !== room.hero)];
+  return urls.map((src) => ({
+    src,
+    key: room.slug as CaptionKey,
+    cat: "rooms" as CatKey,
+  }));
+});
+
+const media: MediaItem[] = [
+  ...exteriorMedia,
+  ...roomMedia,
+  ...spacesMedia,
+  ...surroundingsMedia,
 ];
 
 const catKeys: (CatKey | "all")[] = [
@@ -49,7 +84,6 @@ const catKeys: (CatKey | "all")[] = [
   "exterior",
   "rooms",
   "spaces",
-  "details",
   "surroundings",
 ];
 
@@ -116,7 +150,7 @@ const Gallery = () => {
           <div className="columns-1 sm:columns-2 lg:columns-3 gap-4 md:gap-6 [column-fill:_balance]">
             {filtered.map((item, i) => (
               <button
-                key={item.caption}
+                key={`${item.src}-${i}`}
                 onClick={() => setLightbox(i)}
                 className="group mb-4 md:mb-6 block w-full break-inside-avoid overflow-hidden rounded-sm bg-muted"
               >
