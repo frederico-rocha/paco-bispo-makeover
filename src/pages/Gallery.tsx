@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 import { ArrowLeft, X } from "lucide-react";
 import { Navbar } from "@/components/site/Navbar";
 import { Footer } from "@/components/site/Footer";
@@ -105,6 +106,10 @@ const Gallery = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <Helmet>
+        <title>{`${g.eyebrow} — Paço do Bispo Boutique House`}</title>
+        <meta name="description" content={g.intro} />
+      </Helmet>
       <Navbar />
 
       <section className="pt-36 md:pt-44 pb-16 md:pb-20">

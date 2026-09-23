@@ -1,4 +1,5 @@
 import { Link, useParams } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 import { ArrowLeft, ArrowUpRight, BedDouble, Users } from "lucide-react";
 import { Navbar } from "@/components/site/Navbar";
 import { Footer } from "@/components/site/Footer";
@@ -24,6 +25,10 @@ const RoomDetail = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <Helmet>
+        <title>{`${txt.name} — Paço do Bispo Boutique House`}</title>
+        <meta name="description" content={txt.short} />
+      </Helmet>
       <Navbar />
 
       <article>
