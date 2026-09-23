@@ -31,7 +31,7 @@
       {
         "name": "get_room",
         "title": "Get room details",
-        "description": "Return full details for a single room by slug: description, amenities, size, capacity and view. Use list_rooms to discover valid slugs.",
+        "description": "Return full details for a single room by slug: description, amenities, capacity and bed type. Use list_rooms to discover valid slugs.",
         "annotations": {
           "readOnlyHint": true,
           "idempotentHint": true,

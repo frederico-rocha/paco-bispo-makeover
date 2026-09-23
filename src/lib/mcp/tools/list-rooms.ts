@@ -1,5 +1,5 @@
 import { defineTool } from "@lovable.dev/mcp-js";
-import { rooms } from "@/data/rooms";
+import { roomsInfo } from "../../../data/rooms-info";
 
 export default defineTool({
   name: "list_rooms",
@@ -9,7 +9,7 @@ export default defineTool({
   inputSchema: {},
   annotations: { readOnlyHint: true, idempotentHint: true, openWorldHint: false },
   handler: () => {
-    const summary = rooms.map((r) => ({
+    const summary = roomsInfo.map((r) => ({
       slug: r.slug,
       name: r.name,
       count: r.count,
