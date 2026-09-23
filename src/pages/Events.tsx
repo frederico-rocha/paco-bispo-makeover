@@ -26,7 +26,7 @@ const eventPhotos = [
 ];
 
 const Events = () => {
-  const { t, anchorHref } = useI18n();
+  const { t } = useI18n();
   const p = t.eventsPage;
   const title = `${p.metaTitle}`;
   const description = p.metaDescription;
@@ -51,7 +51,7 @@ const Events = () => {
 
       <div className="container-editorial pt-28 md:pt-36 pb-24 md:pb-36">
         <Link
-          to={anchorHref("/")}
+          to="/"
           className="inline-flex items-center gap-2 text-sm tracking-[0.2em] uppercase text-foreground/60 hover:text-primary transition-colors"
         >
           <ArrowLeft className="w-4 h-4" />
