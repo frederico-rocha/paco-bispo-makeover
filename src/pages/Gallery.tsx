@@ -5,6 +5,7 @@ import { ArrowLeft, X } from "lucide-react";
 import { Navbar } from "@/components/site/Navbar";
 import { Footer } from "@/components/site/Footer";
 import { rooms } from "@/data/rooms";
+import { SITE_URL, absoluteUrl } from "@/lib/seo";
 import heroAsset from "@/assets/hero-paco.jpg.asset.json";
 import facadeAsset from "@/assets/fachada-paco-bispo.png.asset.json";
 import piscina1Asset from "@/assets/piscina-1.jpg.asset.json";
