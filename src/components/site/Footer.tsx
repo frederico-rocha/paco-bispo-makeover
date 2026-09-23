@@ -24,14 +24,14 @@ export const Footer = () => {
         </div>
 
         <div>
-          <h4 className="text-xs uppercase tracking-[0.28em] text-paper/60">{f.visit}</h4>
+          <h3 className="text-xs uppercase tracking-[0.28em] text-paper/60">{f.visit}</h3>
           <address className="not-italic mt-5 text-paper/85 leading-relaxed font-light whitespace-pre-line">
             {f.address}
           </address>
         </div>
 
         <div>
-          <h4 className="text-xs uppercase tracking-[0.28em] text-paper/60">{f.contact}</h4>
+          <h3 className="text-xs uppercase tracking-[0.28em] text-paper/60">{f.contact}</h3>
           <ul className="mt-5 space-y-2 text-paper/85 font-light">
             <li><a href="mailto:geral@pacodobispoboutiquehouse.com" className="hover:text-primary-glow">geral@pacodobispoboutiquehouse.com</a></li>
             <li><a href="tel:+351219243435" className="hover:text-primary-glow">(+351) 21 924 34 35</a></li>

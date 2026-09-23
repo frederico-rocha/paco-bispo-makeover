@@ -143,6 +143,7 @@ export const Hero = () => {
           {h.eyebrow}
         </p>
         <h1 className="font-serif-display text-paper text-5xl md:text-7xl lg:text-8xl mt-5 max-w-5xl leading-[1.02] text-balance reveal reveal-delay-1">
+          <span className="sr-only">Paço do Bispo Boutique House — </span>
           {h.titleLine1}
           <br />
           <span className="italic font-light">{h.titleLine2}</span>
