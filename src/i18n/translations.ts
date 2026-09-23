@@ -277,8 +277,8 @@ export const translations: Record<Lang, Dict> = {
     eventsPage: {
       back: "Voltar",
       eyebrow: "Casamentos & Eventos em Sintra",
-      titleStart: "O palco perfeito para o",
-      titleAccent: "vosso grande dia",
+      titleStart: "Casamentos e Eventos",
+      titleAccent: "no Paço do Bispo",
       intro:
         "Entre a serra e o Atlântico, o Paço do Bispo Boutique House é um palacete histórico recuperado para receber casamentos, batizados, celebrações e eventos corporativos num ambiente exclusivo e intimista.",
       carouselAlt:
@@ -456,8 +456,8 @@ export const translations: Record<Lang, Dict> = {
     eventsPage: {
       back: "Back",
       eyebrow: "Weddings & Events in Sintra",
-      titleStart: "The perfect setting for",
-      titleAccent: "your big day",
+      titleStart: "Weddings & Events",
+      titleAccent: "at Paço do Bispo",
       intro:
         "Between the hills and the Atlantic, Paço do Bispo Boutique House is a restored historic palace hosting weddings, christenings, celebrations and corporate events in an exclusive, intimate atmosphere.",
       carouselAlt:
@@ -637,8 +637,8 @@ export const translations: Record<Lang, Dict> = {
     eventsPage: {
       back: "Volver",
       eyebrow: "Bodas y Eventos en Sintra",
-      titleStart: "El escenario perfecto para",
-      titleAccent: "vuestro gran día",
+      titleStart: "Bodas y Eventos",
+      titleAccent: "en Paço do Bispo",
       intro:
         "Entre la sierra y el Atlántico, el Paço do Bispo Boutique House es un palacete histórico rehabilitado para acoger bodas, bautizos, celebraciones y eventos corporativos en un ambiente exclusivo e íntimo.",
       carouselAlt:
@@ -819,8 +819,8 @@ export const translations: Record<Lang, Dict> = {
     eventsPage: {
       back: "Retour",
       eyebrow: "Mariages & Événements à Sintra",
-      titleStart: "Le cadre idéal pour",
-      titleAccent: "votre grand jour",
+      titleStart: "Mariages et Événements",
+      titleAccent: "au Paço do Bispo",
       intro:
         "Entre les collines et l'Atlantique, la Paço do Bispo Boutique House est un palais historique restauré qui accueille mariages, baptêmes, célébrations et événements d'entreprise dans une atmosphère exclusive et intimiste.",
       carouselAlt:

@@ -90,6 +90,7 @@ const RoomDetail = () => {
               <p className="eyebrow text-paper/80">{txt.count}</p>
               <h1 className="font-serif-display text-5xl md:text-7xl mt-4 leading-[1.02] max-w-3xl">
                 {txt.name}
+                <span className="sr-only"> — Paço do Bispo Boutique House</span>
               </h1>
             </div>
           </div>
