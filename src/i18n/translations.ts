@@ -310,6 +310,7 @@ export const translations: Record<Lang, Dict> = {
         "Casamentos e Eventos em Sintra — Paço do Bispo Boutique House",
       metaDescription:
         "Espaço para casamentos, batizados e eventos corporativos em Sintra. Palacete histórico com salão, capela, jardins, piscina e alojamento no local.",
+      moreLink: "Saber mais sobre casamentos e eventos",
     },
     notFound: {
       title: "Página não encontrada",
@@ -487,6 +488,7 @@ export const translations: Record<Lang, Dict> = {
         "Weddings and Events in Sintra — Paço do Bispo Boutique House",
       metaDescription:
         "Venue for weddings, christenings and corporate events in Sintra. Historic palace with event hall, chapel, gardens, pool and on-site accommodation.",
+      moreLink: "Learn more about weddings and events",
     },
     notFound: {
       title: "Page not found",
@@ -668,6 +670,7 @@ export const translations: Record<Lang, Dict> = {
         "Bodas y Eventos en Sintra — Paço do Bispo Boutique House",
       metaDescription:
         "Espacio para bodas, bautizos y eventos corporativos en Sintra. Palacete histórico con salón, capilla, jardines, piscina y alojamiento in situ.",
+      moreLink: "Saber más sobre bodas y eventos",
     },
     notFound: {
       title: "Página no encontrada",
@@ -849,6 +852,7 @@ export const translations: Record<Lang, Dict> = {
         "Mariages et Événements à Sintra — Paço do Bispo Boutique House",
       metaDescription:
         "Lieu de mariages, baptêmes et événements d'entreprise à Sintra. Palais historique avec salle de réception, chapelle, jardins, piscine et hébergement sur place.",
+      moreLink: "En savoir plus sur les mariages et événements",
     },
     notFound: {
       title: "Page introuvable",
