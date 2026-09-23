@@ -1,4 +1,4 @@
-export const SITE_URL = "https://pacodobispoboutiquehouse.com";
+export const SITE_URL = "https://www.pacodobispoboutiquehouse.com";
 
 /** Turn a site-relative path into an absolute URL for social crawlers. */
 export const absoluteUrl = (path: string) => {
