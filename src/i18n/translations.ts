@@ -273,6 +273,43 @@ export const translations: Record<Lang, Dict> = {
       otherAccent: "quartos",
       backHome: "Voltar ao início",
     },
+    eventsPage: {
+      back: "Voltar",
+      eyebrow: "Casamentos & Eventos em Sintra",
+      titleStart: "O palco perfeito para o",
+      titleAccent: "vosso grande dia",
+      intro:
+        "Entre a serra e o Atlântico, o Paço do Bispo Boutique House é um palacete histórico recuperado para receber casamentos, batizados, celebrações e eventos corporativos num ambiente exclusivo e intimista.",
+      carouselAlt:
+        "Casamentos e eventos no Paço do Bispo Boutique House, Sintra",
+      servicesTitle: "O que oferecemos",
+      services: [
+        {
+          title: "Espaços versáteis",
+          desc: "Salão de eventos, lounge na antiga capela do século XVIII, jardins e piscina panorâmica sobre a serra.",
+        },
+        {
+          title: "Alojamento no local",
+          desc: "Nove quartos de luxo, um Loft e uma Penthouse para os noivos e convidados ficarem na casa.",
+        },
+        {
+          title: "Exclusividade",
+          desc: "Possibilidade de privatização total da casa para o vosso evento, com total privacidade.",
+        },
+        {
+          title: "Localização única",
+          desc: "No Parque Natural Sintra-Cascais, a 5 minutos da vila de Sintra e a 30 km de Lisboa, com estacionamento privativo.",
+        },
+      ],
+      ctaTitle: "Vamos planear o vosso evento",
+      ctaText:
+        "Conte-nos a vossa ideia e enviamos uma proposta personalizada.",
+      ctaButton: "Pedir proposta",
+      metaTitle:
+        "Casamentos e Eventos em Sintra — Paço do Bispo Boutique House",
+      metaDescription:
+        "Espaço para casamentos, batizados e eventos corporativos em Sintra. Palacete histórico com salão, capela, jardins, piscina e alojamento no local.",
+    },
     notFound: {
       title: "Página não encontrada",
       text: "A página que procura não existe ou foi movida.",
@@ -413,6 +450,42 @@ export const translations: Record<Lang, Dict> = {
       otherStart: "Other",
       otherAccent: "rooms",
       backHome: "Back to home",
+    },
+    eventsPage: {
+      back: "Back",
+      eyebrow: "Weddings & Events in Sintra",
+      titleStart: "The perfect setting for",
+      titleAccent: "your big day",
+      intro:
+        "Between the hills and the Atlantic, Paço do Bispo Boutique House is a restored historic palace hosting weddings, christenings, celebrations and corporate events in an exclusive, intimate atmosphere.",
+      carouselAlt:
+        "Weddings and events at Paço do Bispo Boutique House, Sintra",
+      servicesTitle: "What we offer",
+      services: [
+        {
+          title: "Versatile spaces",
+          desc: "Event hall, lounge in the former 18th-century chapel, gardens and a panoramic pool overlooking the hills.",
+        },
+        {
+          title: "On-site accommodation",
+          desc: "Nine luxury rooms, a Loft and a Penthouse so the couple and their guests can stay in the house.",
+        },
+        {
+          title: "Exclusivity",
+          desc: "Full privatisation of the house for your event, with complete privacy.",
+        },
+        {
+          title: "Unique location",
+          desc: "In the Sintra-Cascais Natural Park, 5 minutes from Sintra village and 30 km from Lisbon, with private parking.",
+        },
+      ],
+      ctaTitle: "Let's plan your event",
+      ctaText: "Tell us your idea and we will send you a tailored proposal.",
+      ctaButton: "Request a proposal",
+      metaTitle:
+        "Weddings and Events in Sintra — Paço do Bispo Boutique House",
+      metaDescription:
+        "Venue for weddings, christenings and corporate events in Sintra. Historic palace with event hall, chapel, gardens, pool and on-site accommodation.",
     },
     notFound: {
       title: "Page not found",
@@ -558,6 +631,43 @@ export const translations: Record<Lang, Dict> = {
       otherAccent: "habitaciones",
       backHome: "Volver al inicio",
     },
+    eventsPage: {
+      back: "Volver",
+      eyebrow: "Bodas y Eventos en Sintra",
+      titleStart: "El escenario perfecto para",
+      titleAccent: "vuestro gran día",
+      intro:
+        "Entre la sierra y el Atlántico, el Paço do Bispo Boutique House es un palacete histórico rehabilitado para acoger bodas, bautizos, celebraciones y eventos corporativos en un ambiente exclusivo e íntimo.",
+      carouselAlt:
+        "Bodas y eventos en el Paço do Bispo Boutique House, Sintra",
+      servicesTitle: "Qué ofrecemos",
+      services: [
+        {
+          title: "Espacios versátiles",
+          desc: "Salón de eventos, lounge en la antigua capilla del siglo XVIII, jardines y piscina panorámica sobre la sierra.",
+        },
+        {
+          title: "Alojamiento in situ",
+          desc: "Nueve habitaciones de lujo, un Loft y una Penthouse para que los novios y los invitados se alojen en la casa.",
+        },
+        {
+          title: "Exclusividad",
+          desc: "Posibilidad de privatización total de la casa para vuestro evento, con total privacidad.",
+        },
+        {
+          title: "Ubicación única",
+          desc: "En el Parque Natural Sintra-Cascais, a 5 minutos del pueblo de Sintra y a 30 km de Lisboa, con aparcamiento privado.",
+        },
+      ],
+      ctaTitle: "Planeemos vuestro evento",
+      ctaText:
+        "Contadnos vuestra idea y os enviaremos una propuesta personalizada.",
+      ctaButton: "Solicitar propuesta",
+      metaTitle:
+        "Bodas y Eventos en Sintra — Paço do Bispo Boutique House",
+      metaDescription:
+        "Espacio para bodas, bautizos y eventos corporativos en Sintra. Palacete histórico con salón, capilla, jardines, piscina y alojamiento in situ.",
+    },
     notFound: {
       title: "Página no encontrada",
       text: "La página que busca no existe o ha sido movida.",
@@ -701,6 +811,43 @@ export const translations: Record<Lang, Dict> = {
       otherStart: "Autres",
       otherAccent: "chambres",
       backHome: "Retour à l'accueil",
+    },
+    eventsPage: {
+      back: "Retour",
+      eyebrow: "Mariages & Événements à Sintra",
+      titleStart: "Le cadre idéal pour",
+      titleAccent: "votre grand jour",
+      intro:
+        "Entre les collines et l'Atlantique, la Paço do Bispo Boutique House est un palais historique restauré qui accueille mariages, baptêmes, célébrations et événements d'entreprise dans une atmosphère exclusive et intimiste.",
+      carouselAlt:
+        "Mariages et événements au Paço do Bispo Boutique House, Sintra",
+      servicesTitle: "Ce que nous offrons",
+      services: [
+        {
+          title: "Espaces polyvalents",
+          desc: "Salle de réception, lounge dans l'ancienne chapelle du XVIIIe siècle, jardins et piscine panoramique sur les collines.",
+        },
+        {
+          title: "Hébergement sur place",
+          desc: "Neuf chambres de luxe, un Loft et une Penthouse pour que les mariés et leurs invités dorment dans la maison.",
+        },
+        {
+          title: "Exclusivité",
+          desc: "Possibilité de privatisation totale de la maison pour votre événement, en toute intimité.",
+        },
+        {
+          title: "Emplacement unique",
+          desc: "Dans le Parc Naturel de Sintra-Cascais, à 5 minutes du village de Sintra et à 30 km de Lisbonne, avec parking privé.",
+        },
+      ],
+      ctaTitle: "Planifions votre événement",
+      ctaText:
+        "Racontez-nous votre idée et nous vous enverrons une proposition sur mesure.",
+      ctaButton: "Demander une proposition",
+      metaTitle:
+        "Mariages et Événements à Sintra — Paço do Bispo Boutique House",
+      metaDescription:
+        "Lieu de mariages, baptêmes et événements d'entreprise à Sintra. Palais historique avec salle de réception, chapelle, jardins, piscine et hébergement sur place.",
     },
     notFound: {
       title: "Page introuvable",
