@@ -114,6 +114,21 @@ export type Dict = {
     otherAccent: string;
     backHome: string;
   };
+  eventsPage: {
+    back: string;
+    eyebrow: string;
+    titleStart: string;
+    titleAccent: string;
+    intro: string;
+    carouselAlt: string;
+    servicesTitle: string;
+    services: { title: string; desc: string }[];
+    ctaTitle: string;
+    ctaText: string;
+    ctaButton: string;
+    metaTitle: string;
+    metaDescription: string;
+  };
   notFound: {
     title: string;
     text: string;
