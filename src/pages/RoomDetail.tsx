@@ -45,6 +45,31 @@ const RoomDetail = () => {
         />
         <meta name="twitter:description" content={txt.short} />
         <meta name="twitter:image" content={absoluteUrl(room.hero)} />
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "HotelRoom",
+            name: txt.name,
+            description: txt.short,
+            url: `${SITE_URL}/quartos/${room.slug}`,
+            image: absoluteUrl(room.hero),
+            bed: txt.bed,
+            occupancy: {
+              "@type": "QuantitativeValue",
+              name: txt.guests,
+            },
+            amenityFeature: amenities.map((a) => ({
+              "@type": "LocationFeatureSpecification",
+              name: a,
+              value: true,
+            })),
+            containedInPlace: {
+              "@type": "Hotel",
+              name: "Paço do Bispo Boutique House",
+              url: `${SITE_URL}/`,
+            },
+          })}
+        </script>
       </Helmet>
       <Navbar />
 
