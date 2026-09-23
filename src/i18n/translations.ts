@@ -277,8 +277,8 @@ export const translations: Record<Lang, Dict> = {
     eventsPage: {
       back: "Voltar",
       eyebrow: "Casamentos & Eventos em Sintra",
-      titleStart: "O palco perfeito para o",
-      titleAccent: "vosso grande dia",
+      titleStart: "Casamentos e Eventos",
+      titleAccent: "no Paço do Bispo",
       intro:
         "Entre a serra e o Atlântico, o Paço do Bispo Boutique House é um palacete histórico recuperado para receber casamentos, batizados, celebrações e eventos corporativos num ambiente exclusivo e intimista.",
       carouselAlt:
