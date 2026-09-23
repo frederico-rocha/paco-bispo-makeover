@@ -7,6 +7,7 @@ import Index from "./pages/Index.tsx";
 import NotFound from "./pages/NotFound.tsx";
 import RoomDetail from "./pages/RoomDetail.tsx";
 import Gallery from "./pages/Gallery.tsx";
+import Events from "./pages/Events.tsx";
 import ScrollToTop from "./components/ScrollToTop";
 import { LanguageProvider } from "./i18n/LanguageContext";
 
@@ -24,6 +25,7 @@ const App = () => (
           <Route path="/" element={<Index />} />
           <Route path="/quartos/:slug" element={<RoomDetail />} />
           <Route path="/galeria" element={<Gallery />} />
+          <Route path="/eventos" element={<Events />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
