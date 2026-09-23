@@ -109,6 +109,22 @@ const Gallery = () => {
       <Helmet>
         <title>{`${g.eyebrow} — Paço do Bispo Boutique House`}</title>
         <meta name="description" content={g.intro} />
+        <link rel="canonical" href={`${SITE_URL}/galeria`} />
+        <meta
+          property="og:title"
+          content={`${g.eyebrow} — Paço do Bispo Boutique House`}
+        />
+        <meta property="og:description" content={g.intro} />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content={`${SITE_URL}/galeria`} />
+        <meta property="og:image" content={absoluteUrl(facadeAsset.url)} />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+          name="twitter:title"
+          content={`${g.eyebrow} — Paço do Bispo Boutique House`}
+        />
+        <meta name="twitter:description" content={g.intro} />
+        <meta name="twitter:image" content={absoluteUrl(facadeAsset.url)} />
       </Helmet>
       <Navbar />
 

@@ -6,6 +6,7 @@ import { Footer } from "@/components/site/Footer";
 import { getRoom, rooms } from "@/data/rooms";
 import NotFound from "./NotFound";
 import { useI18n } from "@/i18n/LanguageContext";
+import { SITE_URL, absoluteUrl } from "@/lib/seo";
 
 const RoomDetail = () => {
   const { slug } = useParams();
