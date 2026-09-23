@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import chapelAsset from "@/assets/capela-centro-1.jpg.asset.json";
 const chapel = chapelAsset.url;
 import event89Asset from "@/assets/PacodoBispo28.02.2019-89.jpeg.asset.json";
@@ -126,6 +127,12 @@ export const Experiences = () => {
                 geral@pacodobispoboutiquehouse.com
               </a>
             </p>
+            <Link
+              to="/eventos"
+              className="mt-8 inline-block text-sm tracking-[0.2em] uppercase text-primary underline-offset-4 hover:underline"
+            >
+              {t.eventsPage.moreLink} →
+            </Link>
           </div>
         </div>
 
