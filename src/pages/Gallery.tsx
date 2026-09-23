@@ -5,6 +5,7 @@ import { ArrowLeft, X } from "lucide-react";
 import { Navbar } from "@/components/site/Navbar";
 import { Footer } from "@/components/site/Footer";
 import { rooms } from "@/data/rooms";
+import { SITE_URL, absoluteUrl } from "@/lib/seo";
 import heroAsset from "@/assets/hero-paco.jpg.asset.json";
 import facadeAsset from "@/assets/fachada-paco-bispo.png.asset.json";
 import piscina1Asset from "@/assets/piscina-1.jpg.asset.json";
@@ -109,6 +110,22 @@ const Gallery = () => {
       <Helmet>
         <title>{`${g.eyebrow} — Paço do Bispo Boutique House`}</title>
         <meta name="description" content={g.intro} />
+        <link rel="canonical" href={`${SITE_URL}/galeria`} />
+        <meta
+          property="og:title"
+          content={`${g.eyebrow} — Paço do Bispo Boutique House`}
+        />
+        <meta property="og:description" content={g.intro} />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content={`${SITE_URL}/galeria`} />
+        <meta property="og:image" content={absoluteUrl(facadeAsset.url)} />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+          name="twitter:title"
+          content={`${g.eyebrow} — Paço do Bispo Boutique House`}
+        />
+        <meta name="twitter:description" content={g.intro} />
+        <meta name="twitter:image" content={absoluteUrl(facadeAsset.url)} />
       </Helmet>
       <Navbar />
 

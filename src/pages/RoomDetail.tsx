@@ -6,6 +6,7 @@ import { Footer } from "@/components/site/Footer";
 import { getRoom, rooms } from "@/data/rooms";
 import NotFound from "./NotFound";
 import { useI18n } from "@/i18n/LanguageContext";
+import { SITE_URL, absoluteUrl } from "@/lib/seo";
 
 const RoomDetail = () => {
   const { slug } = useParams();
@@ -28,6 +29,22 @@ const RoomDetail = () => {
       <Helmet>
         <title>{`${txt.name} — Paço do Bispo Boutique House`}</title>
         <meta name="description" content={txt.short} />
+        <link rel="canonical" href={`${SITE_URL}/quartos/${room.slug}`} />
+        <meta
+          property="og:title"
+          content={`${txt.name} — Paço do Bispo Boutique House`}
+        />
+        <meta property="og:description" content={txt.short} />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content={`${SITE_URL}/quartos/${room.slug}`} />
+        <meta property="og:image" content={absoluteUrl(room.hero)} />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+          name="twitter:title"
+          content={`${txt.name} — Paço do Bispo Boutique House`}
+        />
+        <meta name="twitter:description" content={txt.short} />
+        <meta name="twitter:image" content={absoluteUrl(room.hero)} />
       </Helmet>
       <Navbar />
 
