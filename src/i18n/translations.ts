@@ -128,6 +128,7 @@ export type Dict = {
     ctaButton: string;
     metaTitle: string;
     metaDescription: string;
+    moreLink: string;
   };
   notFound: {
     title: string;
