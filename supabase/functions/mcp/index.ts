@@ -7,7 +7,88 @@ import { defineMcp } from "npm:@lovable.dev/mcp-js@0.22.2";
 
 // src/lib/mcp/tools/list-rooms.ts
 import { defineTool } from "npm:@lovable.dev/mcp-js@0.22.2";
-import { rooms } from "npm:@/data/rooms";
+
+// src/data/rooms-info.ts
+var commonAmenities = [
+  "Wi-Fi de alta velocidade",
+  "Ar condicionado",
+  "Pavimento radiante na casa de banho",
+  "Amenities de banho",
+  "Roup\xE3o de banho turco",
+  "Cofre",
+  "Mini-bar",
+  "Chaleira"
+];
+var roomsInfo = [
+  {
+    slug: "standard",
+    name: "Standard",
+    count: "Ponto de partida",
+    short: "Um ref\xFAgio simples e acolhedor, ideal para estadias curtas.",
+    guests: "2 h\xF3spedes",
+    bed: "Cama king-size",
+    description: [
+      "O quarto Standard \xE9 o ponto de partida da casa: espa\xE7o acolhedor, luz natural e um enquadramento sereno sobre o p\xE1tio interior.",
+      "Um ref\xFAgio simples e acolhedor, ideal para estadias curtas em Sintra."
+    ],
+    amenities: commonAmenities
+  },
+  {
+    slug: "deluxe",
+    name: "Deluxe",
+    count: "Um passo a cima",
+    short: "Um espa\xE7o tranquilo e confort\xE1vel, pensado para proporcionar uma estadia agrad\xE1vel e especial.",
+    guests: "2 h\xF3spedes",
+    bed: "Cama king-size",
+    description: [
+      "Um espa\xE7o tranquilo e confort\xE1vel, pensado para proporcionar uma estadia agrad\xE1vel e especial.",
+      "Restauradas a partir das alas originais do palacete setecentista, as su\xEDtes Deluxe conservam tectos altos, soalhos largos em pinho e detalhes em azulejo do s\xE9culo XVIII."
+    ],
+    amenities: commonAmenities
+  },
+  {
+    slug: "superior",
+    name: "Superior",
+    count: "Uma experi\xEAncia Superior",
+    short: "Mais espa\xE7o, mais conforto, uma experi\xEAncia Superior.",
+    guests: "2 h\xF3spedes",
+    bed: "Cama king-size",
+    description: [
+      "Um passo acima do Standard, o quarto Superior oferece mais \xE1rea, uma zona de estar e vista sobre o jardim.",
+      "Mais espa\xE7o, mais conforto \u2014 uma experi\xEAncia Superior, sem renunciar \xE0 discri\xE7\xE3o da casa."
+    ],
+    amenities: commonAmenities
+  },
+  {
+    slug: "penthouse",
+    name: "Penthouse",
+    count: "O ponto mais alto da casa",
+    short: "Suite familiar equipada com kitchenette, sala de estar e banheira de hidromassagem.",
+    guests: "2\u20134 h\xF3spedes",
+    bed: "Cama king + sof\xE1-cama",
+    description: [
+      "A penthouse ocupa todo o \xFAltimo piso da torre original. Suite familiar equipada com kitchenette, sala de estar e banheira de hidromassagem.",
+      "Pensada para ocasi\xF5es raras \u2014 um anivers\xE1rio, uma lua-de-mel, uma escapadinha em fam\xEDlia com a paisagem como \xFAnica companhia."
+    ],
+    amenities: commonAmenities
+  },
+  {
+    slug: "loft",
+    name: "Loft",
+    count: "Est\xFAdio acolhedor",
+    short: "Um ambiente amplo e descontra\xEDdo, que combina conforto e personalidade para uma estadia diferente.",
+    guests: "2 h\xF3spedes",
+    bed: "Cama queen-size",
+    description: [
+      "Um ambiente amplo e descontra\xEDdo, que combina conforto e personalidade para uma estadia diferente.",
+      "O Loft \xE9 o espa\xE7o mais informal da casa \u2014 perfeito para quem procura liberdade e car\xE1cter em Sintra."
+    ],
+    amenities: commonAmenities
+  }
+];
+var getRoomInfo = (slug) => roomsInfo.find((r) => r.slug === slug);
+
+// src/lib/mcp/tools/list-rooms.ts
 var list_rooms_default = defineTool({
   name: "list_rooms",
   title: "List rooms",
@@ -15,7 +96,7 @@ var list_rooms_default = defineTool({
   inputSchema: {},
   annotations: { readOnlyHint: true, idempotentHint: true, openWorldHint: false },
   handler: () => {
-    const summary = rooms.map((r) => ({
+    const summary = roomsInfo.map((r) => ({
       slug: r.slug,
       name: r.name,
       count: r.count,
@@ -33,32 +114,30 @@ var list_rooms_default = defineTool({
 // src/lib/mcp/tools/get-room.ts
 import { defineTool as defineTool2 } from "npm:@lovable.dev/mcp-js@0.22.2";
 import { z } from "npm:zod@^4.4.3";
-import { getRoom, rooms as rooms2 } from "npm:@/data/rooms";
 var get_room_default = defineTool2({
   name: "get_room",
   title: "Get room details",
-  description: "Return full details for a single room by slug: description, amenities, size, capacity and view. Use list_rooms to discover valid slugs.",
+  description: "Return full details for a single room by slug: description, amenities, capacity and bed type. Use list_rooms to discover valid slugs.",
   inputSchema: {
-    slug: z.string().min(1).describe(`Room slug. One of: ${rooms2.map((r) => r.slug).join(", ")}`)
+    slug: z.string().min(1).describe(`Room slug. One of: ${roomsInfo.map((r) => r.slug).join(", ")}`)
   },
   annotations: { readOnlyHint: true, idempotentHint: true, openWorldHint: false },
   handler: ({ slug }) => {
-    const room = getRoom(slug);
+    const room = getRoomInfo(slug);
     if (!room) {
       return {
         content: [
           {
             type: "text",
-            text: `No room found with slug "${slug}". Available: ${rooms2.map((r) => r.slug).join(", ")}.`
+            text: `No room found with slug "${slug}". Available: ${roomsInfo.map((r) => r.slug).join(", ")}.`
           }
         ],
         isError: true
       };
     }
-    const { hero: _h, gallery: _g, ...data } = room;
     return {
-      content: [{ type: "text", text: JSON.stringify(data, null, 2) }],
-      structuredContent: { room: data }
+      content: [{ type: "text", text: JSON.stringify(room, null, 2) }],
+      structuredContent: { room }
     };
   }
 });
