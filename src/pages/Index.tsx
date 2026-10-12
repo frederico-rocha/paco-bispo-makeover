@@ -7,6 +7,8 @@ import { Location } from "@/components/site/Location";
 import { Reservation } from "@/components/site/Reservation";
 import { Footer } from "@/components/site/Footer";
 import { useEffect } from "react";
+import { Helmet } from "react-helmet-async";
+import { SITE_URL } from "@/lib/seo";
 import { useI18n } from "@/i18n/LanguageContext";
 
 const Index = () => {
@@ -26,6 +28,7 @@ const Index = () => {
 
   return (
     <main className="bg-background text-foreground">
+      <Helmet><link rel="canonical" href={`${SITE_URL}/`} /></Helmet>
       <Navbar />
       <Hero />
       <About />
